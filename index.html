@@ -36,7 +36,7 @@ ul{list-style:none}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
-.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-text,.gt{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .section-label{display:inline-flex;align-items:center;gap:8px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.25);color:#7EB3FF;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
 .section-title{font-family:var(--font-h);font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:800;line-height:1.1;letter-spacing:-.025em}
 .section-sub{color:var(--muted);font-size:1rem;line-height:1.75;max-width:580px}
@@ -49,10 +49,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:100px;font-size:.9rem;font-weight:600;transition:all var(--trans);position:relative;overflow:hidden;white-space:nowrap}
 .btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.09);opacity:0;transition:opacity var(--trans)}
 .btn:hover::after{opacity:1}
-.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 22px rgba(58,123,255,.4)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
-.btn-outline{border:1.5px solid rgba(255,255,255,.18);color:#fff}
-.btn-outline:hover{border-color:rgba(58,123,255,.6);box-shadow:0 0 22px rgba(58,123,255,.18)}
+.btn-primary,.btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 22px rgba(58,123,255,.4)}
+.btn-primary:hover,.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
+.btn-outline,.btn-o{border:1.5px solid rgba(255,255,255,.18);color:#fff}
+.btn-outline:hover,.btn-o:hover{border-color:rgba(58,123,255,.6);box-shadow:0 0 22px rgba(58,123,255,.18)}
 .btn-lg{padding:14px 34px;font-size:1rem}
 .btn-ghost{padding:13px 28px;border:1.5px solid rgba(255,255,255,.2);color:#fff;border-radius:100px;font-size:1rem;font-weight:600;display:inline-flex;align-items:center;gap:9px;transition:all var(--trans)}
 .btn-ghost:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);transform:translateY(-2px)}
@@ -66,28 +66,28 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 /* ════════════════════════════
    NAVBAR
 ════════════════════════════ */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--trans),box-shadow var(--trans)}
-.navbar.scrolled{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-.nav-inner{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--trans),box-shadow var(--trans)}
+nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav-in{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
 .logo{font-family:var(--font-h);font-size:1.55rem;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
-.logo-dot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pulse-dot 2s infinite}
+.logo-dot,.ldot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pulse-dot 2s infinite}
 @keyframes pulse-dot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
-.nav-links{display:flex;align-items:center;gap:34px}
-.nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--trans);position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--trans);border-radius:2px}
-.nav-links a:hover{color:#fff}
-.nav-links a:hover::after{transform:scaleX(1)}
-.nav-cta{display:flex;align-items:center;gap:10px}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:8px}
-.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--trans)}
+.nav-l{display:flex;align-items:center;gap:34px}
+.nav-l a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--trans);position:relative}
+.nav-l a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--trans);border-radius:2px}
+.nav-l a:hover,.nav-l a.act{color:#fff}
+.nav-l a.act::after,.nav-l a:hover::after{transform:scaleX(1)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.hbg{display:none;flex-direction:column;gap:5px;padding:8px}
+.hbg span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--trans)}
 
 /* Mobile menu */
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(30px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--trans)}
-.mobile-menu a:hover{color:var(--c1)}
-.mobile-close{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer;transition:color var(--trans)}
-.mobile-close:hover{color:#fff}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(30px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob.open{display:flex}
+.mob a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--trans)}
+.mob a:hover{color:var(--c1)}
+.mclose{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer;transition:color var(--trans)}
+.mclose:hover{color:#fff}
 
 /* ════════════════════════════
    HERO
@@ -448,8 +448,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hv-rating{left:-28px}
 }
 @media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
-  .hamburger{display:flex}
+  .nav-l,.nav-r{display:none}
+  .hbg{display:flex}
   .hero-inner{grid-template-columns:1fr}
   .hero-visual{display:none}
   .hero{padding-top:96px}
@@ -495,31 +495,33 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 </div>
 
 <!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <span class="mobile-close" id="mobileClose"><i class="fas fa-xmark"></i></span>
-  <a href="index.html"    onclick="closeMob()">Home</a>
+<div class="mob" id="mob">
+  <span class="mclose" id="mclose"><i class="fas fa-xmark"></i></span>
+  <a href="index.html" onclick="closeMob()">Home</a>
   <a href="services.html" onclick="closeMob()">Services</a>
-  <a href="about.html"    onclick="closeMob()">About</a>
+  <a href="about.html" onclick="closeMob()">About</a>
   <a href="portfolio.html" onclick="closeMob()">Portfolio</a>
-  <a href="contact.html"  onclick="closeMob()">Contact</a>
+  <a href="#" onclick="closeMob()">Blog</a>
+  <a href="contact.html" onclick="closeMob()">Contact</a>
 </div>
 
 <!-- ══════════════ NAVBAR ══════════════ -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="logo"><div class="logo-dot"></div>Nova<span class="grad-text">Mark</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+    <ul class="nav-l">
+      <li><a href="index.html" class="act">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="#">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="#" class="btn btn-outline">Login</a>
-      <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+    <div class="nav-r">
+      <a href="#" class="btn btn-o">Login</a>
+      <a href="contact.html" class="btn btn-p">Work With Us <i class="fas fa-arrow-right"></i></a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -1074,7 +1076,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" class="logo"><div class="logo-dot"></div>Nova<span class="grad-text">Mark</span></a>
+      <a href="index.html" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
       <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
       <div class="social-links">
         <a href="#" class="social-link" aria-label="X"><i class="fab fa-x-twitter"></i></a>
@@ -1154,7 +1156,7 @@ document.querySelectorAll('a,button').forEach(function(el){
 });
 
 /* Navbar */
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60)});
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('sc',window.scrollY>60)});
 
 /* Back to top */
 var bt=document.querySelector('.back-top');
@@ -1163,11 +1165,13 @@ if(bt){
   bt.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
 }
 
-/* Hamburger */
-var hbg=document.getElementById('hamburger'),mob=document.getElementById('mobileMenu'),mc=document.getElementById('mobileClose');
-if(hbg){hbg.addEventListener('click',function(){mob.classList.add('open');document.body.style.overflow='hidden'})}
-if(mc){mc.addEventListener('click',function(){mob.classList.remove('open');document.body.style.overflow=''})}
-function closeMob(){var m=document.getElementById('mobileMenu');if(m){m.classList.remove('open');document.body.style.overflow=''}}
+/* Hamburger / mobile menu */
+document.getElementById('hbg').addEventListener('click',function(){
+  document.getElementById('mob').classList.add('open');
+  document.body.style.overflow='hidden';
+});
+document.getElementById('mclose').addEventListener('click',closeMob);
+function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow='';}
 
 /* Chat widget */
 var chatBtn=document.getElementById('chatBtn'),chatPop=document.getElementById('chatPopup');
