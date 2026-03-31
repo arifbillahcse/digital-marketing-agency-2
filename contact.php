@@ -1,0 +1,1170 @@
+<?php /* NovaMark – Contact Us – NovaMark Digital Marketing Agency */ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us – NovaMark Digital Marketing Agency</title>
+<meta name="description" content="Get in touch with NovaMark. Book a free discovery call, send us a project brief, or ask us anything — we respond within one business day."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous"/>
+<style>
+:root{
+  --ink:#060C18;--ink2:#0D1525;--ink3:#111E32;
+  --muted:#8897B3;--c1:#00D4FF;--c2:#3A7BFF;--c3:#7C3AED;
+  --grad:linear-gradient(135deg,var(--c1),var(--c2),var(--c3));
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--r-xl:40px;
+  --sh:0 20px 60px rgba(0,0,0,.4);--sh-g:0 0 44px rgba(58,123,255,.28);
+  --t:.3s cubic-bezier(.4,0,.2,1);
+  --fh:"Outfit",sans-serif;--fb:"Plus Jakarta Sans",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ink);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.gt{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.26);color:#7EB3FF;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.h2{font-family:var(--fh);font-size:clamp(2rem,3.8vw,3rem);font-weight:900;line-height:1.08;letter-spacing:-.028em}
+.sub{color:var(--muted);font-size:.97rem;line-height:1.78;max-width:580px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:100px;font-size:.9rem;font-weight:600;transition:all var(--t);position:relative;overflow:hidden;white-space:nowrap;cursor:pointer;border:none}
+.btn::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.09);opacity:0;transition:opacity var(--t)}
+.btn:hover::after{opacity:1}
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 22px rgba(58,123,255,.4)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
+.btn-o{border:1.5px solid rgba(255,255,255,.18);color:#fff}
+.btn-o:hover{border-color:rgba(58,123,255,.6)}
+.btn-g{padding:10px 22px;border:1.5px solid rgba(255,255,255,.2);color:#fff;border-radius:100px;font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all var(--t)}
+.btn-g:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+
+/* CURSOR */
+#cur{width:10px;height:10px;background:var(--c1);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+#ring{width:38px;height:38px;border:1.5px solid rgba(0,212,255,.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--t),box-shadow var(--t)}
+nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav-in{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.logo{font-family:var(--fh);font-size:1.55rem;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
+.ldot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pdot 2s infinite}
+@keyframes pdot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
+.nav-l{display:flex;align-items:center;gap:34px}
+.nav-l a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--t);position:relative}
+.nav-l a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--t);border-radius:2px}
+.nav-l a:hover,.nav-l a.act{color:#fff}
+.nav-l a.act::after,.nav-l a:hover::after{transform:scaleX(1)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.hbg{display:none;flex-direction:column;gap:5px;padding:8px}
+.hbg span{width:24px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(28px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob.open{display:flex}
+.mob a{font-family:var(--fh);font-size:2rem;font-weight:700;transition:color var(--t)}
+.mob a:hover{color:var(--c1)}
+.mclose{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer}
+
+/* ═══ HERO ═══ */
+.hero{min-height:88vh;display:flex;align-items:center;padding:110px 24px 72px;position:relative;overflow:hidden}
+.h-bg{position:absolute;inset:0;z-index:0}
+.hbl{position:absolute;border-radius:50%;filter:blur(110px);opacity:.12;animation:bl 11s ease-in-out infinite}
+.hbl1{width:580px;height:580px;background:var(--c2);top:-150px;left:-70px}
+.hbl2{width:400px;height:400px;background:var(--c3);bottom:-50px;right:8%;animation-delay:4s}
+.hbl3{width:260px;height:260px;background:var(--c1);top:45%;right:35%;animation-delay:7s}
+@keyframes bl{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(18px,-26px) scale(1.04)}66%{transform:translate(-13px,18px) scale(.97)}}
+.h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(58,123,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(58,123,255,.04) 1px,transparent 1px);background-size:56px 56px}
+.h-vl{position:absolute;width:1px;background:linear-gradient(to bottom,transparent,rgba(58,123,255,.2),transparent);top:0;bottom:0}
+.h-in{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+
+/* Hero left */
+.hero-text .bc{display:flex;align-items:center;gap:8px;font-size:.77rem;color:var(--muted);margin-bottom:22px;animation:fu .7s ease both}
+.bc a{transition:color var(--t)}.bc a:hover{color:#fff}
+.bc i{font-size:.6rem;opacity:.5}
+.hbdg{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);color:var(--c1);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;animation:fu .7s ease .06s both}
+.hbdg-dot{width:6px;height:6px;background:var(--c1);border-radius:50%;animation:pdot 1.5s infinite}
+.hero-title{font-family:var(--fh);font-size:clamp(2.6rem,4.5vw,4rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;margin-bottom:18px;animation:fu .7s ease .12s both}
+.hero-desc{color:var(--muted);font-size:.99rem;line-height:1.8;margin-bottom:32px;max-width:480px;animation:fu .7s ease .22s both}
+.hero-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap;animation:fu .7s ease .3s both}
+
+/* Trust pills */
+.trust-pills{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.07);animation:fu .7s ease .42s both}
+.tpill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:7px 14px;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.7)}
+.tpill i{color:var(--c1);font-size:.8rem}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Hero visual mosaic */
+.hv{position:relative;height:520px;animation:fu .9s ease .25s both}
+.hv-block{position:absolute;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.07)}
+.hv-block img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s ease}
+.hv-block:hover img{transform:scale(1.04)}
+.hv-ov{position:absolute;inset:0;border-radius:var(--r-lg);pointer-events:none;z-index:1}
+.hv-chip{position:absolute;top:13px;left:13px;background:rgba(6,12,24,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:4px 12px;font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:6px;z-index:2}
+.cdot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.hva{top:0;left:0;width:60%;height:60%}
+.hva img{object-position:center;filter:brightness(.72) contrast(1.08) saturate(.82)}
+.hva .hv-ov{background:linear-gradient(135deg,rgba(58,123,255,.22),rgba(6,12,24,.48))}
+.hvb{top:0;right:0;width:38%;height:76%}
+.hvb img{object-position:center top;filter:brightness(.68) contrast(1.12) saturate(.76)}
+.hvb .hv-ov{background:linear-gradient(160deg,rgba(124,58,237,.24),rgba(6,12,24,.52))}
+.hvc{bottom:0;left:0;width:58%;height:38%}
+.hvc img{object-position:center;filter:brightness(.65) contrast(1.1) saturate(.78)}
+.hvc .hv-ov{background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(6,12,24,.56))}
+.hv-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(58,123,255,.22),transparent 70%);top:30%;left:56%;transform:translate(-50%,-50%);pointer-events:none;animation:gp 4.5s ease-in-out infinite}
+@keyframes gp{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.35)}}
+.hfc{position:absolute;background:rgba(7,12,26,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.13);border-radius:var(--r-md);padding:12px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 16px 48px rgba(0,0,0,.55);z-index:10;white-space:nowrap}
+.hfc-i{width:34px;height:34px;background:var(--grad);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#fff;flex-shrink:0}
+.hfc-v{font-family:var(--fh);font-size:.95rem;font-weight:800;line-height:1}
+.hfc-l{font-size:.63rem;color:var(--muted);margin-top:2px}
+.fc1{top:-16px;right:12%;animation:f1 4.6s ease-in-out infinite}
+.fc2{top:40%;left:-44px;animation:f2 5.2s ease-in-out infinite}
+.fc3{bottom:20%;right:-36px;animation:f3 4s ease-in-out infinite}
+.fc4{bottom:-16px;left:22%;animation:f4 5.7s ease-in-out infinite}
+@keyframes f1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes f2{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+@keyframes f3{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes f4{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+/* ═══ CONTACT MAIN SECTION ═══ */
+.contact-main{padding:80px 24px 100px}
+.contact-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.55fr;gap:60px;align-items:start}
+
+/* ── Left: info column ── */
+.info-col{}
+.info-col .chip{margin-bottom:16px}
+.info-col .h2{margin-bottom:14px}
+.info-col .sub{margin-bottom:40px}
+
+/* Contact info cards */
+.info-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
+.info-card{
+  display:flex;align-items:flex-start;gap:16px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-md);
+  padding:20px 22px;
+  transition:all var(--t);
+}
+.info-card:hover{border-color:rgba(58,123,255,.26);background:rgba(58,123,255,.04);transform:translateX(4px)}
+.info-ico{
+  width:46px;height:46px;flex-shrink:0;
+  background:var(--grad);border-radius:13px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;color:#fff;
+  box-shadow:0 6px 20px rgba(58,123,255,.28);
+  transition:transform var(--t);
+}
+.info-card:hover .info-ico{transform:scale(1.08) rotate(-4deg)}
+.info-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.info-val{font-size:.95rem;font-weight:600;color:#fff;margin-bottom:2px}
+.info-sub{font-size:.78rem;color:var(--muted)}
+
+/* Office hours */
+.hours-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-md);
+  padding:22px;
+  margin-bottom:36px;
+}
+.hours-title{display:flex;align-items:center;gap:9px;font-family:var(--fh);font-size:.9rem;font-weight:700;margin-bottom:16px}
+.hours-title i{color:var(--c1)}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.84rem}
+.hours-row:last-child{border-bottom:none}
+.hours-day{color:var(--muted)}
+.hours-time{font-weight:600;color:#fff}
+.hours-time.closed{color:rgba(255,255,255,.3)}
+.hours-dot{width:7px;height:7px;border-radius:50%;background:#34D399;flex-shrink:0;box-shadow:0 0 8px rgba(52,211,153,.5)}
+
+/* Social links */
+.social-row{display:flex;gap:10px}
+.soc-btn{
+  width:42px;height:42px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:.95rem;
+  transition:all var(--t);
+}
+.soc-btn:hover{background:var(--grad);border-color:transparent;color:#fff;transform:translateY(-3px)}
+
+/* ── Right: form column ── */
+.form-col{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-xl);
+  padding:44px 48px;
+  position:relative;
+  overflow:hidden;
+}
+.form-col::before{
+  content:"";position:absolute;top:-80px;right:-80px;
+  width:280px;height:280px;
+  background:radial-gradient(circle,rgba(58,123,255,.1),transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.form-title{font-family:var(--fh);font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;position:relative;z-index:1}
+.form-sub{font-size:.85rem;color:var(--muted);margin-bottom:30px;position:relative;z-index:1}
+
+/* Form fields */
+.form-body{position:relative;z-index:1}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field:last-of-type{margin-bottom:0}
+.field label{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.field label span{color:var(--c1);margin-left:2px}
+.field input,.field select,.field textarea{
+  background:rgba(255,255,255,.04);
+  border:1.5px solid rgba(255,255,255,.09);
+  border-radius:var(--r-md);
+  padding:13px 16px;
+  font-size:.9rem;
+  font-family:var(--fb);
+  color:#fff;
+  transition:all var(--t);
+  outline:none;
+  width:100%;
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.25)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--c2);
+  background:rgba(58,123,255,.07);
+  box-shadow:0 0 0 3px rgba(58,123,255,.15);
+}
+.field select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238897B3' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.field select option{background:var(--ink2);color:#fff}
+.field textarea{resize:vertical;min-height:130px;line-height:1.65}
+.field input.error,.field select.error,.field textarea.error{border-color:rgba(248,113,113,.6);background:rgba(248,113,113,.05)}
+.err-msg{font-size:.74rem;color:#F87171;display:none;margin-top:2px}
+.err-msg.show{display:block}
+
+/* Budget selector (pill buttons) */
+.budget-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.budget-pill{
+  padding:8px 16px;border-radius:100px;
+  font-size:.78rem;font-weight:600;
+  border:1.5px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.55);
+  cursor:pointer;transition:all var(--t);
+  background:transparent;
+}
+.budget-pill:hover{border-color:rgba(58,123,255,.4);color:#fff}
+.budget-pill.sel{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 3px 14px rgba(58,123,255,.35)}
+
+/* Privacy checkbox */
+.check-row{display:flex;align-items:flex-start;gap:12px;margin:20px 0 28px}
+.check-row input[type="checkbox"]{
+  width:18px;height:18px;flex-shrink:0;
+  accent-color:var(--c2);cursor:pointer;margin-top:2px;
+}
+.check-row label{font-size:.8rem;color:var(--muted);line-height:1.6;cursor:pointer}
+.check-row label a{color:var(--c1);text-decoration:underline}
+
+/* Submit button */
+.submit-btn{
+  width:100%;padding:15px;
+  background:var(--grad);color:#fff;
+  border-radius:100px;font-size:1rem;font-weight:700;
+  letter-spacing:.02em;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:all var(--t);
+  box-shadow:0 4px 22px rgba(58,123,255,.4);
+  position:relative;overflow:hidden;
+}
+.submit-btn::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.1);opacity:0;transition:opacity var(--t)}
+.submit-btn:hover::after{opacity:1}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.submit-btn .btn-spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Success state */
+.form-success{
+  display:none;
+  text-align:center;padding:60px 24px;
+  position:relative;z-index:1;
+}
+.success-ico{
+  width:80px;height:80px;background:var(--grad);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;color:#fff;margin:0 auto 24px;
+  box-shadow:0 8px 36px rgba(58,123,255,.4);
+  animation:pop .5s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.success-title{font-family:var(--fh);font-size:1.6rem;font-weight:900;margin-bottom:10px}
+.success-sub{color:var(--muted);font-size:.9rem;line-height:1.7}
+.success-back{margin-top:28px;display:inline-flex;align-items:center;gap:8px;color:var(--c1);font-size:.88rem;font-weight:600;cursor:pointer}
+
+/* ═══ STATS BAND ═══ */
+.stats-band{padding:0 24px;margin-bottom:80px}
+.stats-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:var(--r-lg);overflow:hidden}
+.sc{background:var(--ink);padding:48px 24px;text-align:center;position:relative;overflow:hidden;transition:background var(--t)}
+.sc:hover{background:rgba(58,123,255,.065)}
+.sc-ico{font-size:1.9rem;margin-bottom:14px;display:block}
+.sc-v{font-family:var(--fh);font-size:3rem;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:7px}
+.sc-l{font-size:.84rem;color:var(--muted);font-weight:500}
+
+/* ═══ HOW IT WORKS ═══ */
+.how{padding:80px 24px;background:linear-gradient(180deg,transparent,rgba(58,123,255,.04),transparent)}
+.how-inner{max-width:1200px;margin:0 auto}
+.how-head{text-align:center;margin-bottom:64px}
+.how-head .sub{margin:14px auto 0}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps-grid::before{content:"";position:absolute;top:38px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,rgba(58,123,255,.3) 20%,rgba(124,58,237,.3) 80%,transparent)}
+.step-item{text-align:center;padding:0 16px;position:relative;z-index:1}
+.step-num{
+  width:76px;height:76px;border-radius:50%;
+  background:rgba(6,12,24,.95);
+  border:1.5px solid rgba(58,123,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+  font-size:1.15rem;color:#7EB3FF;
+  transition:all var(--t);
+}
+.step-item:hover .step-num{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 0 8px rgba(58,123,255,.1)}
+.step-title{font-family:var(--fh);font-size:.95rem;font-weight:700;margin-bottom:8px}
+.step-body{font-size:.8rem;color:var(--muted);line-height:1.65}
+
+/* ═══ FAQ ═══ */
+.faq{padding:80px 24px}
+.faq-inner{max-width:820px;margin:0 auto}
+.faq-head{text-align:center;margin-bottom:52px}
+.faq-head .sub{margin:14px auto 0}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-md);
+  overflow:hidden;
+  transition:border-color var(--t);
+}
+.faq-item.open{border-color:rgba(58,123,255,.28)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 24px;cursor:pointer;
+  font-family:var(--fh);font-size:.97rem;font-weight:700;
+  gap:16px;transition:color var(--t);
+}
+.faq-q:hover{color:var(--c1)}
+.faq-ico{
+  width:32px;height:32px;flex-shrink:0;
+  background:rgba(255,255,255,.05);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;color:var(--muted);
+  transition:all var(--t);
+}
+.faq-item.open .faq-ico{background:var(--grad);color:#fff;transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s ease;
+  padding:0 24px;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 20px}
+.faq-a p{font-size:.88rem;color:var(--muted);line-height:1.78}
+
+/* ═══ MAP / OFFICE ═══ */
+.office{padding:80px 24px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.04),transparent)}
+.office-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}
+.office-content .sub{margin:14px 0 32px}
+.office-details{display:flex;flex-direction:column;gap:18px}
+.od-item{display:flex;align-items:flex-start;gap:14px}
+.od-ico{width:42px;height:42px;flex-shrink:0;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.22);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#7EB3FF;font-size:.95rem}
+.od-label{font-size:.73rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.od-val{font-size:.9rem;font-weight:600}
+.od-sub{font-size:.8rem;color:var(--muted);margin-top:1px}
+
+.map-wrap{
+  border-radius:var(--r-lg);overflow:hidden;
+  border:1px solid rgba(255,255,255,.07);
+  box-shadow:0 32px 80px rgba(0,0,0,.4);
+  position:relative;height:380px;
+  background:var(--ink2);
+}
+/* Stylised map placeholder (no API key needed) */
+.map-inner{
+  width:100%;height:100%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(58,123,255,.12) 0%, transparent 60%),
+    linear-gradient(rgba(58,123,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(58,123,255,.03) 1px,transparent 1px);
+  background-size:100% 100%, 42px 42px, 42px 42px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.map-pin-wrap{display:flex;flex-direction:column;align-items:center;gap:0}
+.map-pin{
+  width:60px;height:60px;background:var(--grad);border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  box-shadow:0 8px 28px rgba(58,123,255,.5);
+  display:flex;align-items:center;justify-content:center;
+  animation:bounce 2.5s ease-in-out infinite;
+}
+.map-pin i{transform:rotate(45deg);font-size:1.3rem;color:#fff}
+.map-shadow{width:28px;height:8px;background:rgba(0,0,0,.3);border-radius:50%;margin-top:6px;animation:shadow-pulse 2.5s ease-in-out infinite}
+.map-label{
+  margin-top:16px;background:rgba(6,12,24,.92);
+  backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r-md);padding:10px 18px;
+  font-family:var(--fh);font-size:.88rem;font-weight:700;
+  white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+@keyframes bounce{0%,100%{transform:rotate(-45deg) translateY(0)}50%{transform:rotate(-45deg) translateY(-8px)}}
+@keyframes shadow-pulse{0%,100%{transform:scaleX(1);opacity:.3}50%{transform:scaleX(.7);opacity:.15}}
+
+/* Decorative map roads */
+.map-road{position:absolute;background:rgba(58,123,255,.12);border-radius:2px}
+.mr1{width:1px;height:100%;left:30%;top:0}
+.mr2{width:100%;height:1px;left:0;top:40%}
+.mr3{width:1px;height:100%;right:25%;top:0;opacity:.6}
+.mr4{width:100%;height:1px;left:0;bottom:25%;opacity:.6}
+
+/* ═══ CTA ═══ */
+.cta{padding:80px 24px}
+.cta-in{max-width:1080px;margin:0 auto;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(58,123,255,.12),rgba(124,58,237,.08));border:1px solid rgba(58,123,255,.26);border-radius:var(--r-xl);padding:72px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-in::before{content:"";position:absolute;top:-50%;left:-10%;width:480px;height:480px;background:radial-gradient(circle,rgba(58,123,255,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-in::after{content:"";position:absolute;bottom:-50%;right:-10%;width:380px;height:380px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-c{position:relative;z-index:1}
+.cta-t{font-family:var(--fh);font-size:clamp(2rem,3.8vw,2.9rem);font-weight:900;letter-spacing:-.025em;margin-bottom:14px}
+.cta-d{color:var(--muted);font-size:1rem;margin:0 auto 36px;max-width:480px}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* ═══ FOOTER ═══ */
+footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.06);padding:80px 24px 32px}
+.ft{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:62px}
+.fb p{color:var(--muted);font-size:.85rem;line-height:1.72;margin:14px 0 24px;max-width:270px}
+.fsocs{display:flex;gap:10px}
+.fsoc{width:38px;height:38px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;transition:all var(--t)}
+.fsoc:hover{background:var(--grad);border-color:transparent;color:#fff;transform:translateY(-3px)}
+.fcol h4{font-family:var(--fh);font-size:.88rem;font-weight:700;margin-bottom:18px}
+.flinks{display:flex;flex-direction:column;gap:10px}
+.flinks a{font-size:.84rem;color:var(--muted);transition:color var(--t);display:flex;align-items:center;gap:7px}
+.flinks a:hover{color:#fff}
+.flinks a i{font-size:.72rem;color:var(--c2);flex-shrink:0}
+.fbot{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.06)}
+.fleg{font-size:.78rem;color:var(--muted)}
+.flegs{display:flex;gap:18px}
+.flegs a{font-size:.78rem;color:var(--muted);transition:color var(--t)}.flegs a:hover{color:#fff}
+
+/* BACK-TOP + CHAT */
+#bt{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:var(--grad);border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;box-shadow:0 8px 26px rgba(58,123,255,.45);transition:all var(--t);opacity:0;pointer-events:none;z-index:500}
+#bt.on{opacity:1;pointer-events:all}
+#bt:hover{transform:translateY(-4px)}
+.chat{position:fixed;bottom:30px;left:30px;z-index:500}
+.chat-btn{width:54px;height:54px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;box-shadow:0 8px 28px rgba(58,123,255,.5);cursor:pointer;transition:all var(--t);position:relative}
+.chat-btn::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(58,123,255,.3);animation:ping 2s ease infinite}
+@keyframes ping{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.chat-btn:hover{transform:scale(1.1)}
+.chat-pop{position:absolute;bottom:66px;left:0;width:272px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:20px;display:none;box-shadow:var(--sh)}
+.chat-pop.open{display:block}
+.chat-pop h4{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:5px}
+.chat-pop p{font-size:.79rem;color:var(--muted);margin-bottom:14px}
+.chat-start{display:block;text-align:center;padding:10px;background:var(--grad);color:#fff;border-radius:8px;font-size:.83rem;font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .h-in{grid-template-columns:1fr;gap:52px}
+  .hv{height:380px}.fc2,.fc3{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .form-col{padding:36px 32px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+  .steps-grid::before{display:none}
+  .office-inner{grid-template-columns:1fr}
+  .map-wrap{height:300px}
+  .ft{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .nav-l,.nav-r{display:none}.hbg{display:flex}
+  .hv{height:280px}.fc1,.fc4{display:none}
+  .field-row{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .cta-in{padding:44px 26px}
+  .ft{grid-template-columns:1fr 1fr}
+  .fbot{flex-direction:column;gap:14px;text-align:center}
+  #cur,#ring{display:none}
+  #bt{right:14px;bottom:14px}.chat{left:14px;bottom:14px}
+  .trust-pills{gap:8px}
+}
+@media(max-width:480px){
+  .ft{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .form-col{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="ring"></div>
+<a href="#" id="bt"><i class="fas fa-arrow-up"></i></a>
+
+<div class="chat">
+  <div class="chat-btn" id="chatBtn"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-pop" id="chatPop">
+    <h4>&#128075; Hey there!</h4>
+    <p>Prefer to chat directly? Drop us a message and we will be back within one business day.</p>
+    <a href="#contact-form" class="chat-start" onclick="document.getElementById('chatPop').classList.remove('open')">Jump to Contact Form</a>
+  </div>
+</div>
+
+<div class="mob" id="mob">
+  <span class="mclose" id="mclose"><i class="fas fa-xmark"></i></span>
+  <a href="index.php" onclick="closeMob()">Home</a>
+  <a href="services.php" onclick="closeMob()">Services</a>
+  <a href="about.php" onclick="closeMob()">About</a>
+  <a href="portfolio.php" onclick="closeMob()">Portfolio</a>
+  <a href="contact.php" onclick="closeMob()">Contact</a>
+</div>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.php" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+    <ul class="nav-l">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="services.php">Services</a></li>
+      <li><a href="about.php">About</a></li>
+      <li><a href="portfolio.php">Portfolio</a></li>
+      <li><a href="contact.php" class="act">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="#" class="btn btn-o">Login</a>
+      <a href="#contact-form" class="btn btn-p">Get in Touch <i class="fas fa-arrow-down"></i></a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="h-bg">
+    <div class="hbl hbl1"></div><div class="hbl hbl2"></div><div class="hbl hbl3"></div>
+    <div class="h-grid"></div>
+    <div class="h-vl" style="left:33%"></div><div class="h-vl" style="right:33%"></div>
+  </div>
+  <div class="h-in wrap">
+    <!-- Left: text -->
+    <div class="hero-text">
+      <div class="bc"><a href="index.php">Home</a><i class="fas fa-chevron-right"></i><span style="color:#fff">Contact</span></div>
+      <div class="hbdg"><span class="hbdg-dot"></span> Let's Start a Conversation</div>
+      <h1 class="hero-title">Tell Us About<br/><span class="gt">Your Goals.</span></h1>
+      <p class="hero-desc">Whether you have a project in mind, a question about our services, or just want an honest second opinion on your current marketing — we are here and we respond fast.</p>
+      <div class="hero-ctas">
+        <a href="#contact-form" class="btn btn-p">Send Us a Message <i class="fas fa-arrow-down"></i></a>
+        <a href="tel:+12125550190" class="btn-g"><i class="fas fa-phone"></i> Call Us Now</a>
+      </div>
+      <div class="trust-pills">
+        <span class="tpill"><i class="fas fa-clock"></i> Responds within 24 hours</span>
+        <span class="tpill"><i class="fas fa-lock"></i> 100% confidential</span>
+        <span class="tpill"><i class="fas fa-circle-check"></i> No obligation</span>
+        <span class="tpill"><i class="fas fa-star"></i> 4.9 / 5 rating</span>
+      </div>
+    </div>
+    <!-- Right: dark image mosaic -->
+    <div class="hv">
+      <div class="hv-glow"></div>
+      <div class="hv-block hva">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c1)"></span> Strategy Call</div>
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&h=700&q=90&auto=format&fit=crop&crop=center" alt="Team strategy meeting" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <div class="hv-block hvb">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c3)"></span> Our Team</div>
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&h=1000&q=90&auto=format&fit=crop&crop=center" alt="NovaMark office team" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <div class="hv-block hvc">
+        <div class="hv-chip"><span class="cdot" style="background:#34D399"></span> Discovery</div>
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=500&q=90&auto=format&fit=crop&crop=center" alt="Discovery meeting dark" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <div class="hfc fc1"><div class="hfc-i"><i class="fas fa-clock"></i></div><div><div class="hfc-v">&lt; 24 hrs</div><div class="hfc-l">Response Time</div></div></div>
+      <div class="hfc fc2"><div class="hfc-i"><i class="fas fa-star"></i></div><div><div class="hfc-v">4.9 / 5.0</div><div class="hfc-l">Client Rating</div></div></div>
+      <div class="hfc fc3"><div class="hfc-i"><i class="fas fa-users"></i></div><div><div class="hfc-v">150+ Clients</div><div class="hfc-l">Served Globally</div></div></div>
+      <div class="hfc fc4"><div class="hfc-i"><i class="fas fa-globe"></i></div><div><div class="hfc-v">12 Countries</div><div class="hfc-l">We Work Worldwide</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT MAIN ═══ -->
+<section class="contact-main" id="contact-form">
+  <div class="contact-grid wrap">
+
+    <!-- ── Left: Info ── -->
+    <div class="info-col rv">
+      <div class="chip"><i class="fas fa-headset"></i> Get In Touch</div>
+      <h2 class="h2">We Would Love to<br/><span class="gt">Hear From You.</span></h2>
+      <p class="sub">Drop us a message, book a discovery call, or simply ask a question. Every enquiry is answered personally by a senior member of our team — never a bot, never a template.</p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-ico"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="info-label">Email Us</div>
+            <div class="info-val"><a href="/cdn-cgi/l/email-protection#2048454c4c4f604e4f56414d41524b0e4147454e4359" style="color:#fff"><span class="__cf_email__" data-cfemail="caa2afa6a6a58aa4a5bcaba7abb8a1e4abadafa4a9b3">[email&#160;protected]</span></a></div>
+            <div class="info-sub">We reply within one business day, usually faster</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-ico"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="info-label">Call Us</div>
+            <div class="info-val"><a href="tel:+12125550190" style="color:#fff">+1 (212) 555-0190</a></div>
+            <div class="info-sub">Mon–Fri, 9 AM – 6 PM EST</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-ico"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <div class="info-label">Visit Us</div>
+            <div class="info-val">340 Park Ave, Suite 400</div>
+            <div class="info-sub">New York, NY 10022, United States</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-ico"><i class="fas fa-calendar-check"></i></div>
+          <div>
+            <div class="info-label">Book a Discovery Call</div>
+            <div class="info-val">Free 30-min strategy session</div>
+            <div class="info-sub">No pitch, no pressure — just honest insight</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Office Hours -->
+      <div class="hours-card">
+        <div class="hours-title"><i class="fas fa-clock"></i> Office Hours</div>
+        <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time" style="display:flex;align-items:center;gap:8px"><span class="hours-dot"></span> 9:00 AM – 6:00 PM EST</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time" style="display:flex;align-items:center;gap:8px"><span class="hours-dot" style="background:#FBBF24;box-shadow:0 0 8px rgba(251,191,36,.5)"></span> 10:00 AM – 2:00 PM EST</span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time closed">Closed</span></div>
+      </div>
+
+      <!-- Social links -->
+      <div class="social-row">
+        <a href="#" class="soc-btn" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="soc-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="soc-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="soc-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="soc-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- ── Right: Form ── -->
+    <div class="form-col rv">
+      <!-- Form visible state -->
+      <div id="formWrap">
+        <div class="form-title">Send Us a Message</div>
+        <div class="form-sub">Fill in the details below and we will get back to you within one business day. Fields marked <span style="color:var(--c1)">*</span> are required.</div>
+
+        <div class="form-body">
+          <!-- Name + Email -->
+          <div class="field-row">
+            <div class="field">
+              <label>Full Name <span>*</span></label>
+              <input type="text" id="f-name" placeholder="James Carter" autocomplete="name"/>
+              <div class="err-msg" id="err-name">Please enter your full name.</div>
+            </div>
+            <div class="field">
+              <label>Email Address <span>*</span></label>
+              <input type="email" id="f-email" placeholder="james@company.com" autocomplete="email"/>
+              <div class="err-msg" id="err-email">Please enter a valid email address.</div>
+            </div>
+          </div>
+
+          <!-- Phone + Company -->
+          <div class="field-row">
+            <div class="field">
+              <label>Phone Number</label>
+              <input type="tel" id="f-phone" placeholder="+1 (212) 555-0190" autocomplete="tel"/>
+            </div>
+            <div class="field">
+              <label>Company Name</label>
+              <input type="text" id="f-company" placeholder="Acme Corp" autocomplete="organization"/>
+            </div>
+          </div>
+
+          <!-- Service interested in -->
+          <div class="field">
+            <label>Service You're Interested In <span>*</span></label>
+            <select id="f-service">
+              <option value="" disabled selected>Select a service...</option>
+              <option value="seo">Search Engine Optimization (SEO)</option>
+              <option value="smm">Social Media Marketing (SMM)</option>
+              <option value="paid-ads">Paid Advertising (Google &amp; Meta Ads)</option>
+              <option value="web-design">Website Design &amp; Development</option>
+              <option value="content">Content Marketing</option>
+              <option value="email">Email Marketing &amp; Automation</option>
+              <option value="branding">Branding &amp; Growth Strategy</option>
+              <option value="analytics">Analytics &amp; Reporting</option>
+              <option value="multiple">Multiple Services</option>
+              <option value="not-sure">Not Sure Yet — Need Advice</option>
+            </select>
+            <div class="err-msg" id="err-service">Please select a service.</div>
+          </div>
+
+          <!-- Monthly budget -->
+          <div class="field">
+            <label>Monthly Budget (USD)</label>
+          </div>
+          <div class="budget-group" id="budgetGroup">
+            <button type="button" class="budget-pill" data-val="under1k">Under $1,000</button>
+            <button type="button" class="budget-pill" data-val="1k-3k">$1,000 – $3,000</button>
+            <button type="button" class="budget-pill" data-val="3k-7k">$3,000 – $7,000</button>
+            <button type="button" class="budget-pill" data-val="7k-15k">$7,000 – $15,000</button>
+            <button type="button" class="budget-pill" data-val="15k+">$15,000+</button>
+          </div>
+
+          <!-- Website URL -->
+          <div class="field">
+            <label>Your Website URL</label>
+            <input type="url" id="f-url" placeholder="https://yourwebsite.com"/>
+          </div>
+
+          <!-- Message -->
+          <div class="field">
+            <label>Tell Us About Your Project <span>*</span></label>
+            <textarea id="f-message" placeholder="Describe your goals, current challenges, or what you would like to achieve. The more detail you share, the more useful our response will be..."></textarea>
+            <div class="err-msg" id="err-message">Please tell us a bit about your project.</div>
+          </div>
+
+          <!-- How did you hear -->
+          <div class="field">
+            <label>How Did You Hear About Us?</label>
+            <select id="f-source">
+              <option value="" disabled selected>Select an option...</option>
+              <option value="google">Google Search</option>
+              <option value="social">Social Media</option>
+              <option value="referral">Client Referral</option>
+              <option value="clutch">Clutch / G2</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="podcast">Podcast / Webinar</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Privacy checkbox -->
+          <div class="check-row">
+            <input type="checkbox" id="f-privacy"/>
+            <label for="f-privacy">I agree to NovaMark's <a href="#">Privacy Policy</a> and consent to being contacted about my enquiry. We never share your data with third parties.</label>
+          </div>
+          <div class="err-msg" id="err-privacy" style="margin-top:-12px;margin-bottom:16px">Please accept the privacy policy to continue.</div>
+
+          <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">
+            <span id="btn-text">Send Message</span>
+            <i class="fas fa-arrow-right" id="btn-ico"></i>
+            <div class="btn-spinner" id="btn-spin"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div class="form-success" id="formSuccess">
+        <div class="success-ico"><i class="fas fa-check"></i></div>
+        <div class="success-title">Message Sent!</div>
+        <p class="success-sub">Thanks for reaching out. A senior member of our team will review your message and get back to you within one business day — usually much sooner.</p>
+        <p class="success-sub" style="margin-top:10px">In the meantime, feel free to explore our <a href="portfolio.php" style="color:var(--c1)">case studies</a> or check out our <a href="services.php" style="color:var(--c1)">full services</a>.</p>
+        <div class="success-back" onclick="resetForm()"><i class="fas fa-arrow-left"></i> Send Another Message</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ STATS BAND ═══ -->
+<div class="stats-band">
+  <div class="stats-grid wrap">
+    <div class="sc rv"><span class="sc-ico">&#128200;</span><div class="sc-v" data-to="150" data-sx="+">0+</div><div class="sc-l">Clients Served</div></div>
+    <div class="sc rv"><span class="sc-ico">&#9992;&#65039;</span><div class="sc-v" data-to="12" data-sx=" countries">0</div><div class="sc-l">Countries Worldwide</div></div>
+    <div class="sc rv"><span class="sc-ico">&#11088;</span><div class="sc-v" data-to="4" data-px="" data-sx=".9/5">0</div><div class="sc-l">Client Satisfaction</div></div>
+    <div class="sc rv"><span class="sc-ico">&#9889;</span><div class="sc-v" data-to="24" data-sx="h reply">0</div><div class="sc-l">Response Guarantee</div></div>
+  </div>
+</div>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<div class="how">
+  <div class="how-inner">
+    <div class="how-head rv">
+      <div class="chip"><i class="fas fa-gears"></i> What Happens Next</div>
+      <h2 class="h2">From Enquiry to<br/><span class="gt">First Results in 4 Steps.</span></h2>
+      <p class="sub">Here is exactly what happens after you hit send — no mystery, no waiting, no surprises.</p>
+    </div>
+    <div class="steps-grid rv">
+      <div class="step-item">
+        <div class="step-num"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="step-title">We Review Your Brief</div>
+        <div class="step-body">A senior strategist reads your message within one business day and prepares a thoughtful, personalised response — not a template.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"><i class="fas fa-calendar-check"></i></div>
+        <div class="step-title">Discovery Call</div>
+        <div class="step-body">We schedule a free 30-minute call to understand your goals, challenges, and current setup in depth before recommending anything.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"><i class="fas fa-drafting-compass"></i></div>
+        <div class="step-title">Custom Strategy Proposal</div>
+        <div class="step-body">We prepare a tailored growth strategy and proposal with clear scope, deliverables, pricing, and expected outcomes — specific to your business.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"><i class="fas fa-rocket"></i></div>
+        <div class="step-title">We Get to Work</div>
+        <div class="step-body">Once you are happy to proceed, onboarding takes 48 hours and campaigns go live within 5 business days. Growth starts immediately.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OFFICE / MAP ═══ -->
+<div class="office">
+  <div class="office-inner wrap">
+    <div class="office-content rv">
+      <div class="chip"><i class="fas fa-building"></i> Our Office</div>
+      <h2 class="h2">Come Visit Us<br/><span class="gt">in New York.</span></h2>
+      <p class="sub">We work with clients worldwide, but our home base is the heart of Manhattan. Meetings by appointment — just drop us a note beforehand.</p>
+      <div class="office-details">
+        <div class="od-item">
+          <div class="od-ico"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <div class="od-label">Address</div>
+            <div class="od-val">340 Park Avenue, Suite 400</div>
+            <div class="od-sub">New York, NY 10022, United States</div>
+          </div>
+        </div>
+        <div class="od-item">
+          <div class="od-ico"><i class="fas fa-train-subway"></i></div>
+          <div>
+            <div class="od-label">Nearest Subway</div>
+            <div class="od-val">Lexington Ave / 51st St</div>
+            <div class="od-sub">Lines 6, E, M — 3 minute walk</div>
+          </div>
+        </div>
+        <div class="od-item">
+          <div class="od-ico"><i class="fas fa-square-parking"></i></div>
+          <div>
+            <div class="od-label">Parking</div>
+            <div class="od-val">Garage at 330 Park Ave</div>
+            <div class="od-sub">We validate for client visits — ask at reception</div>
+          </div>
+        </div>
+        <div class="od-item">
+          <div class="od-ico"><i class="fas fa-wifi"></i></div>
+          <div>
+            <div class="od-label">Remote Meetings</div>
+            <div class="od-val">Zoom, Google Meet, or Teams</div>
+            <div class="od-sub">We accommodate all time zones — just let us know yours</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stylised map -->
+    <div class="map-wrap rv">
+      <div class="map-inner">
+        <div class="map-road mr1"></div>
+        <div class="map-road mr2"></div>
+        <div class="map-road mr3"></div>
+        <div class="map-road mr4"></div>
+        <div class="map-pin-wrap">
+          <div class="map-pin"><i class="fas fa-building"></i></div>
+          <div class="map-shadow"></div>
+          <div class="map-label">&#128205; NovaMark — 340 Park Ave, NYC</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FAQ ═══ -->
+<div class="faq">
+  <div class="faq-inner">
+    <div class="faq-head rv">
+      <div class="chip"><i class="fas fa-circle-question"></i> FAQs</div>
+      <h2 class="h2">Questions We Get<br/><span class="gt">Asked Most Often.</span></h2>
+      <p class="sub" style="margin:14px auto 0">If you do not see your question here, just ask us directly — we are happy to answer anything.</p>
+    </div>
+    <div class="faq-list rv">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How quickly do you respond to enquiries?
+          <div class="faq-ico"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a"><p>We guarantee a response within one business day, Monday to Friday. In practice, most enquiries receive a personalised reply within a few hours. Every message is read and answered by a senior member of our team — never a bot or auto-responder.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is the discovery call really free? What does it involve?
+          <div class="faq-ico"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a"><p>Completely free, no strings attached. The discovery call is a 30-minute conversation where we learn about your business, current marketing situation, and growth goals. We share honest insights even if we are not the right fit for you. If we believe we can genuinely help, we will outline how — with no pressure to proceed.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What information should I include in my message?
+          <div class="faq-ico"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a"><p>The more context the better, but do not worry if you are not sure exactly what you need. Useful things to share include your website URL, current marketing channels, monthly budget range, and the specific goals you are trying to achieve — whether that is more traffic, leads, sales, or brand awareness. We will ask follow-up questions on the call.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you work with businesses outside the United States?
+          <div class="faq-ico"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a"><p>Absolutely. We currently work with clients in 12 countries across North America, Europe, the UK, and Asia-Pacific. All client communication is in English and we accommodate any time zone for calls and meetings. Our team is fully remote-first so geography is never a barrier.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What is the minimum budget to work with NovaMark?
+          <div class="faq-ico"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a"><p>Our minimum engagement varies by service. For full-service SEO or paid media management we typically recommend a minimum monthly budget of $1,500 to see meaningful results. For standalone services like web design, email setup, or a content audit, project-based pricing applies. We are transparent about pricing during the discovery call — no hidden costs, no surprises.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Are there long-term contracts?
+          <div class="faq-ico"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a"><p>No lock-in contracts. Our ongoing service engagements are month-to-month. We believe in earning your business through consistent results, not legal obligation. Most of our clients stay for years — not because they have to, but because the results keep coming. If you ever want to pause or end the engagement, 30 days notice is all we ask.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How soon will I see results?
+          <div class="faq-ico"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a"><p>It depends on the service. Paid advertising campaigns typically generate measurable results within the first 2–4 weeks as campaigns learn and optimise. SEO is a longer-term investment — most clients see significant organic growth within 3–6 months. We set clear, honest timelines during onboarding and track progress transparently throughout.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+  <div class="cta-in rv">
+    <div class="cta-c">
+      <div class="chip" style="justify-content:center"><i class="fas fa-handshake"></i> Still Deciding?</div>
+      <h2 class="cta-t">Read What Our<br/><span class="gt">Clients Say First.</span></h2>
+      <p class="cta-d">150+ businesses have trusted NovaMark with their growth. Browse our case studies and client testimonials before reaching out — we think you will like what you see.</p>
+      <div class="cta-btns">
+        <a href="portfolio.php" class="btn btn-p">View Case Studies <i class="fas fa-arrow-right"></i></a>
+        <a href="about.php" class="btn-g"><i class="fas fa-users"></i> Meet the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft wrap">
+    <div class="fb">
+      <a href="index.php" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <div class="fsocs">
+        <a href="#" class="fsoc" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="fsoc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="fsoc" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="fsoc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="fsoc" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <div class="flinks">
+        <a href="services.php#seo"><i class="fas fa-magnifying-glass-chart"></i> SEO</a>
+        <a href="services.php#social-media"><i class="fas fa-hashtag"></i> Social Media</a>
+        <a href="services.php#paid-ads"><i class="fas fa-bullseye"></i> Paid Advertising</a>
+        <a href="services.php#web-design"><i class="fas fa-code"></i> Web Design</a>
+        <a href="services.php#content"><i class="fas fa-pen-nib"></i> Content Marketing</a>
+        <a href="services.php#email"><i class="fas fa-envelope-open-text"></i> Email Marketing</a>
+        <a href="services.php#branding"><i class="fas fa-palette"></i> Branding &amp; Growth</a>
+        <a href="services.php#analytics"><i class="fas fa-chart-pie"></i> Analytics</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Company</h4>
+      <div class="flinks">
+        <a href="about.php"><i class="fas fa-building"></i> About Us</a>
+        <a href="about.php#team"><i class="fas fa-users"></i> Our Team</a>
+        <a href="portfolio.php"><i class="fas fa-folder-open"></i> Portfolio</a>
+        <a href="contact.php"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="#"><i class="fas fa-briefcase"></i> Careers</a>
+        <a href="#"><i class="fas fa-newspaper"></i> Press</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Resources</h4>
+      <div class="flinks">
+        <a href="#"><i class="fas fa-rss"></i> Blog</a>
+        <a href="#"><i class="fas fa-screwdriver-wrench"></i> Free Tools</a>
+        <a href="#"><i class="fas fa-book"></i> Marketing Guides</a>
+        <a href="#"><i class="fas fa-video"></i> Webinars</a>
+        <a href="#"><i class="fas fa-list-check"></i> SEO Checklist</a>
+        <a href="#"><i class="fas fa-calculator"></i> ROI Calculator</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Contact</h4>
+      <div class="flinks">
+        <a href="/cdn-cgi/l/email-protection#95fdf0f9f9fad5fbfae3f4f8f4e7febbf4f2f0fbf6ec"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="94fcf1f8f8fbd4fafbe2f5f9f5e6ffbaf5f3f1faf7ed">[email&#160;protected]</span></a>
+        <a href="tel:+12125550190"><i class="fas fa-phone"></i> +1 (212) 555-0190</a>
+        <a href="#" style="align-items:flex-start"><i class="fas fa-location-dot" style="margin-top:3px"></i><span>340 Park Ave, Suite 400<br/>New York, NY 10022</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot wrap">
+    <div class="fleg">&copy; 2025 NovaMark Agency. All rights reserved.</div>
+    <div class="flegs">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+/* Cursor */
+var CR=document.getElementById('cur'),RG=document.getElementById('ring');
+var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;CR.style.left=mx+'px';CR.style.top=my+'px'});
+(function t(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;RG.style.left=rx+'px';RG.style.top=ry+'px';requestAnimationFrame(t)})();
+document.querySelectorAll('a,button,.info-card,.faq-item').forEach(function(el){
+  el.addEventListener('mouseenter',function(){CR.style.width='18px';CR.style.height='18px';RG.style.width='54px';RG.style.height='54px'});
+  el.addEventListener('mouseleave',function(){CR.style.width='10px';CR.style.height='10px';RG.style.width='38px';RG.style.height='38px'});
+});
+
+/* Navbar */
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('sc',window.scrollY>60)});
+
+/* Back to top */
+var bt=document.getElementById('bt');
+window.addEventListener('scroll',function(){bt.classList.toggle('on',window.scrollY>400)});
+bt.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+
+/* Hamburger */
+document.getElementById('hbg').addEventListener('click',function(){document.getElementById('mob').classList.add('open');document.body.style.overflow='hidden'});
+document.getElementById('mclose').addEventListener('click',closeMob);
+function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow=''}
+
+/* Chat */
+document.getElementById('chatBtn').addEventListener('click',function(){document.getElementById('chatPop').classList.toggle('open')});
+document.addEventListener('click',function(e){if(!e.target.closest('.chat'))document.getElementById('chatPop').classList.remove('open')});
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id==='#')return;var t=document.querySelector(id);if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'})}});
+});
+
+/* Scroll reveal */
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){
+      var sibs=Array.from(en.target.parentElement.children).filter(function(c){return c.classList.contains('rv')});
+      var idx=sibs.indexOf(en.target);
+      setTimeout(function(){en.target.classList.add('on')},idx*80);
+      observer.unobserve(en.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){observer.observe(el)});
+
+/* Animated counters */
+function animCount(el){
+  var tgt=parseInt(el.dataset.to),px=el.dataset.px||'',sx=el.dataset.sx||'';
+  var step=tgt/(2000/16);var c=0;
+  var timer=setInterval(function(){c+=step;if(c>=tgt){c=tgt;clearInterval(timer)}el.textContent=px+Math.floor(c)+sx},16);
+}
+var sg=document.querySelector('.stats-grid');
+if(sg){
+  var counted=false;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting&&!counted){counted=true;en.target.querySelectorAll('[data-to]').forEach(animCount)}});
+  },{threshold:0.3}).observe(sg);
+}
+
+/* Budget pills */
+document.querySelectorAll('.budget-pill').forEach(function(pill){
+  pill.addEventListener('click',function(){
+    document.querySelectorAll('.budget-pill').forEach(function(p){p.classList.remove('sel')});
+    pill.classList.add('sel');
+  });
+});
+
+/* FAQ accordion */
+function toggleFaq(btn){
+  var item=btn.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(fi){fi.classList.remove('open')});
+  if(!isOpen)item.classList.add('open');
+}
+
+/* Form validation */
+function validateEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}
+function showErr(id,show){var el=document.getElementById(id);if(el){el.classList[show?'add':'remove']('show')}}
+function setErr(fieldId,errId,show){
+  var inp=document.getElementById(fieldId);if(inp){inp.classList[show?'add':'remove']('error')}
+  showErr(errId,show);
+}
+
+function handleSubmit(){
+  var name=document.getElementById('f-name').value.trim();
+  var email=document.getElementById('f-email').value.trim();
+  var service=document.getElementById('f-service').value;
+  var message=document.getElementById('f-message').value.trim();
+  var privacy=document.getElementById('f-privacy').checked;
+  var valid=true;
+
+  setErr('f-name','err-name',!name);if(!name)valid=false;
+  setErr('f-email','err-email',!validateEmail(email));if(!validateEmail(email))valid=false;
+  setErr('f-service','err-service',!service);if(!service)valid=false;
+  setErr('f-message','err-message',message.length<10);if(message.length<10)valid=false;
+  showErr('err-privacy',!privacy);if(!privacy)valid=false;
+
+  if(!valid)return;
+
+  var btn=document.getElementById('submitBtn');
+  var txt=document.getElementById('btn-text');
+  var ico=document.getElementById('btn-ico');
+  var spin=document.getElementById('btn-spin');
+  btn.disabled=true;txt.textContent='Sending...';ico.style.display='none';spin.style.display='block';
+
+  setTimeout(function(){
+    document.getElementById('formWrap').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  },1800);
+}
+
+function resetForm(){
+  var fields=['f-name','f-email','f-phone','f-company','f-service','f-url','f-message','f-source'];
+  fields.forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
+  var cb=document.getElementById('f-privacy');if(cb)cb.checked=false;
+  document.querySelectorAll('.budget-pill').forEach(function(p){p.classList.remove('sel')});
+  var btn=document.getElementById('submitBtn');if(btn)btn.disabled=false;
+  var txt=document.getElementById('btn-text');if(txt)txt.textContent='Send Message';
+  var ico=document.getElementById('btn-ico');if(ico)ico.style.display='';
+  var spin=document.getElementById('btn-spin');if(spin)spin.style.display='none';
+  document.getElementById('formWrap').style.display='';
+  document.getElementById('formSuccess').style.display='none';
+  ['err-name','err-email','err-service','err-message','err-privacy'].forEach(function(id){showErr(id,false)});
+  ['f-name','f-email','f-service','f-message'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.remove('error')});
+}
+
+/* Clear errors on input */
+['f-name','f-email','f-service','f-message'].forEach(function(id){
+  var el=document.getElementById(id);
+  if(el){
+    el.addEventListener('input',function(){
+      el.classList.remove('error');
+      showErr('err-'+id.replace('f-',''),false);
+    });
+  }
+});
+var priv=document.getElementById('f-privacy');
+if(priv){priv.addEventListener('change',function(){showErr('err-privacy',false)})}
+</script>
+</body>
+</html>

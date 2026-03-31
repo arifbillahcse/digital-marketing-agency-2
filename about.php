@@ -1,0 +1,1124 @@
+<?php /* NovaMark – About Us – NovaMark Digital Marketing Agency */ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us – NovaMark Digital Marketing Agency</title>
+<meta name="description" content="Meet the people, mission, and values behind NovaMark — built on transparency, results, and genuine client partnerships since 2016."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous"/>
+<style>
+:root{
+  --ink:#060C18;--ink2:#0D1525;--ink3:#111E32;
+  --muted:#8897B3;--c1:#00D4FF;--c2:#3A7BFF;--c3:#7C3AED;
+  --grad:linear-gradient(135deg,var(--c1),var(--c2),var(--c3));
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--r-xl:40px;
+  --sh:0 20px 60px rgba(0,0,0,.4);--sh-g:0 0 44px rgba(58,123,255,.28);
+  --t:.3s cubic-bezier(.4,0,.2,1);
+  --fh:"Outfit",sans-serif;--fb:"Plus Jakarta Sans",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ink);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.gt{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.26);color:#7EB3FF;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.h2{font-family:var(--fh);font-size:clamp(2rem,3.8vw,3rem);font-weight:900;line-height:1.08;letter-spacing:-.028em}
+.sub{color:var(--muted);font-size:.97rem;line-height:1.78;max-width:580px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:100px;font-size:.9rem;font-weight:600;transition:all var(--t);position:relative;overflow:hidden;white-space:nowrap}
+.btn::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.09);opacity:0;transition:opacity var(--t)}
+.btn:hover::after{opacity:1}
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 22px rgba(58,123,255,.4)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
+.btn-o{border:1.5px solid rgba(255,255,255,.18);color:#fff}
+.btn-o:hover{border-color:rgba(58,123,255,.6)}
+.btn-g{padding:10px 22px;border:1.5px solid rgba(255,255,255,.2);color:#fff;border-radius:100px;font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all var(--t)}
+.btn-g:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+
+/* CURSOR */
+#cur{width:10px;height:10px;background:var(--c1);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+#ring{width:38px;height:38px;border:1.5px solid rgba(0,212,255,.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--t),box-shadow var(--t)}
+nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav-in{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.logo{font-family:var(--fh);font-size:1.55rem;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
+.ldot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pdot 2s infinite}
+@keyframes pdot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
+.nav-l{display:flex;align-items:center;gap:34px}
+.nav-l a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--t);position:relative}
+.nav-l a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--t);border-radius:2px}
+.nav-l a:hover,.nav-l a.act{color:#fff}
+.nav-l a.act::after,.nav-l a:hover::after{transform:scaleX(1)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.hbg{display:none;flex-direction:column;gap:5px;padding:8px}
+.hbg span{width:24px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(28px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob.open{display:flex}
+.mob a{font-family:var(--fh);font-size:2rem;font-weight:700;transition:color var(--t)}
+.mob a:hover{color:var(--c1)}
+.mclose{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 24px 80px;position:relative;overflow:hidden}
+.h-bg{position:absolute;inset:0;z-index:0}
+.hbl{position:absolute;border-radius:50%;filter:blur(110px);opacity:.12;animation:bl 11s ease-in-out infinite}
+.hbl1{width:580px;height:580px;background:var(--c2);top:-150px;left:-70px}
+.hbl2{width:400px;height:400px;background:var(--c3);bottom:-50px;right:8%;animation-delay:4s}
+.hbl3{width:260px;height:260px;background:var(--c1);top:45%;right:35%;animation-delay:7s}
+@keyframes bl{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(18px,-26px) scale(1.04)}66%{transform:translate(-13px,18px) scale(.97)}}
+.h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(58,123,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(58,123,255,.04) 1px,transparent 1px);background-size:56px 56px}
+.h-vl{position:absolute;width:1px;background:linear-gradient(to bottom,transparent,rgba(58,123,255,.2),transparent);top:0;bottom:0}
+.h-in{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-text .bc{display:flex;align-items:center;gap:8px;font-size:.77rem;color:var(--muted);margin-bottom:22px;animation:fu .7s ease both}
+.bc a{transition:color var(--t)}.bc a:hover{color:#fff}
+.bc i{font-size:.6rem;opacity:.5}
+.hbdg{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);color:var(--c1);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;animation:fu .7s ease .06s both}
+.hbdg-dot{width:6px;height:6px;background:var(--c1);border-radius:50%;animation:pdot 1.5s infinite}
+.hero-title{font-family:var(--fh);font-size:clamp(2.6rem,4.5vw,4rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;margin-bottom:18px;animation:fu .7s ease .12s both}
+.hero-desc{color:var(--muted);font-size:.99rem;line-height:1.8;margin-bottom:32px;max-width:480px;animation:fu .7s ease .22s both}
+.hero-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap;animation:fu .7s ease .3s both}
+.hfacts{display:flex;margin-top:38px;padding-top:30px;border-top:1px solid rgba(255,255,255,.07);animation:fu .7s ease .42s both}
+.hf{flex:1;padding-right:22px;border-right:1px solid rgba(255,255,255,.07)}
+.hf:last-child{border-right:none;padding-left:22px;padding-right:0}
+.hf:not(:first-child):not(:last-child){padding:0 22px}
+.hf-v{font-family:var(--fh);font-size:1.85rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hf-l{font-size:.74rem;color:var(--muted);margin-top:4px;font-weight:500}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO MOSAIC — explicit divs for overlays, no ::after reliance */
+.hv{position:relative;height:560px;animation:fu .9s ease .25s both}
+.hv-block{position:absolute;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.07)}
+.hv-block img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s ease}
+.hv-block:hover img{transform:scale(1.04)}
+.hv-ov{position:absolute;inset:0;border-radius:var(--r-lg);pointer-events:none;z-index:1}
+.hv-chip{position:absolute;top:13px;left:13px;background:rgba(6,12,24,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:4px 12px;font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:6px;z-index:2}
+.cdot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+/* Image A: top-left large */
+.hva{top:0;left:0;width:61%;height:62%}
+.hva img{object-position:center top;filter:brightness(.72) contrast(1.08) saturate(.8)}
+.hva .hv-ov{background:linear-gradient(135deg,rgba(58,123,255,.22) 0%,rgba(6,12,24,.48) 100%)}
+/* Image B: tall right */
+.hvb{top:0;right:0;width:37%;height:79%}
+.hvb img{object-position:center top;filter:brightness(.68) contrast(1.12) saturate(.76)}
+.hvb .hv-ov{background:linear-gradient(160deg,rgba(124,58,237,.24) 0%,rgba(6,12,24,.52) 100%)}
+/* Image C: bottom-left wide */
+.hvc{bottom:0;left:0;width:59%;height:36%}
+.hvc img{object-position:center 40%;filter:brightness(.65) contrast(1.1) saturate(.78)}
+.hvc .hv-ov{background:linear-gradient(135deg,rgba(0,212,255,.16) 0%,rgba(6,12,24,.56) 100%)}
+/* Glow orb */
+.hv-glow{position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(58,123,255,.22),transparent 70%);top:29%;left:57%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;animation:gp 4.5s ease-in-out infinite}
+@keyframes gp{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.35)}}
+/* Floating cards */
+.hfc{position:absolute;background:rgba(7,12,26,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);padding:12px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 16px 48px rgba(0,0,0,.55);z-index:10;white-space:nowrap}
+.hfc-i{width:34px;height:34px;background:var(--grad);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#fff;flex-shrink:0}
+.hfc-v{font-family:var(--fh);font-size:.95rem;font-weight:800;line-height:1}
+.hfc-l{font-size:.63rem;color:var(--muted);margin-top:2px}
+.fc1{top:-16px;right:13%;animation:f1 4.6s ease-in-out infinite}
+.fc2{top:42%;left:-44px;animation:f2 5.2s ease-in-out infinite}
+.fc3{bottom:22%;right:-38px;animation:f3 4s ease-in-out infinite}
+.fc4{bottom:-16px;left:24%;animation:f4 5.7s ease-in-out infinite}
+@keyframes f1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes f2{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+@keyframes f3{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes f4{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+/* TRUST BAR */
+.tbar{padding:26px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.018);overflow:hidden}
+.ttrack{display:flex;gap:60px;animation:mq 28s linear infinite;width:max-content}
+.ttrack:hover{animation-play-state:paused}
+.ti{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.3);font-family:var(--fh);font-weight:700;font-size:.95rem;white-space:nowrap;transition:color var(--t)}
+.ti:hover{color:rgba(255,255,255,.7)}
+.ti i{font-size:1.1rem}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ STORY ═══ */
+.story{padding:110px 24px}
+.story-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.story-vis{position:relative;padding-bottom:24px;padding-right:24px}
+.s-main{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3.2;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.s-main img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.76) contrast(1.06) saturate(.85);display:block;transition:transform 7s ease}
+.s-main:hover img{transform:scale(1.03)}
+.s-main-ov{position:absolute;inset:0;background:linear-gradient(150deg,rgba(58,123,255,.15),rgba(6,12,24,.4));pointer-events:none}
+.s-sm{position:absolute;bottom:0;right:0;width:170px;height:130px;border-radius:var(--r-md);overflow:hidden;border:3px solid var(--ink);box-shadow:0 16px 44px rgba(0,0,0,.6);z-index:2}
+.s-sm img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.7) contrast(1.1) saturate(.76);display:block}
+.s-sm-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(6,12,24,.48));pointer-events:none}
+.s-badge{position:absolute;top:-20px;left:-20px;background:rgba(7,12,26,.94);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);padding:18px 24px;box-shadow:0 14px 40px rgba(0,0,0,.5);z-index:3}
+.sb-v{font-family:var(--fh);font-size:2.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.sb-l{font-size:.7rem;color:var(--muted);font-weight:500;margin-top:3px}
+.sc .sub{margin:16px 0 26px}
+.sbody{color:var(--muted);font-size:.94rem;line-height:1.84;margin-bottom:18px}
+.squote{display:flex;align-items:flex-start;gap:16px;background:rgba(58,123,255,.07);border:1px solid rgba(58,123,255,.18);border-left:3px solid var(--c2);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:20px 22px;margin:28px 0}
+.squote i{color:var(--c1);font-size:1.2rem;margin-top:2px;flex-shrink:0}
+.squote p{font-size:.9rem;color:rgba(255,255,255,.86);line-height:1.72;font-style:italic}
+.squote cite{display:block;font-size:.76rem;color:var(--muted);font-style:normal;margin-top:10px;font-weight:600}
+
+/* ═══ MISSION ═══ */
+.mission{padding:100px 24px;background:linear-gradient(180deg,transparent,rgba(58,123,255,.04),transparent)}
+.mhead{text-align:center;margin-bottom:72px}
+.mhead .sub{margin:16px auto 0}
+.mlayout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:20px;align-items:start}
+.mmain{background:linear-gradient(145deg,rgba(58,123,255,.14),rgba(124,58,237,.08));border:1px solid rgba(58,123,255,.28);border-radius:var(--r-lg);padding:42px;grid-row:span 2;position:relative;overflow:hidden}
+.mmain::before{content:"";position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(58,123,255,.2),transparent 70%);border-radius:50%;pointer-events:none}
+.mm-ic{width:62px;height:62px;background:var(--grad);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;margin-bottom:26px;box-shadow:0 8px 24px rgba(58,123,255,.35);position:relative;z-index:1}
+.mm-t{font-family:var(--fh);font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin-bottom:16px;position:relative;z-index:1}
+.mm-b{color:var(--muted);font-size:.9rem;line-height:1.82;position:relative;z-index:1}
+.mm-sep{height:1px;background:rgba(255,255,255,.08);margin:22px 0;position:relative;z-index:1}
+.mm-tag{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c1);margin-bottom:12px;position:relative;z-index:1}
+.mm-list{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+.mm-list li{display:flex;align-items:center;gap:10px;font-size:.86rem;color:rgba(255,255,255,.82)}
+.mm-list li i{color:var(--c1);font-size:.8rem;flex-shrink:0}
+.vcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-md);padding:28px;transition:all var(--t);position:relative;overflow:hidden}
+.vcard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
+.vcard:hover{border-color:rgba(58,123,255,.28);transform:translateY(-5px);box-shadow:var(--sh-g)}
+.vcard:hover::before{transform:scaleX(1)}
+.vc-ic{width:48px;height:48px;background:var(--grad);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;color:#fff;margin-bottom:16px;transition:transform var(--t);box-shadow:0 6px 20px rgba(58,123,255,.28)}
+.vcard:hover .vc-ic{transform:scale(1.1) rotate(-5deg)}
+.vc-t{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:9px}
+.vc-b{font-size:.82rem;color:var(--muted);line-height:1.72}
+
+/* ═══ STATS ═══ */
+.sband{padding:0 24px}
+.sgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:var(--r-lg);overflow:hidden}
+.sc2{background:var(--ink);padding:52px 28px;text-align:center;position:relative;overflow:hidden;transition:background var(--t)}
+.sc2:hover{background:rgba(58,123,255,.065)}
+.sc2-ico{font-size:2rem;margin-bottom:16px;display:block}
+.sc2-v{font-family:var(--fh);font-size:3.2rem;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:7px}
+.sc2-l{font-size:.86rem;color:var(--muted);font-weight:500}
+
+/* ═══ PROCESS ═══ */
+.process{padding:110px 24px}
+.phead{text-align:center;margin-bottom:80px}
+.phead .sub{margin:16px auto 0}
+.pgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:34px 30px;position:relative;overflow:hidden;transition:all var(--t)}
+.pcard:hover{border-color:rgba(58,123,255,.28);transform:translateY(-6px);box-shadow:var(--sh-g)}
+.pc-n{font-family:var(--fh);font-size:4rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:18px;opacity:.22;transition:opacity var(--t)}
+.pcard:hover .pc-n{opacity:.45}
+.pc-ic{width:52px;height:52px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.22);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#7EB3FF;font-size:1.15rem;margin-bottom:20px;transition:all var(--t)}
+.pcard:hover .pc-ic{background:var(--grad);border-color:transparent;color:#fff;transform:scale(1.08)}
+.pc-t{font-family:var(--fh);font-size:1.08rem;font-weight:700;margin-bottom:11px}
+.pc-b{font-size:.84rem;color:var(--muted);line-height:1.78}
+
+/* ═══ TIMELINE ═══ */
+.tlsec{padding:110px 24px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.04),transparent)}
+.tlhead{text-align:center;margin-bottom:80px}
+.tlhead .sub{margin:16px auto 0}
+.tl{max-width:920px;margin:0 auto;position:relative}
+.tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(58,123,255,.35) 8%,rgba(124,58,237,.35) 92%,transparent);transform:translateX(-50%)}
+.tlr{display:grid;grid-template-columns:1fr 56px 1fr;gap:0 24px;margin-bottom:52px;align-items:start}
+.tlr:last-child{margin-bottom:0}
+.tlbox{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-md);padding:24px 26px;transition:all var(--t)}
+.tlbox:hover{background:rgba(255,255,255,.055);border-color:rgba(58,123,255,.22);transform:translateY(-3px)}
+.tltag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c2);margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.tltag i{font-size:.7rem}
+.tlt{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:9px}
+.tlb{font-size:.82rem;color:var(--muted);line-height:1.68}
+.tll{text-align:right}.tll .tltag{justify-content:flex-end}
+.tlc{display:flex;flex-direction:column;align-items:center;position:relative;z-index:2}
+.tldot{width:52px;height:52px;border-radius:50%;background:var(--grad);border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#fff;box-shadow:0 0 0 6px rgba(58,123,255,.12),0 8px 24px rgba(58,123,255,.3);flex-shrink:0}
+.tly{font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--c1);margin-top:8px;white-space:nowrap}
+.tle{}
+/* Even rows: explicitly assign grid columns so nothing gets squished into the 56px center column */
+.even .tle{grid-column:1}
+.even .tlc{grid-column:2}
+.even .tlr2{grid-column:3;text-align:left}
+.even .tlr2 .tltag{justify-content:flex-start}
+
+/* ═══ TEAM ═══ */
+.team{padding:100px 24px}
+.thead{text-align:center;margin-bottom:68px}
+.thead .sub{margin:16px auto 0}
+.tgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);overflow:hidden;transition:all var(--t)}
+.tcard:hover{border-color:rgba(58,123,255,.3);transform:translateY(-7px);box-shadow:0 28px 72px rgba(0,0,0,.35)}
+.tphoto{height:268px;position:relative;overflow:hidden}
+.tphoto img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.74) contrast(1.08) saturate(.8);transition:transform .6s ease,filter .4s ease}
+.tcard:hover .tphoto img{transform:scale(1.06);filter:brightness(.85) contrast(1.05) saturate(.88)}
+.tphoto-grad{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(6,12,24,.88) 100%);pointer-events:none}
+.tsocs{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:3;opacity:0;transform:translateY(10px);transition:all var(--t)}
+.tcard:hover .tsocs{opacity:1;transform:translateY(0)}
+.tsoc{width:32px;height:32px;background:rgba(6,12,24,.88);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);font-size:.78rem;transition:all var(--t)}
+.tsoc:hover{background:var(--grad);border-color:transparent;color:#fff}
+.texps{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.texp{font-size:.62rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.2);color:#7EB3FF;padding:3px 9px;border-radius:100px}
+.tinfo{padding:18px}
+.tn{font-family:var(--fh);font-size:1.02rem;font-weight:700;margin-bottom:3px}
+.tr{font-size:.75rem;color:var(--c1);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.tb{font-size:.79rem;color:var(--muted);line-height:1.65}
+
+/* ═══ AWARDS ═══ */
+.awards{padding:80px 24px;background:linear-gradient(180deg,transparent,rgba(0,212,255,.03),transparent)}
+.award-head{text-align:center;margin-bottom:56px}
+.award-head .sub{margin:16px auto 0}
+.agrid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.acard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-md);padding:32px 22px;text-align:center;transition:all var(--t)}
+.acard:hover{border-color:rgba(58,123,255,.25);transform:translateY(-5px);box-shadow:var(--sh-g)}
+.a-ico{font-size:2.6rem;margin-bottom:14px;display:block}
+.a-t{font-family:var(--fh);font-size:.95rem;font-weight:700;margin-bottom:6px}
+.a-y{font-size:.75rem;color:var(--c1);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.a-b{font-size:.78rem;color:var(--muted);line-height:1.62}
+
+/* ═══ CULTURE ═══ */
+.culture{padding:100px 24px}
+.cult-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.cult-vis{position:relative;height:500px}
+.cv-img{position:absolute;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.cv-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cv-img-ov{position:absolute;inset:0;pointer-events:none}
+.cva{top:0;left:0;width:63%;height:55%}
+.cva img{filter:brightness(.72) contrast(1.08) saturate(.8);object-position:center}
+.cva .cv-img-ov{background:linear-gradient(135deg,rgba(58,123,255,.18),rgba(6,12,24,.45))}
+.cvb{bottom:0;right:0;width:56%;height:58%}
+.cvb img{filter:brightness(.68) contrast(1.1) saturate(.76);object-position:center top}
+.cvb .cv-img-ov{background:linear-gradient(160deg,rgba(124,58,237,.2),rgba(6,12,24,.5))}
+.cvc{bottom:0;left:0;width:40%;height:42%}
+.cvc img{filter:brightness(.65) contrast(1.1) saturate(.76);object-position:center}
+.cvc .cv-img-ov{background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(6,12,24,.54))}
+.cv-badge{position:absolute;top:50%;right:-10px;transform:translateY(-50%);background:rgba(7,12,26,.94);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);padding:18px 22px;text-align:center;box-shadow:0 16px 48px rgba(0,0,0,.5);animation:cb 5.2s ease-in-out infinite}
+@keyframes cb{0%,100%{transform:translateY(-50%)}50%{transform:translateY(calc(-50% - 9px))}}
+.cvb-v{font-family:var(--fh);font-size:1.9rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cvb-l{font-size:.7rem;color:var(--muted);margin-top:2px}
+.cult-content .sub{margin:16px 0 36px}
+.clist{display:flex;flex-direction:column;gap:22px}
+.ci{display:flex;align-items:flex-start;gap:16px}
+.ci-ic{width:46px;height:46px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.22);border-radius:13px;display:flex;align-items:center;justify-content:center;color:#7EB3FF;font-size:.98rem;flex-shrink:0;transition:all var(--t)}
+.ci:hover .ci-ic{background:var(--grad);border-color:transparent;color:#fff}
+.ci-t{font-weight:700;font-size:.95rem;margin-bottom:5px}
+.ci-b{font-size:.83rem;color:var(--muted);line-height:1.68}
+
+/* ═══ TESTIMONIALS ═══ */
+.testi{padding:80px 24px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.03),transparent)}
+.testi-head{text-align:center;margin-bottom:52px}
+.testi-head .sub{margin:16px auto 0}
+.testgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:32px;transition:all var(--t)}
+.tc:hover{border-color:rgba(124,58,237,.28);transform:translateY(-5px)}
+.tc-q{font-size:3rem;line-height:1;color:var(--c3);opacity:.3;font-family:Georgia,serif;margin-bottom:14px}
+.tc-stars{color:#FBBF24;font-size:.78rem;display:flex;gap:3px;margin-bottom:14px}
+.tc-txt{font-size:.89rem;color:rgba(255,255,255,.82);line-height:1.76;margin-bottom:24px}
+.tc-au{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.07);padding-top:18px}
+.tc-av{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,.1)}
+.tc-av img{width:100%;height:100%;object-fit:cover;display:block}
+.tc-n{font-weight:700;font-size:.87rem}
+.tc-c{font-size:.72rem;color:var(--muted)}
+
+/* ═══ CTA ═══ */
+.cta{padding:72px 24px}
+.cta-in{max-width:1080px;margin:0 auto;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(58,123,255,.12),rgba(124,58,237,.08));border:1px solid rgba(58,123,255,.26);border-radius:var(--r-xl);padding:72px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-in::before{content:"";position:absolute;top:-50%;left:-10%;width:480px;height:480px;background:radial-gradient(circle,rgba(58,123,255,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-in::after{content:"";position:absolute;bottom:-50%;right:-10%;width:380px;height:380px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-c{position:relative;z-index:1}
+.cta-t{font-family:var(--fh);font-size:clamp(2rem,3.8vw,2.9rem);font-weight:900;letter-spacing:-.025em;margin-bottom:14px}
+.cta-d{color:var(--muted);font-size:1rem;margin:0 auto 36px;max-width:480px}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* ═══ FOOTER ═══ */
+footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.06);padding:80px 24px 32px}
+.ft{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:62px}
+.fb p{color:var(--muted);font-size:.85rem;line-height:1.72;margin:14px 0 24px;max-width:270px}
+.fsocs{display:flex;gap:10px}
+.fsoc{width:38px;height:38px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;transition:all var(--t)}
+.fsoc:hover{background:var(--grad);border-color:transparent;color:#fff;transform:translateY(-3px)}
+.fcol h4{font-family:var(--fh);font-size:.88rem;font-weight:700;margin-bottom:18px}
+.flinks{display:flex;flex-direction:column;gap:10px}
+.flinks a{font-size:.84rem;color:var(--muted);transition:color var(--t);display:flex;align-items:center;gap:7px}
+.flinks a:hover{color:#fff}
+.flinks a i{font-size:.72rem;color:var(--c2);flex-shrink:0}
+.fbot{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.06)}
+.fleg{font-size:.78rem;color:var(--muted)}
+.flegs{display:flex;gap:18px}
+.flegs a{font-size:.78rem;color:var(--muted);transition:color var(--t)}.flegs a:hover{color:#fff}
+
+/* BACK-TOP + CHAT */
+#bt{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:var(--grad);border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;box-shadow:0 8px 26px rgba(58,123,255,.45);transition:all var(--t);opacity:0;pointer-events:none;z-index:500}
+#bt.on{opacity:1;pointer-events:all}
+#bt:hover{transform:translateY(-4px)}
+.chat{position:fixed;bottom:30px;left:30px;z-index:500}
+.chat-btn{width:54px;height:54px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;box-shadow:0 8px 28px rgba(58,123,255,.5);cursor:pointer;transition:all var(--t);position:relative}
+.chat-btn::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(58,123,255,.3);animation:ping 2s ease infinite}
+@keyframes ping{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.chat-btn:hover{transform:scale(1.1)}
+.chat-pop{position:absolute;bottom:66px;left:0;width:272px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:20px;display:none;box-shadow:var(--sh)}
+.chat-pop.open{display:block}
+.chat-pop h4{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:5px}
+.chat-pop p{font-size:.79rem;color:var(--muted);margin-bottom:14px}
+.chat-start{display:block;text-align:center;padding:10px;background:var(--grad);color:#fff;border-radius:8px;font-size:.83rem;font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .h-in,.story-in,.cult-in{grid-template-columns:1fr}
+  .hv{height:420px}.fc2,.fc3{display:none}
+  .story-vis{padding:20px 20px 44px}
+  .mlayout{grid-template-columns:1fr 1fr}
+  .mmain{grid-column:1/-1;grid-row:span 1}
+  .sgrid{grid-template-columns:repeat(2,1fr)}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .agrid{grid-template-columns:repeat(2,1fr)}
+  .cult-vis{height:380px}.cv-badge{right:12px}
+  .testgrid{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .nav-l,.nav-r{display:none}.hbg{display:flex}
+  .hv{height:300px}.fc1,.fc4{display:none}
+  .tlr{grid-template-columns:1fr}
+  .tlc{flex-direction:row;margin-bottom:10px}.tly{margin-top:0;margin-left:10px}
+  .tll,.tle{display:none}
+  .even .tll,.even .tlr2{order:unset;text-align:left}
+  .even .tlr2 .tltag{justify-content:flex-start}
+  .mlayout{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}
+  .agrid{grid-template-columns:1fr 1fr}.tgrid{grid-template-columns:1fr 1fr}
+  .cta-in{padding:44px 26px}.ft{grid-template-columns:1fr 1fr}
+  .fbot{flex-direction:column;gap:14px;text-align:center}
+  #cur,#ring{display:none}
+  #bt{right:14px;bottom:14px}.chat{left:14px;bottom:14px}
+  .tl::before{left:24px}
+  .hfacts{flex-direction:column;gap:18px}
+  .hf{border-right:none;padding-right:0}
+}
+@media(max-width:480px){
+  .ft{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr}
+  .agrid{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="ring"></div>
+<a href="#" id="bt"><i class="fas fa-arrow-up"></i></a>
+
+<div class="chat">
+  <div class="chat-btn" id="chatBtn"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-pop" id="chatPop">
+    <h4>&#128075; Hey there!</h4>
+    <p>Want to learn more or kick off a project? We are online right now.</p>
+    <a href="#cta" class="chat-start" onclick="document.getElementById('chatPop').classList.remove('open')">Start a Conversation</a>
+  </div>
+</div>
+
+<div class="mob" id="mob">
+  <span class="mclose" id="mclose"><i class="fas fa-xmark"></i></span>
+  <a href="index.php" onclick="closeMob()">Home</a>
+  <a href="services.php" onclick="closeMob()">Services</a>
+  <a href="about.php" onclick="closeMob()">About</a>
+  <a href="#team" onclick="closeMob()">Team</a>
+  <a href="#cta" onclick="closeMob()">Contact</a>
+</div>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.php" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+    <ul class="nav-l">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="services.php">Services</a></li>
+      <li><a href="about.php" class="act">About</a></li>
+      <li><a href="#">Case Studies</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="index.php#contact">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="#" class="btn btn-o">Login</a>
+      <a href="#cta" class="btn btn-p">Work With Us <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="h-bg">
+    <div class="hbl hbl1"></div><div class="hbl hbl2"></div><div class="hbl hbl3"></div>
+    <div class="h-grid"></div>
+    <div class="h-vl" style="left:33%"></div><div class="h-vl" style="right:33%"></div>
+  </div>
+  <div class="h-in wrap">
+    <!-- Left: text -->
+    <div class="hero-text">
+      <div class="bc"><a href="index.php">Home</a><i class="fas fa-chevron-right"></i><span style="color:#fff">About Us</span></div>
+      <div class="hbdg"><span class="hbdg-dot"></span> Our Story &amp; Team</div>
+      <h1 class="hero-title">The People Behind<br/><span class="gt">Your Growth.</span></h1>
+      <p class="hero-desc">We are a team of strategists, creatives, and data experts united by one obsession: turning your marketing budget into measurable, scalable business growth with complete transparency at every step.</p>
+      <div class="hero-ctas">
+        <a href="#team" class="btn btn-p">Meet the Team <i class="fas fa-arrow-down"></i></a>
+        <a href="#cta" class="btn-g"><i class="fas fa-calendar-check"></i> Work With Us</a>
+      </div>
+      <div class="hfacts">
+        <div class="hf"><div class="hf-v">2016</div><div class="hf-l">Year Founded</div></div>
+        <div class="hf"><div class="hf-v">38</div><div class="hf-l">Team Members</div></div>
+        <div class="hf"><div class="hf-v">12</div><div class="hf-l">Countries Served</div></div>
+      </div>
+    </div>
+    <!-- Right: dark image mosaic — explicit overlay divs -->
+    <div class="hv">
+      <div class="hv-glow"></div>
+      <!-- Image A: top-left large — dark team office -->
+      <div class="hv-block hva">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c1)"></span> Our Team</div>
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&h=700&q=90&auto=format&fit=crop&crop=center" alt="NovaMark team collaborating" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <!-- Image B: tall right — dark strategy -->
+      <div class="hv-block hvb">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c3)"></span> Strategy</div>
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&h=1000&q=90&auto=format&fit=crop&crop=center" alt="Dark marketing strategy session" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <!-- Image C: bottom-left — dark analytics -->
+      <div class="hv-block hvc">
+        <div class="hv-chip"><span class="cdot" style="background:#34D399"></span> Data &amp; Results</div>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&q=90&auto=format&fit=crop&crop=center" alt="Analytics dashboard dark" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <!-- Floating stat cards -->
+      <div class="hfc fc1"><div class="hfc-i"><i class="fas fa-trophy"></i></div><div><div class="hfc-v">8+ Years</div><div class="hfc-l">Experience</div></div></div>
+      <div class="hfc fc2"><div class="hfc-i"><i class="fas fa-star"></i></div><div><div class="hfc-v">4.9 / 5.0</div><div class="hfc-l">Client Rating</div></div></div>
+      <div class="hfc fc3"><div class="hfc-i"><i class="fas fa-users"></i></div><div><div class="hfc-v">38 Experts</div><div class="hfc-l">In-House Team</div></div></div>
+      <div class="hfc fc4"><div class="hfc-i"><i class="fas fa-globe"></i></div><div><div class="hfc-v">12 Countries</div><div class="hfc-l">Clients Worldwide</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="tbar">
+  <div class="ttrack">
+    <div class="ti"><i class="fab fa-google"></i> Google Premier Partner</div>
+    <div class="ti"><i class="fab fa-meta"></i> Meta Business Partner</div>
+    <div class="ti"><i class="fab fa-shopify"></i> Shopify Experts</div>
+    <div class="ti"><i class="fas fa-certificate"></i> HubSpot Certified</div>
+    <div class="ti"><i class="fab fa-linkedin"></i> LinkedIn Marketing Partner</div>
+    <div class="ti"><i class="fas fa-award"></i> Clutch Top Agency 2024</div>
+    <div class="ti"><i class="fas fa-star"></i> G2 Leader 2025</div>
+    <div class="ti"><i class="fas fa-shield-halved"></i> ISO 27001 Certified</div>
+    <div class="ti"><i class="fab fa-google"></i> Google Premier Partner</div>
+    <div class="ti"><i class="fab fa-meta"></i> Meta Business Partner</div>
+    <div class="ti"><i class="fab fa-shopify"></i> Shopify Experts</div>
+    <div class="ti"><i class="fas fa-certificate"></i> HubSpot Certified</div>
+    <div class="ti"><i class="fab fa-linkedin"></i> LinkedIn Marketing Partner</div>
+    <div class="ti"><i class="fas fa-award"></i> Clutch Top Agency 2024</div>
+    <div class="ti"><i class="fas fa-star"></i> G2 Leader 2025</div>
+    <div class="ti"><i class="fas fa-shield-halved"></i> ISO 27001 Certified</div>
+  </div>
+</div>
+
+<!-- ═══ OUR STORY ═══ -->
+<section class="story" id="story">
+  <div class="story-in wrap">
+    <div class="story-vis rv">
+      <div class="s-main">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=720&q=88&auto=format&fit=crop&crop=center" alt="NovaMark founding team" loading="lazy"/>
+        <div class="s-main-ov"></div>
+      </div>
+      <div class="s-sm">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=320&q=88&auto=format&fit=crop&crop=center" alt="Strategy whiteboard" loading="lazy"/>
+        <div class="s-sm-ov"></div>
+      </div>
+      <div class="s-badge"><div class="sb-v">2016</div><div class="sb-l">Founded in New York</div></div>
+    </div>
+    <div class="sc rv">
+      <div class="chip"><i class="fas fa-book-open"></i> Our Story</div>
+      <h2 class="h2">Built on Results,<br/><span class="gt">Not Promises.</span></h2>
+      <p class="sub" style="margin:16px 0 26px">From a three-person startup in Brooklyn to a 38-strong global team serving clients in 12 countries — here is how NovaMark became the agency that brands actually trust.</p>
+      <p class="sbody">NovaMark was founded in 2016 by three ex-agency marketers who had grown tired of watching businesses pay large retainers for campaigns that looked impressive on slides but delivered little in actual revenue. They had seen agencies prioritise award entries over client outcomes, and vanity metrics over real commercial impact. Something had to change — so they built it themselves.</p>
+      <p class="sbody">We launched with five founding clients and one simple promise: every strategy we build will be directly traceable to business results, with full transparency into the work, the data, and the reasoning behind every decision. In our first year, all five clients renewed. That became our blueprint for everything that followed.</p>
+      <div class="squote">
+        <i class="fas fa-quote-left"></i>
+        <div>
+          <p>We built NovaMark because we believed agencies could actually hold themselves accountable to real business outcomes — not just clicks and impressions. Eight years on, that belief still drives every campaign we run and every partnership we form.</p>
+          <cite>&#8212; James Carter, CEO &amp; Co-Founder</cite>
+        </div>
+      </div>
+      <p class="sbody">Today we manage over $12 million in annual ad spend for 150+ clients across 12 countries, with a 98% client retention rate earned through results — not contracts. We are bootstrapped, independent, and accountable only to the people who matter most: our clients.</p>
+      <a href="#team" class="btn btn-p" style="margin-top:10px">Meet Our Full Team <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MISSION + VALUES ═══ -->
+<section class="mission">
+  <div class="wrap">
+    <div class="mhead rv">
+      <div class="chip"><i class="fas fa-compass"></i> Mission &amp; Values</div>
+      <h2 class="h2">What We Stand For,<br/><span class="gt">Every Single Day.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Five values that shape how we think, build teams, design strategies, and measure success — for ourselves and every client we serve.</p>
+    </div>
+    <div class="mlayout">
+      <div class="mmain rv">
+        <div class="mm-ic"><i class="fas fa-rocket"></i></div>
+        <div class="mm-t">Our Mission</div>
+        <p class="mm-b">To be the most trusted growth partner for ambitious brands worldwide — delivering marketing strategies rooted in data, executed with precision, measured by revenue impact, and communicated with radical transparency at every step of the journey.</p>
+        <div class="mm-sep"></div>
+        <div class="mm-tag"><i class="fas fa-circle-check"></i> Core Commitments</div>
+        <ul class="mm-list">
+          <li><i class="fas fa-circle-check"></i> Revenue-first reporting — never vanity metrics</li>
+          <li><i class="fas fa-circle-check"></i> Full access to your live data, always</li>
+          <li><i class="fas fa-circle-check"></i> No lock-in contracts — we earn your business monthly</li>
+          <li><i class="fas fa-circle-check"></i> One dedicated expert, not a rotating team of juniors</li>
+          <li><i class="fas fa-circle-check"></i> Weekly communication, monthly deep-dive reviews</li>
+        </ul>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-chart-line"></i></div>
+        <div class="vc-t">Results Over Vanity</div>
+        <div class="vc-b">Impressions and click rates are milestones — revenue and ROAS are the destination. Every campaign we run is measured against the metric that actually moves your business forward, and only that metric.</div>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-eye"></i></div>
+        <div class="vc-t">Radical Transparency</div>
+        <div class="vc-b">You will see everything: every test result, every dollar spent, every decision we made and why. We share what worked and what did not — without spin, without cherry-picking, without excuses.</div>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-flask-vial"></i></div>
+        <div class="vc-t">Always Be Testing</div>
+        <div class="vc-b">We run structured A/B experiments every week — creative, copy, audiences, bids. Compounding 1% improvements is how extraordinary, lasting results are built. We never stop iterating.</div>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-handshake"></i></div>
+        <div class="vc-t">Partnership Mindset</div>
+        <div class="vc-b">Your business goals are our strategy. Your wins are our wins. We embed ourselves in your growth, think like co-founders, and care deeply about the outcome as much as you do — every single month.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS BAND ═══ -->
+<div class="sband">
+  <div class="sgrid wrap">
+    <div class="sc2"><span class="sc2-ico">&#128200;</span><div class="sc2-v" data-to="150" data-sx="+">0+</div><div class="sc2-l">Happy Clients</div></div>
+    <div class="sc2"><span class="sc2-ico">&#128176;</span><div class="sc2-v" data-to="12" data-px="$" data-sx="M+">$0M+</div><div class="sc2-l">Ad Spend Managed</div></div>
+    <div class="sc2"><span class="sc2-ico">&#127942;</span><div class="sc2-v" data-to="38" data-sx="">0</div><div class="sc2-l">Team Members</div></div>
+    <div class="sc2"><span class="sc2-ico">&#11088;</span><div class="sc2-v" data-to="98" data-sx="%">0%</div><div class="sc2-l">Client Retention</div></div>
+  </div>
+</div>
+
+<!-- ═══ HOW WE WORK ═══ -->
+<section class="process">
+  <div class="wrap">
+    <div class="phead rv">
+      <div class="chip"><i class="fas fa-gears"></i> How We Work</div>
+      <h2 class="h2">Our Proven Path<br/>to <span class="gt">Client Growth.</span></h2>
+      <p class="sub" style="margin:16px auto 0">No templates, no guesswork. Every engagement starts with deep discovery and ends with a growth engine built specifically for your business — then optimised continuously.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard rv">
+        <div class="pc-n">01</div>
+        <div class="pc-ic"><i class="fas fa-magnifying-glass-chart"></i></div>
+        <div class="pc-t">Deep Discovery &amp; Audit</div>
+        <div class="pc-b">We spend the first two weeks inside your data — analysing current performance, competitor positioning, audience behaviour, and historical spend. We identify every growth lever and every wasted dollar before suggesting a single strategy.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">02</div>
+        <div class="pc-ic"><i class="fas fa-drafting-compass"></i></div>
+        <div class="pc-t">Custom Strategy Design</div>
+        <div class="pc-b">Based on discovery, we build a bespoke multi-channel growth plan with clear KPIs, 90-day milestones, channel allocation, creative direction, and a structured testing roadmap. No two strategies look the same because no two businesses are identical.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">03</div>
+        <div class="pc-ic"><i class="fas fa-rocket"></i></div>
+        <div class="pc-t">Launch &amp; Execute</div>
+        <div class="pc-b">Campaigns go live within 5 business days. Every element — tracking setup, creative, copy, landing pages, and audiences — is validated before a single dollar of budget goes out the door. Launch day is a milestone, not a gamble.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">04</div>
+        <div class="pc-ic"><i class="fas fa-flask"></i></div>
+        <div class="pc-t">Test &amp; Optimise Weekly</div>
+        <div class="pc-b">Every week we run structured A/B tests across creative, copy, audiences, and bids. What works gets scaled. What does not gets cut or iterated fast. We never wait for quarterly reviews to make important optimisation decisions.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">05</div>
+        <div class="pc-ic"><i class="fas fa-chart-line"></i></div>
+        <div class="pc-t">Report &amp; Scale</div>
+        <div class="pc-b">Weekly automated dashboards keep you fully informed. Monthly deep-dives cover what worked, what did not, and what is next. As results compound, we identify new growth frontiers — new channels, markets, and conversion funnels to unlock.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">06</div>
+        <div class="pc-ic"><i class="fas fa-handshake-angle"></i></div>
+        <div class="pc-t">Long-Term Partnership</div>
+        <div class="pc-b">Our best relationships run for years — not because of contracts, but because of compounding results. We grow with you, expanding scope as your business scales, always staying three steps ahead of where your marketing needs to go next.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section class="tlsec">
+  <div class="wrap">
+    <div class="tlhead rv">
+      <div class="chip"><i class="fas fa-clock-rotate-left"></i> Our Journey</div>
+      <h2 class="h2">From Startup to<br/><span class="gt">Industry Leader.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Eight years of growth, hard-won lessons, and a relentless focus on client results over everything else.</p>
+    </div>
+    <div class="tl">
+      <div class="tlr rv">
+        <div class="tll"><div class="tlbox"><div class="tltag"><i class="fas fa-rocket"></i> The Beginning</div><div class="tlt">NovaMark Founded in Brooklyn, New York</div><div class="tlb">Three ex-agency marketers launch NovaMark with five founding clients and one clear manifesto: no vanity metrics, no lock-in contracts, and radical transparency on every campaign. All five clients renew after month one — proof the model works.</div></div></div>
+        <div class="tlc"><div class="tldot"><i class="fas fa-rocket"></i></div><div class="tly">2016</div></div>
+        <div class="tle"></div>
+      </div>
+      <div class="tlr even rv">
+        <div class="tle"></div>
+        <div class="tlc"><div class="tldot"><i class="fas fa-magnifying-glass-chart"></i></div><div class="tly">2017</div></div>
+        <div class="tlr2"><div class="tlbox"><div class="tltag"><i class="fas fa-chart-line"></i> First Major Win</div><div class="tlt">SEO Division Launched — 312% Traffic in 90 Days</div><div class="tlb">We launch a dedicated SEO practice. Within 90 days, our first enterprise SEO engagement delivers 312% organic traffic growth for a B2B SaaS client, generating $420K in attributed pipeline. Word spreads fast and the team doubles in six months.</div></div></div>
+      </div>
+      <div class="tlr rv">
+        <div class="tll"><div class="tlbox"><div class="tltag"><i class="fas fa-users"></i> Scaling Up</div><div class="tlt">Team Grows to 15, Paid Media Division Launched</div><div class="tlb">Word-of-mouth growth sees us expand rapidly to 15 specialists. We launch a full paid media division covering Google, Facebook, and Instagram. We cross our first $1M managed ad spend milestone and land our first e-commerce and DTC clients.</div></div></div>
+        <div class="tlc"><div class="tldot"><i class="fas fa-users"></i></div><div class="tly">2019</div></div>
+        <div class="tle"></div>
+      </div>
+      <div class="tlr even rv">
+        <div class="tle"></div>
+        <div class="tlc"><div class="tldot"><i class="fas fa-globe"></i></div><div class="tly">2021</div></div>
+        <div class="tlr2"><div class="tlbox"><div class="tltag"><i class="fas fa-globe"></i> Going Global</div><div class="tlt">Remote-First Expansion Across 10 Countries, $5M+ Managed</div><div class="tlb">NovaMark goes fully remote-first, enabling best-in-class global talent. We begin serving clients across the UK, EU, and Asia-Pacific. We cross $5M in managed spend, earn our first Clutch Top Agency Award, and achieve Google Premier Partner status.</div></div></div>
+      </div>
+      <div class="tlr rv">
+        <div class="tll"><div class="tlbox"><div class="tltag"><i class="fas fa-trophy"></i> Today</div><div class="tlt">38 Specialists, $12M+ Managed, 150+ Clients in 12 Countries</div><div class="tlb">NovaMark is a 38-person specialist agency managing $12M+ in annual ad spend for 150+ clients globally. Average client ROAS of 6.2x. Retention rate of 98%. Client satisfaction score of 4.9/5. And we are just getting started on what comes next.</div></div></div>
+        <div class="tlc"><div class="tldot"><i class="fas fa-trophy"></i></div><div class="tly">2025</div></div>
+        <div class="tle"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="thead rv">
+      <div class="chip"><i class="fas fa-users"></i> The Team</div>
+      <h2 class="h2">Specialists Who Own<br/><span class="gt">Your Results.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Every NovaMark team member is a certified specialist — not a generalist wearing multiple hats. When you partner with us, you get dedicated experts on every channel, not one person doing everything at once.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="James Carter CEO" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Strategy</span><span class="texp">Growth</span></div>
+        <div class="tinfo">
+          <div class="tn">James Carter</div><div class="tr">CEO &amp; Co-Founder</div>
+          <div class="tb">10+ years in performance marketing. Former VP Growth at two acquired SaaS companies. Leads overall strategy and key client relationships for our highest-growth accounts.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="Priya Mehra CMO" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Brand</span><span class="texp">Creative</span></div>
+        <div class="tinfo">
+          <div class="tn">Priya Mehra</div><div class="tr">CMO &amp; Co-Founder</div>
+          <div class="tb">Brand strategist turned data scientist. Leads creative strategy across all enterprise accounts. Google and Meta certified with a track record of campaigns that convert at scale.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="Daniel Park SEO" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">SEO</span><span class="texp">Technical</span></div>
+        <div class="tinfo">
+          <div class="tn">Daniel Park</div><div class="tr">Head of SEO</div>
+          <div class="tb">8 years in technical and content SEO. Has driven 300%+ organic traffic growth for SaaS, e-commerce, and professional services clients. Authority in Core Web Vitals and entity SEO.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="Sofia Alvarez Paid Media" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Google Ads</span><span class="texp">Meta Ads</span></div>
+        <div class="tinfo">
+          <div class="tn">Sofia Alvarez</div><div class="tr">Paid Media Lead</div>
+          <div class="tb">Manages $8M+ in annual ad spend across Google and Meta. Average client ROAS of 7.1x. Expert in Performance Max, Advantage+, and cross-channel attribution modelling.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="Marcus Webb Content" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Content</span><span class="texp">SEO Writing</span></div>
+        <div class="tinfo">
+          <div class="tn">Marcus Webb</div><div class="tr">Head of Content</div>
+          <div class="tb">Former investigative journalist turned content strategist. Builds pillar-cluster content ecosystems that rank, convert, and compound in organic value every single month.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="Aiko Tanaka Analytics" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">GA4</span><span class="texp">Attribution</span></div>
+        <div class="tinfo">
+          <div class="tn">Aiko Tanaka</div><div class="tr">Analytics Lead</div>
+          <div class="tb">GA4, Looker Studio, and Conversions API specialist. Builds the attribution models and real-time dashboards that give every client complete visibility into what is actually working.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="Ryan O'Brien CRO" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">CRO</span><span class="texp">A/B Testing</span></div>
+        <div class="tinfo">
+          <div class="tn">Ryan O'Brien</div><div class="tr">CRO Specialist</div>
+          <div class="tb">500+ A/B tests run. Finds the marginal improvements in UX, copy, and landing page design that compound into 89% average conversion lifts per engagement. Data only, no gut feel.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=700&q=88&auto=format&fit=crop&crop=faces,top" alt="Emma Walsh Account Director" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Accounts</span><span class="texp">Client Growth</span></div>
+        <div class="tinfo">
+          <div class="tn">Emma Walsh</div><div class="tr">Account Director</div>
+          <div class="tb">Ensures every account has a clear 90-day roadmap, weekly communication cadence, and a team fully aligned to their growth goals. The driving force behind our 98% retention rate.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AWARDS ═══ -->
+<section class="awards">
+  <div class="wrap">
+    <div class="award-head rv">
+      <div class="chip"><i class="fas fa-award"></i> Awards &amp; Recognition</div>
+      <h2 class="h2">Recognised for Results<br/><span class="gt">by the Industry.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Independent validation from the platforms, review sites, and publications that know digital marketing best.</p>
+    </div>
+    <div class="agrid">
+      <div class="acard rv">
+        <span class="a-ico">&#129351;</span>
+        <div class="a-t">Clutch Top Agency</div>
+        <div class="a-y">2022 &bull; 2023 &bull; 2024</div>
+        <div class="a-b">Three consecutive years ranked in Clutch's Top Digital Marketing Agencies globally, based exclusively on verified client reviews and real project outcome data.</div>
+      </div>
+      <div class="acard rv">
+        <span class="a-ico">&#11088;</span>
+        <div class="a-t">G2 Leader Badge</div>
+        <div class="a-y">Spring 2025</div>
+        <div class="a-b">Awarded G2 Leader status in the Digital Marketing Agencies category, based on user satisfaction scores, ease of use, and measurable market presence across all segments.</div>
+      </div>
+      <div class="acard rv">
+        <span class="a-ico">&#128309;</span>
+        <div class="a-t">Google Premier Partner</div>
+        <div class="a-y">Since 2020</div>
+        <div class="a-b">Placed in the top 3% of Google Partners worldwide based on consistent campaign performance, client growth metrics, and managed spend quality across all account types.</div>
+      </div>
+      <div class="acard rv">
+        <span class="a-ico">&#127942;</span>
+        <div class="a-t">Meta Business Partner</div>
+        <div class="a-y">Since 2021</div>
+        <div class="a-b">Recognised as a certified Meta Business Partner for exceptional ROAS delivery and proven expertise across Facebook, Instagram, and WhatsApp advertising at scale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CULTURE / WHY US ═══ -->
+<section class="culture">
+  <div class="cult-in wrap">
+    <!-- Image collage — explicit overlay divs, no ::after ambiguity -->
+    <div class="cult-vis rv">
+      <div class="cv-img cva">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Team collaboration" loading="lazy"/>
+        <div class="cv-img-ov" style="background:linear-gradient(135deg,rgba(58,123,255,.18),rgba(6,12,24,.44))"></div>
+      </div>
+      <div class="cv-img cvb">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=700&h=900&q=88&auto=format&fit=crop&crop=center" alt="Office team" loading="lazy"/>
+        <div class="cv-img-ov" style="background:linear-gradient(160deg,rgba(124,58,237,.2),rgba(6,12,24,.5))"></div>
+      </div>
+      <div class="cv-img cvc">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="Team brainstorm" loading="lazy"/>
+        <div class="cv-img-ov" style="background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(6,12,24,.54))"></div>
+      </div>
+      <div class="cv-badge"><div class="cvb-v">98%</div><div class="cvb-l">Client Retention</div></div>
+    </div>
+    <div class="cult-content rv">
+      <div class="chip"><i class="fas fa-heart"></i> Why Work With Us</div>
+      <h2 class="h2">An Agency That Feels<br/>Like <span class="gt">Your Own Team.</span></h2>
+      <p class="sub" style="margin:16px 0 36px">The best relationships we have feel like a co-founding partnership. Here is what makes working with NovaMark genuinely, tangibly different from every other agency you have tried.</p>
+      <div class="clist">
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-headset"></i></div>
+          <div><div class="ci-t">One Dedicated Senior Manager, Always</div><div class="ci-b">No rotating junior teams. One senior specialist who knows your business, your goals, and your history — reachable by Slack, email, or call. No ticket queues, no runaround, no surprises.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-chart-bar"></i></div>
+          <div><div class="ci-t">Weekly Reporting With Absolute Honesty</div><div class="ci-b">Real-time dashboards plus weekly email digests cover every metric that matters. We tell you what worked and what did not — clearly, directly, without cherry-picking the good numbers.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-lock-open"></i></div>
+          <div><div class="ci-t">Month-to-Month — Zero Lock-In</div><div class="ci-b">We have never believed in keeping clients through 12-month contracts. You stay because we are delivering measurable results every single month — not because you are legally obligated to stay.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-bolt"></i></div>
+          <div><div class="ci-t">Fast Execution, Faster Optimisation</div><div class="ci-b">New campaigns live within 5 business days. Optimisations happen every week — never quarterly. We move at the speed your business demands and make all decisions based on real-time data.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-certificate"></i></div>
+          <div><div class="ci-t">Certified Across Every Major Platform</div><div class="ci-b">Google Premier Partner, Meta Business Partner, HubSpot Certified. We have direct access to platform support teams, early beta features, and insider data that independent agencies simply cannot get.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-head rv">
+      <div class="chip"><i class="fas fa-heart"></i> Client Stories</div>
+      <h2 class="h2">Trusted by 150+ Brands.<br/><span class="gt">Loved by All of Them.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Do not take our word for it — here is what the businesses we have grown have to say about actually working with NovaMark.</p>
+    </div>
+    <div class="testgrid">
+      <div class="tc rv">
+        <div class="tc-q">"</div>
+        <div class="tc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tc-txt">NovaMark does not feel like an agency — they feel like an extension of our internal team. They know our business, they anticipate our needs, they communicate proactively, and they consistently deliver results that genuinely exceed what we thought was achievable.</p>
+        <div class="tc-au">
+          <div class="tc-av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Sarah Johnson" loading="lazy"/></div>
+          <div><div class="tc-n">Sarah Johnson</div><div class="tc-c">CEO, TechFlow SaaS</div></div>
+        </div>
+      </div>
+      <div class="tc rv">
+        <div class="tc-q">"</div>
+        <div class="tc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tc-txt">The transparency NovaMark brings is unlike anything I have experienced with previous agencies. I see exactly where every dollar goes and what it returns. I worked with four agencies before this. None of them came close to this level of honesty. That trust is genuinely priceless.</p>
+        <div class="tc-au">
+          <div class="tc-av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Marcus Rodriguez" loading="lazy"/></div>
+          <div><div class="tc-n">Marcus Rodriguez</div><div class="tc-c">Founder, EcoGear Store</div></div>
+        </div>
+      </div>
+      <div class="tc rv">
+        <div class="tc-q">"</div>
+        <div class="tc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tc-txt">Two years in and we have never once thought about leaving. NovaMark delivers consistently, month after month. Their email automation alone now generates 35% of our total revenue on autopilot. Emma is genuinely one of the best marketing professionals I have worked with in 15 years.</p>
+        <div class="tc-au">
+          <div class="tc-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Amanda Lee" loading="lazy"/></div>
+          <div><div class="tc-n">Amanda Lee</div><div class="tc-c">CMO, Wellness Brands Co.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta" id="cta">
+  <div class="cta-in rv">
+    <div class="cta-c">
+      <div class="chip" style="justify-content:center"><i class="fas fa-handshake"></i> Let's Build Something</div>
+      <h2 class="cta-t">Ready to Grow<br/><span class="gt">With NovaMark?</span></h2>
+      <p class="cta-d">Book a free 30-minute discovery call. No pitch, no pressure — just an honest look at where your marketing can improve and how we would approach your specific growth goals.</p>
+      <div class="cta-btns">
+        <a href="index.php#contact" class="btn btn-p">Book a Discovery Call <i class="fas fa-arrow-right"></i></a>
+        <a href="services.php" class="btn-g"><i class="fas fa-table-cells-large"></i> View Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft wrap">
+    <div class="fb">
+      <a href="index.php" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <div class="fsocs">
+        <a href="#" class="fsoc" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="fsoc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="fsoc" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="fsoc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="fsoc" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <div class="flinks">
+        <a href="services.php#seo"><i class="fas fa-magnifying-glass-chart"></i> SEO Optimization</a>
+        <a href="services.php#google-ads"><i class="fab fa-google"></i> Google Ads</a>
+        <a href="services.php#social-ads"><i class="fab fa-meta"></i> Facebook &amp; Instagram Ads</a>
+        <a href="services.php#social-media"><i class="fas fa-hashtag"></i> Social Media</a>
+        <a href="services.php#content"><i class="fas fa-pen-nib"></i> Content Marketing</a>
+        <a href="services.php#email"><i class="fas fa-envelope-open-text"></i> Email Marketing</a>
+        <a href="services.php#cro"><i class="fas fa-chart-line"></i> CRO</a>
+        <a href="services.php#analytics"><i class="fas fa-chart-pie"></i> Analytics</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Company</h4>
+      <div class="flinks">
+        <a href="about.php"><i class="fas fa-building"></i> About Us</a>
+        <a href="#team"><i class="fas fa-users"></i> Our Team</a>
+        <a href="#"><i class="fas fa-award"></i> Case Studies</a>
+        <a href="#"><i class="fas fa-briefcase"></i> Careers</a>
+        <a href="#"><i class="fas fa-newspaper"></i> Press</a>
+        <a href="#"><i class="fas fa-handshake"></i> Partners</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Resources</h4>
+      <div class="flinks">
+        <a href="#"><i class="fas fa-rss"></i> Blog</a>
+        <a href="#"><i class="fas fa-screwdriver-wrench"></i> Free Tools</a>
+        <a href="#"><i class="fas fa-book"></i> Marketing Guides</a>
+        <a href="#"><i class="fas fa-video"></i> Webinars</a>
+        <a href="#"><i class="fas fa-list-check"></i> SEO Checklist</a>
+        <a href="#"><i class="fas fa-calculator"></i> ROI Calculator</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Contact</h4>
+      <div class="flinks">
+        <a href="/cdn-cgi/l/email-protection#3c54595050537c52534a5d515d4e57125d5b59525f45"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="bcd4d9d0d0d3fcd2d3caddd1ddced792dddbd9d2dfc5">[email&#160;protected]</span></a>
+        <a href="tel:+12125550190"><i class="fas fa-phone"></i> +1 (212) 555-0190</a>
+        <a href="#" style="align-items:flex-start"><i class="fas fa-location-dot" style="margin-top:3px"></i> <span>340 Park Ave, Suite 400<br/>New York, NY 10022</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot wrap">
+    <div class="fleg">&copy; 2025 NovaMark Agency. All rights reserved.</div>
+    <div class="flegs">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Cursor */
+const CR=document.getElementById('cur'),RG=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;CR.style.left=mx+'px';CR.style.top=my+'px'});
+(function tick(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;RG.style.left=rx+'px';RG.style.top=ry+'px';requestAnimationFrame(tick)})();
+document.querySelectorAll('a,button,.tcard,.tc,.vcard,.tlbox,.acard,.pcard').forEach(function(el){
+  el.addEventListener('mouseenter',function(){CR.style.width='18px';CR.style.height='18px';RG.style.width='54px';RG.style.height='54px'});
+  el.addEventListener('mouseleave',function(){CR.style.width='10px';CR.style.height='10px';RG.style.width='38px';RG.style.height='38px'});
+});
+
+/* Navbar scroll */
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('sc',window.scrollY>60);
+});
+
+/* Back to top */
+var bt=document.getElementById('bt');
+window.addEventListener('scroll',function(){bt.classList.toggle('on',window.scrollY>400)});
+bt.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+
+/* Hamburger / mobile menu */
+document.getElementById('hbg').addEventListener('click',function(){
+  document.getElementById('mob').classList.add('open');
+  document.body.style.overflow='hidden';
+});
+document.getElementById('mclose').addEventListener('click',closeMob);
+function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow='';}
+
+/* Chat widget */
+document.getElementById('chatBtn').addEventListener('click',function(){
+  document.getElementById('chatPop').classList.toggle('open');
+});
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.chat')) document.getElementById('chatPop').classList.remove('open');
+});
+
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=a.getAttribute('href');
+    if(id==='#') return;
+    var target=document.querySelector(id);
+    if(target){e.preventDefault();window.scrollTo({top:target.offsetTop-80,behavior:'smooth'});}
+  });
+});
+
+/* Scroll reveal — adds class "on" to .rv elements when they enter viewport */
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){
+      var siblings=Array.from(en.target.parentElement.children).filter(function(c){return c.classList.contains('rv')});
+      var idx=siblings.indexOf(en.target);
+      setTimeout(function(){en.target.classList.add('on')}, idx*85);
+      observer.unobserve(en.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){observer.observe(el)});
+
+/* Animated counters */
+function animCount(el){
+  var tgt=parseInt(el.dataset.to);
+  var px=el.dataset.px||'';
+  var sx=el.dataset.sx||'';
+  var duration=2200;
+  var step=tgt/(duration/16);
+  var current=0;
+  var timer=setInterval(function(){
+    current+=step;
+    if(current>=tgt){current=tgt;clearInterval(timer);}
+    el.textContent=px+Math.floor(current)+sx;
+  },16);
+}
+var sgrid=document.querySelector('.sgrid');
+if(sgrid){
+  var counted=false;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting&&!counted){
+        counted=true;
+        en.target.querySelectorAll('[data-to]').forEach(animCount);
+      }
+    });
+  },{threshold:0.3}).observe(sgrid);
+}
+</script>
+</body>
+</html>

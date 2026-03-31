@@ -1,0 +1,1215 @@
+<?php /* NovaMark – Portfolio & Case Studies – NovaMark Digital Marketing Agency */ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio &amp; Case Studies – NovaMark Digital Marketing Agency</title>
+<meta name="description" content="Real results for real businesses. Explore NovaMark's case studies across SEO, Google Ads, Social Media, Email, and CRO — with measurable outcomes on every project."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous"/>
+<style>
+:root{
+  --ink:#060C18;--ink2:#0D1525;--ink3:#111E32;
+  --muted:#8897B3;--c1:#00D4FF;--c2:#3A7BFF;--c3:#7C3AED;
+  --grad:linear-gradient(135deg,var(--c1),var(--c2),var(--c3));
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--r-xl:40px;
+  --sh:0 20px 60px rgba(0,0,0,.4);--sh-g:0 0 44px rgba(58,123,255,.28);
+  --t:.3s cubic-bezier(.4,0,.2,1);
+  --fh:"Outfit",sans-serif;--fb:"Plus Jakarta Sans",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ink);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.gt{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.26);color:#7EB3FF;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.h2{font-family:var(--fh);font-size:clamp(2rem,3.8vw,3rem);font-weight:900;line-height:1.08;letter-spacing:-.028em}
+.sub{color:var(--muted);font-size:.97rem;line-height:1.78;max-width:600px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:100px;font-size:.9rem;font-weight:600;transition:all var(--t);position:relative;overflow:hidden;white-space:nowrap;cursor:pointer}
+.btn::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.09);opacity:0;transition:opacity var(--t)}
+.btn:hover::after{opacity:1}
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 22px rgba(58,123,255,.4)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
+.btn-o{border:1.5px solid rgba(255,255,255,.18);color:#fff}
+.btn-o:hover{border-color:rgba(58,123,255,.6)}
+.btn-g{padding:10px 22px;border:1.5px solid rgba(255,255,255,.2);color:#fff;border-radius:100px;font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all var(--t)}
+.btn-g:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+
+/* CURSOR */
+#cur{width:10px;height:10px;background:var(--c1);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+#ring{width:38px;height:38px;border:1.5px solid rgba(0,212,255,.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--t),box-shadow var(--t)}
+nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav-in{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.logo{font-family:var(--fh);font-size:1.55rem;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
+.ldot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pdot 2s infinite}
+@keyframes pdot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
+.nav-l{display:flex;align-items:center;gap:34px}
+.nav-l a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--t);position:relative}
+.nav-l a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--t);border-radius:2px}
+.nav-l a:hover,.nav-l a.act{color:#fff}
+.nav-l a.act::after,.nav-l a:hover::after{transform:scaleX(1)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.hbg{display:none;flex-direction:column;gap:5px;padding:8px}
+.hbg span{width:24px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(28px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob.open{display:flex}
+.mob a{font-family:var(--fh);font-size:2rem;font-weight:700;transition:color var(--t)}
+.mob a:hover{color:var(--c1)}
+.mclose{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 24px 80px;position:relative;overflow:hidden}
+.h-bg{position:absolute;inset:0;z-index:0}
+.hbl{position:absolute;border-radius:50%;filter:blur(110px);opacity:.13;animation:bl 11s ease-in-out infinite}
+.hbl1{width:600px;height:600px;background:var(--c2);top:-160px;left:-80px}
+.hbl2{width:420px;height:420px;background:var(--c3);bottom:-60px;right:6%;animation-delay:4s}
+.hbl3{width:280px;height:280px;background:var(--c1);top:40%;right:32%;animation-delay:7s}
+@keyframes bl{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(18px,-26px) scale(1.04)}66%{transform:translate(-13px,18px) scale(.97)}}
+.h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(58,123,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(58,123,255,.04) 1px,transparent 1px);background-size:56px 56px}
+.h-vl{position:absolute;width:1px;background:linear-gradient(to bottom,transparent,rgba(58,123,255,.2),transparent);top:0;bottom:0}
+.h-in{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+
+/* left */
+.hero-text .bc{display:flex;align-items:center;gap:8px;font-size:.77rem;color:var(--muted);margin-bottom:22px;animation:fu .7s ease both}
+.bc a{transition:color var(--t)}.bc a:hover{color:#fff}
+.bc i{font-size:.6rem;opacity:.5}
+.hbdg{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);color:var(--c1);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;animation:fu .7s ease .06s both}
+.hbdg-dot{width:6px;height:6px;background:var(--c1);border-radius:50%;animation:pdot 1.5s infinite}
+.hero-title{font-family:var(--fh);font-size:clamp(2.6rem,4.5vw,4rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;margin-bottom:18px;animation:fu .7s ease .12s both}
+.hero-desc{color:var(--muted);font-size:.99rem;line-height:1.8;margin-bottom:32px;max-width:480px;animation:fu .7s ease .22s both}
+.hero-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap;animation:fu .7s ease .3s both}
+.hero-stats{display:flex;gap:0;margin-top:38px;padding-top:30px;border-top:1px solid rgba(255,255,255,.07);animation:fu .7s ease .42s both}
+.hs{flex:1;padding-right:22px;border-right:1px solid rgba(255,255,255,.07)}
+.hs:last-child{border-right:none;padding-left:22px;padding-right:0}
+.hs:not(:first-child):not(:last-child){padding:0 22px}
+.hs-v{font-family:var(--fh);font-size:1.85rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hs-l{font-size:.74rem;color:var(--muted);margin-top:4px;font-weight:500}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Hero visual — image mosaic */
+.hv{position:relative;height:560px;animation:fu .9s ease .25s both}
+.hv-block{position:absolute;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.07)}
+.hv-block img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s ease}
+.hv-block:hover img{transform:scale(1.04)}
+.hv-ov{position:absolute;inset:0;border-radius:var(--r-lg);pointer-events:none;z-index:1}
+.hv-chip{position:absolute;top:13px;left:13px;background:rgba(6,12,24,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:4px 12px;font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:6px;z-index:2}
+.cdot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.hva{top:0;left:0;width:60%;height:61%}
+.hva img{object-position:center;filter:brightness(.72) contrast(1.08) saturate(.82)}
+.hva .hv-ov{background:linear-gradient(135deg,rgba(58,123,255,.22),rgba(6,12,24,.48))}
+.hvb{top:0;right:0;width:38%;height:78%}
+.hvb img{object-position:center top;filter:brightness(.68) contrast(1.12) saturate(.76)}
+.hvb .hv-ov{background:linear-gradient(160deg,rgba(124,58,237,.24),rgba(6,12,24,.52))}
+.hvc{bottom:0;left:0;width:58%;height:37%}
+.hvc img{object-position:center;filter:brightness(.65) contrast(1.1) saturate(.78)}
+.hvc .hv-ov{background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(6,12,24,.56))}
+.hv-glow{position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(58,123,255,.22),transparent 70%);top:29%;left:56%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;animation:gp 4.5s ease-in-out infinite}
+@keyframes gp{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.35)}}
+.hfc{position:absolute;background:rgba(7,12,26,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.13);border-radius:var(--r-md);padding:12px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 16px 48px rgba(0,0,0,.55);z-index:10;white-space:nowrap}
+.hfc-i{width:34px;height:34px;background:var(--grad);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#fff;flex-shrink:0}
+.hfc-v{font-family:var(--fh);font-size:.95rem;font-weight:800;line-height:1}
+.hfc-l{font-size:.63rem;color:var(--muted);margin-top:2px}
+.fc1{top:-16px;right:12%;animation:f1 4.6s ease-in-out infinite}
+.fc2{top:40%;left:-44px;animation:f2 5.2s ease-in-out infinite}
+.fc3{bottom:22%;right:-38px;animation:f3 4s ease-in-out infinite}
+.fc4{bottom:-16px;left:22%;animation:f4 5.7s ease-in-out infinite}
+@keyframes f1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes f2{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+@keyframes f3{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes f4{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+/* ═══ RESULTS TICKER ═══ */
+.ticker{padding:22px 0;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
+.ticker-track{display:flex;gap:0;animation:tk 32s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:flex;align-items:center;gap:12px;padding:0 48px;border-right:1px solid rgba(255,255,255,.07);white-space:nowrap}
+.ticker-item:last-child{border-right:none}
+.t-val{font-family:var(--fh);font-size:1.3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.t-label{font-size:.8rem;color:var(--muted);font-weight:500}
+.t-ico{width:34px;height:34px;background:rgba(58,123,255,.12);border:1px solid rgba(58,123,255,.22);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#7EB3FF;font-size:.85rem;flex-shrink:0}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ FILTER TABS ═══ */
+.filter-bar{padding:60px 24px 0}
+.filter-inner{max-width:1200px;margin:0 auto}
+.filter-head{text-align:center;margin-bottom:48px}
+.filter-head .sub{margin:14px auto 0}
+.filter-tabs{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.ftab{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:100px;font-size:.83rem;font-weight:600;border:1.5px solid rgba(255,255,255,.1);color:var(--muted);background:transparent;cursor:pointer;transition:all var(--t)}
+.ftab:hover{border-color:rgba(58,123,255,.4);color:#fff}
+.ftab.active{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(58,123,255,.35)}
+.ftab i{font-size:.8rem}
+
+/* ═══ FEATURED CASE STUDY ═══ */
+.featured{padding:56px 24px 0}
+.featured-inner{max-width:1200px;margin:0 auto}
+.featured-label{display:flex;align-items:center;gap:10px;font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c1);margin-bottom:20px}
+.featured-label::before,.featured-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.3),transparent)}
+
+.feat-card{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r-xl);overflow:hidden;
+  transition:all var(--t);
+}
+.feat-card:hover{border-color:rgba(58,123,255,.3);box-shadow:0 40px 100px rgba(0,0,0,.35)}
+.feat-img{position:relative;overflow:hidden;min-height:480px}
+.feat-img img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.72) contrast(1.08) saturate(.82);transition:transform 8s ease;display:block}
+.feat-card:hover .feat-img img{transform:scale(1.05)}
+.feat-img-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(58,123,255,.2),rgba(6,12,24,.5));pointer-events:none}
+.feat-img-tag{position:absolute;top:20px;left:20px;background:rgba(6,12,24,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:5px 14px;font-size:.67rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:6px}
+.feat-img-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--c1)}
+.feat-award{position:absolute;bottom:20px;left:20px;background:rgba(6,12,24,.9);backdrop-filter:blur(16px);border:1px solid rgba(255,212,0,.3);border-radius:var(--r-md);padding:12px 16px;display:flex;align-items:center;gap:10px}
+.feat-award i{color:#FBBF24;font-size:1.1rem}
+.feat-award-text{font-size:.78rem;font-weight:600}
+.feat-award-sub{font-size:.67rem;color:var(--muted)}
+
+.feat-content{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.feat-industry{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c2);margin-bottom:14px}
+.feat-industry i{font-size:.72rem}
+.feat-title{font-family:var(--fh);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:900;line-height:1.12;letter-spacing:-.025em;margin-bottom:16px}
+.feat-desc{color:var(--muted);font-size:.92rem;line-height:1.78;margin-bottom:30px}
+.feat-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+.fmetric{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-md);padding:18px 16px;text-align:center}
+.fmetric-val{font-family:var(--fh);font-size:1.7rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:5px}
+.fmetric-label{font-size:.71rem;color:var(--muted);font-weight:500;line-height:1.4}
+.feat-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.ftag{font-size:.7rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:100px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
+.feat-cta{display:flex;align-items:center;gap:12px}
+
+/* ═══ CASE STUDIES GRID ═══ */
+.cases{padding:56px 24px 80px}
+.cases-inner{max-width:1200px;margin:0 auto}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+/* Standard case card */
+.cs-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-lg);overflow:hidden;
+  transition:all var(--t);
+  display:flex;flex-direction:column;
+  cursor:pointer;
+}
+.cs-card:hover{border-color:rgba(58,123,255,.28);transform:translateY(-7px);box-shadow:0 32px 80px rgba(0,0,0,.3)}
+.cs-img{position:relative;height:220px;overflow:hidden;flex-shrink:0}
+.cs-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease;filter:brightness(.74) contrast(1.08) saturate(.82)}
+.cs-card:hover .cs-img img{transform:scale(1.06)}
+.cs-img-ov{position:absolute;inset:0;pointer-events:none}
+.cs-img-tag{position:absolute;top:14px;left:14px;background:rgba(6,12,24,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:3px 11px;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:5px;z-index:2}
+.cs-img-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0}
+/* Result badge on image */
+.cs-result-badge{position:absolute;bottom:14px;right:14px;background:rgba(6,12,24,.9);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:10px 14px;text-align:right;z-index:2}
+.cs-rb-val{font-family:var(--fh);font-size:1.3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.cs-rb-label{font-size:.6rem;color:var(--muted);margin-top:2px}
+.cs-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.cs-industry{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c2);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.cs-title{font-family:var(--fh);font-size:1.05rem;font-weight:800;line-height:1.25;margin-bottom:10px;letter-spacing:-.01em}
+.cs-desc{font-size:.82rem;color:var(--muted);line-height:1.68;margin-bottom:18px;flex:1}
+.cs-metrics{display:flex;gap:0;margin-bottom:18px;border:1px solid rgba(255,255,255,.07);border-radius:var(--r-md);overflow:hidden}
+.cs-m{flex:1;padding:12px 14px;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.cs-m:last-child{border-right:none}
+.cs-m-v{font-family:var(--fh);font-size:1.05rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:3px}
+.cs-m-l{font-size:.62rem;color:var(--muted)}
+.cs-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.cs-tag{font-size:.64rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:100px;border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.55)}
+.cs-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)}
+.cs-client{display:flex;align-items:center;gap:10px}
+.cs-avatar{width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)}
+.cs-avatar img{width:100%;height:100%;object-fit:cover}
+.cs-client-name{font-size:.78rem;font-weight:600}
+.cs-client-co{font-size:.68rem;color:var(--muted)}
+.cs-arrow{width:34px;height:34px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.22);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#7EB3FF;font-size:.8rem;transition:all var(--t);flex-shrink:0}
+.cs-card:hover .cs-arrow{background:var(--grad);border-color:transparent;color:#fff}
+
+/* Large card (spans 2 cols) */
+.cs-card.large{grid-column:span 2}
+.cs-card.large .cs-img{height:280px}
+.cs-card.large .cs-body{padding:28px}
+.cs-card.large .cs-metrics{gap:0}
+
+/* ═══ RESULTS BREAKDOWN ═══ */
+.results-band{padding:80px 24px;background:linear-gradient(180deg,transparent,rgba(58,123,255,.04),transparent)}
+.rb-inner{max-width:1200px;margin:0 auto}
+.rb-head{text-align:center;margin-bottom:64px}
+.rb-head .sub{margin:14px auto 0}
+.rb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:var(--r-lg);overflow:hidden}
+.rb-cell{background:var(--ink);padding:48px 24px;text-align:center;position:relative;overflow:hidden;transition:background var(--t)}
+.rb-cell:hover{background:rgba(58,123,255,.065)}
+.rb-cell::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity var(--t)}
+.rb-cell:hover::before{opacity:.03}
+.rb-ico{font-size:1.9rem;margin-bottom:14px;display:block;position:relative;z-index:1}
+.rb-val{font-family:var(--fh);font-size:2.9rem;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;position:relative;z-index:1}
+.rb-label{font-size:.84rem;color:var(--muted);font-weight:500;position:relative;z-index:1;margin-bottom:6px}
+.rb-sub{font-size:.74rem;color:rgba(255,255,255,.3);position:relative;z-index:1}
+
+/* ═══ INDUSTRIES SERVED ═══ */
+.industries{padding:80px 24px}
+.ind-inner{max-width:1200px;margin:0 auto}
+.ind-head{text-align:center;margin-bottom:56px}
+.ind-head .sub{margin:14px auto 0}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ind-card{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-md);padding:28px 22px;
+  text-align:center;transition:all var(--t);position:relative;overflow:hidden;
+}
+.ind-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
+.ind-card:hover{border-color:rgba(58,123,255,.28);transform:translateY(-5px);box-shadow:var(--sh-g)}
+.ind-card:hover::before{transform:scaleX(1)}
+.ind-ico{width:54px;height:54px;background:var(--grad);border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;margin:0 auto 16px;transition:transform var(--t);box-shadow:0 6px 20px rgba(58,123,255,.28)}
+.ind-card:hover .ind-ico{transform:scale(1.1) rotate(-5deg)}
+.ind-name{font-family:var(--fh);font-size:.95rem;font-weight:700;margin-bottom:6px}
+.ind-count{font-size:.75rem;color:var(--c1);font-weight:600;letter-spacing:.06em;margin-bottom:10px}
+.ind-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
+
+/* ═══ CLIENT LOGOS ═══ */
+.logos-bar{padding:60px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.015);overflow:hidden}
+.logos-bar p{text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:28px}
+.logos-track{display:flex;gap:0;animation:lt 26s linear infinite;width:max-content}
+.logos-track:hover{animation-play-state:paused}
+.logo-item{display:flex;align-items:center;gap:10px;padding:0 44px;border-right:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.2);font-family:var(--fh);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;white-space:nowrap;transition:color var(--t)}
+.logo-item:hover{color:rgba(255,255,255,.55)}
+.logo-item i{font-size:1.15rem}
+@keyframes lt{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ PROCESS STRIP ═══ */
+.process-strip{padding:80px 24px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.04),transparent)}
+.ps-inner{max-width:1200px;margin:0 auto}
+.ps-head{text-align:center;margin-bottom:60px}
+.ps-head .sub{margin:14px auto 0}
+.ps-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.ps-steps::before{content:"";position:absolute;top:36px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(58,123,255,.3) 20%,rgba(124,58,237,.3) 80%,transparent)}
+.ps-step{text-align:center;padding:0 16px;position:relative;z-index:1}
+.ps-num{width:72px;height:72px;border-radius:50%;background:rgba(6,12,24,.9);border:1.5px solid rgba(58,123,255,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.1rem;color:#7EB3FF;transition:all var(--t)}
+.ps-step:hover .ps-num{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 0 8px rgba(58,123,255,.1)}
+.ps-title{font-family:var(--fh);font-size:.88rem;font-weight:700;margin-bottom:6px}
+.ps-body{font-size:.76rem;color:var(--muted);line-height:1.6}
+
+/* ═══ TESTIMONIAL SPOTLIGHT ═══ */
+.tspot{padding:80px 24px}
+.tspot-inner{max-width:1200px;margin:0 auto}
+.tspot-head{text-align:center;margin-bottom:52px}
+.tspot-head .sub{margin:14px auto 0}
+.tspot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tsc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:32px;transition:all var(--t);position:relative;overflow:hidden}
+.tsc:hover{border-color:rgba(58,123,255,.28);transform:translateY(-5px)}
+.tsc-glow{position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(58,123,255,.1),transparent 70%);pointer-events:none}
+.tsc-q{font-size:3rem;line-height:1;color:var(--c3);opacity:.28;font-family:Georgia,serif;margin-bottom:14px}
+.tsc-stars{color:#FBBF24;font-size:.78rem;display:flex;gap:3px;margin-bottom:14px}
+.tsc-text{font-size:.88rem;color:rgba(255,255,255,.82);line-height:1.76;margin-bottom:20px}
+.tsc-result{background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.16);border-radius:var(--r-sm);padding:10px 14px;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.tsc-result-ico{color:var(--c1);font-size:.9rem;flex-shrink:0}
+.tsc-result-text{font-size:.78rem;color:rgba(255,255,255,.8)}
+.tsc-result-text strong{color:var(--c1)}
+.tsc-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.06);padding-top:18px}
+.tsc-av{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,.1)}
+.tsc-av img{width:100%;height:100%;object-fit:cover;display:block}
+.tsc-name{font-weight:700;font-size:.87rem}
+.tsc-co{font-size:.72rem;color:var(--muted)}
+
+/* ═══ CTA ═══ */
+.cta{padding:72px 24px}
+.cta-in{max-width:1080px;margin:0 auto;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(58,123,255,.12),rgba(124,58,237,.08));border:1px solid rgba(58,123,255,.26);border-radius:var(--r-xl);padding:72px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-in::before{content:"";position:absolute;top:-50%;left:-10%;width:480px;height:480px;background:radial-gradient(circle,rgba(58,123,255,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-in::after{content:"";position:absolute;bottom:-50%;right:-10%;width:380px;height:380px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-c{position:relative;z-index:1}
+.cta-t{font-family:var(--fh);font-size:clamp(2rem,3.8vw,2.9rem);font-weight:900;letter-spacing:-.025em;margin-bottom:14px}
+.cta-d{color:var(--muted);font-size:1rem;margin:0 auto 36px;max-width:480px}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* ═══ FOOTER ═══ */
+footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.06);padding:80px 24px 32px}
+.ft{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:62px}
+.fb p{color:var(--muted);font-size:.85rem;line-height:1.72;margin:14px 0 24px;max-width:270px}
+.fsocs{display:flex;gap:10px}
+.fsoc{width:38px;height:38px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;transition:all var(--t)}
+.fsoc:hover{background:var(--grad);border-color:transparent;color:#fff;transform:translateY(-3px)}
+.fcol h4{font-family:var(--fh);font-size:.88rem;font-weight:700;margin-bottom:18px}
+.flinks{display:flex;flex-direction:column;gap:10px}
+.flinks a{font-size:.84rem;color:var(--muted);transition:color var(--t);display:flex;align-items:center;gap:7px}
+.flinks a:hover{color:#fff}
+.flinks a i{font-size:.72rem;color:var(--c2);flex-shrink:0}
+.fbot{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.06)}
+.fleg{font-size:.78rem;color:var(--muted)}
+.flegs{display:flex;gap:18px}
+.flegs a{font-size:.78rem;color:var(--muted);transition:color var(--t)}.flegs a:hover{color:#fff}
+
+/* BACK-TOP + CHAT */
+#bt{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:var(--grad);border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;box-shadow:0 8px 26px rgba(58,123,255,.45);transition:all var(--t);opacity:0;pointer-events:none;z-index:500}
+#bt.on{opacity:1;pointer-events:all}
+#bt:hover{transform:translateY(-4px)}
+.chat{position:fixed;bottom:30px;left:30px;z-index:500}
+.chat-btn{width:54px;height:54px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;box-shadow:0 8px 28px rgba(58,123,255,.5);cursor:pointer;transition:all var(--t);position:relative}
+.chat-btn::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(58,123,255,.3);animation:ping 2s ease infinite}
+@keyframes ping{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.chat-btn:hover{transform:scale(1.1)}
+.chat-pop{position:absolute;bottom:66px;left:0;width:272px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:20px;display:none;box-shadow:var(--sh)}
+.chat-pop.open{display:block}
+.chat-pop h4{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:5px}
+.chat-pop p{font-size:.79rem;color:var(--muted);margin-bottom:14px}
+.chat-start{display:block;text-align:center;padding:10px;background:var(--grad);color:#fff;border-radius:8px;font-size:.83rem;font-weight:600}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;opacity:0;pointer-events:none;transition:opacity var(--t)}
+.modal-bg.open{opacity:1;pointer-events:all}
+.modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%);width:min(860px,94vw);max-height:90vh;overflow-y:auto;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:0;z-index:2001;opacity:0;transform:translate(-50%,-44%);transition:all .35s ease;pointer-events:none}
+.modal-bg.open .modal{opacity:1;transform:translate(-50%,-50%);pointer-events:all}
+.modal-img{position:relative;height:280px;overflow:hidden;border-radius:var(--r-xl) var(--r-xl) 0 0}
+.modal-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) contrast(1.08) saturate(.82);display:block}
+.modal-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,24,.1) 0%,rgba(6,12,24,.7) 100%);pointer-events:none}
+.modal-close{position:absolute;top:20px;right:20px;width:38px;height:38px;background:rgba(6,12,24,.85);border:1px solid rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;color:#fff;transition:all var(--t)}
+.modal-close:hover{background:var(--grad);border-color:transparent}
+.modal-body{padding:40px}
+.modal-ind{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.modal-title{font-family:var(--fh);font-size:clamp(1.5rem,3vw,2rem);font-weight:900;line-height:1.12;letter-spacing:-.025em;margin-bottom:16px}
+.modal-desc{color:var(--muted);font-size:.9rem;line-height:1.78;margin-bottom:28px}
+.modal-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.mm{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-md);padding:16px;text-align:center}
+.mm-v{font-family:var(--fh);font-size:1.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:5px}
+.mm-l{font-size:.68rem;color:var(--muted)}
+.modal-section-title{font-family:var(--fh);font-size:.95rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;color:#fff}
+.modal-section-title i{color:var(--c1);font-size:.85rem}
+.modal-list{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+.modal-list li{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:rgba(255,255,255,.82);line-height:1.6}
+.modal-list li i{color:var(--c1);font-size:.75rem;margin-top:3px;flex-shrink:0}
+.modal-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.modal-tag{font-size:.68rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:100px;border:1px solid rgba(58,123,255,.25);color:#7EB3FF;background:rgba(58,123,255,.08)}
+.modal-footer{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
+.modal-client{display:flex;align-items:center;gap:12px}
+.modal-av{width:42px;height:42px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.1)}
+.modal-av img{width:100%;height:100%;object-fit:cover;display:block}
+.modal-cname{font-weight:700;font-size:.88rem}
+.modal-cco{font-size:.72rem;color:var(--muted)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .h-in{grid-template-columns:1fr;gap:52px}
+  .hv{height:400px}.fc2,.fc3{display:none}
+  .feat-card{grid-template-columns:1fr}
+  .feat-img{min-height:300px}
+  .cases-grid{grid-template-columns:repeat(2,1fr)}
+  .cs-card.large{grid-column:span 1}
+  .rb-grid{grid-template-columns:repeat(2,1fr)}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .ps-steps{grid-template-columns:repeat(3,1fr);gap:22px}
+  .ps-steps::before{display:none}
+  .tspot-grid{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr;gap:36px}
+  .modal-metrics{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-l,.nav-r{display:none}.hbg{display:flex}
+  .hv{height:280px}.fc1,.fc4{display:none}
+  .filter-tabs{gap:8px}
+  .cases-grid{grid-template-columns:1fr}
+  .rb-grid{grid-template-columns:1fr 1fr}
+  .ind-grid{grid-template-columns:1fr 1fr}
+  .ps-steps{grid-template-columns:repeat(2,1fr)}
+  .cta-in{padding:44px 26px}
+  .ft{grid-template-columns:1fr 1fr}
+  .fbot{flex-direction:column;gap:14px;text-align:center}
+  #cur,#ring{display:none}
+  #bt{right:14px;bottom:14px}.chat{left:14px;bottom:14px}
+  .hero-stats{flex-direction:column;gap:18px}
+  .hs{border-right:none;padding-right:0}
+}
+@media(max-width:480px){
+  .ft{grid-template-columns:1fr}
+  .rb-grid{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:1fr}
+  .feat-metrics{grid-template-columns:1fr 1fr}
+  .modal-metrics{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="ring"></div>
+<a href="#" id="bt"><i class="fas fa-arrow-up"></i></a>
+
+<div class="chat">
+  <div class="chat-btn" id="chatBtn"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-pop" id="chatPop">
+    <h4>&#128075; Want results like these?</h4>
+    <p>Book a free strategy call and we will show you exactly how we would grow your business.</p>
+    <a href="#cta" class="chat-start" onclick="document.getElementById('chatPop').classList.remove('open')">Get a Free Strategy Call</a>
+  </div>
+</div>
+
+<div class="mob" id="mob">
+  <span class="mclose" id="mclose"><i class="fas fa-xmark"></i></span>
+  <a href="index.php" onclick="closeMob()">Home</a>
+  <a href="services.php" onclick="closeMob()">Services</a>
+  <a href="about.php" onclick="closeMob()">About</a>
+  <a href="portfolio.php" onclick="closeMob()">Portfolio</a>
+  <a href="#cta" onclick="closeMob()">Contact</a>
+</div>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.php" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+    <ul class="nav-l">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="services.php">Services</a></li>
+      <li><a href="about.php">About</a></li>
+      <li><a href="portfolio.php" class="act">Portfolio</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="index.php#contact">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="#" class="btn btn-o">Login</a>
+      <a href="#cta" class="btn btn-p">Work With Us <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="h-bg">
+    <div class="hbl hbl1"></div><div class="hbl hbl2"></div><div class="hbl hbl3"></div>
+    <div class="h-grid"></div>
+    <div class="h-vl" style="left:33%"></div><div class="h-vl" style="right:33%"></div>
+  </div>
+  <div class="h-in wrap">
+    <div class="hero-text">
+      <div class="bc"><a href="index.php">Home</a><i class="fas fa-chevron-right"></i><span style="color:#fff">Portfolio</span></div>
+      <div class="hbdg"><span class="hbdg-dot"></span> Real Results. Real Businesses.</div>
+      <h1 class="hero-title">Work That<br/>Speaks in <span class="gt">Numbers.</span></h1>
+      <p class="hero-desc">150+ campaigns. 12 countries. Every case study below is backed by real data, verified outcomes, and clients who stayed because the results compelled them to.</p>
+      <div class="hero-ctas">
+        <a href="#cases" class="btn btn-p">Explore Case Studies <i class="fas fa-arrow-down"></i></a>
+        <a href="#cta" class="btn-g"><i class="fas fa-calendar-check"></i> Start a Project</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hs"><div class="hs-v">150+</div><div class="hs-l">Campaigns Delivered</div></div>
+        <div class="hs"><div class="hs-v">6.2×</div><div class="hs-l">Average ROAS</div></div>
+        <div class="hs"><div class="hs-v">98%</div><div class="hs-l">Client Retention</div></div>
+      </div>
+    </div>
+    <!-- Hero mosaic: dark marketing/results images -->
+    <div class="hv">
+      <div class="hv-glow"></div>
+      <div class="hv-block hva">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c1)"></span> Campaign Results</div>
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=700&q=90&auto=format&fit=crop&crop=center" alt="Marketing analytics results dashboard" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <div class="hv-block hvb">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c3)"></span> Data Insights</div>
+        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&h=1000&q=90&auto=format&fit=crop&crop=center" alt="Data analysis dark workspace" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <div class="hv-block hvc">
+        <div class="hv-chip"><span class="cdot" style="background:#34D399"></span> Growth Charts</div>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&q=90&auto=format&fit=crop&crop=center" alt="Growth metrics dark chart" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <div class="hfc fc1"><div class="hfc-i"><i class="fas fa-arrow-trend-up"></i></div><div><div class="hfc-v">+312%</div><div class="hfc-l">Avg. Traffic Growth</div></div></div>
+      <div class="hfc fc2"><div class="hfc-i"><i class="fas fa-dollar-sign"></i></div><div><div class="hfc-v">$12M+</div><div class="hfc-l">Revenue Generated</div></div></div>
+      <div class="hfc fc3"><div class="hfc-i"><i class="fas fa-bullseye"></i></div><div><div class="hfc-v">6.2× ROAS</div><div class="hfc-l">Average Return</div></div></div>
+      <div class="hfc fc4"><div class="hfc-i"><i class="fas fa-trophy"></i></div><div><div class="hfc-v">150+ Wins</div><div class="hfc-l">Case Studies</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESULTS TICKER ═══ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-chart-line"></i></div><div><div class="t-val">+312%</div><div class="t-label">Organic Traffic — TechFlow SaaS</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-dollar-sign"></i></div><div><div class="t-val">7.8× ROAS</div><div class="t-label">Google Ads — EcoGear Store</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-envelope"></i></div><div><div class="t-val">+189%</div><div class="t-label">Email Revenue — Wellness Co.</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-users"></i></div><div><div class="t-val">+240%</div><div class="t-label">Leads Generated — LexGroup Law</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-cart-shopping"></i></div><div><div class="t-val">+89%</div><div class="t-label">Conversion Rate — Luxe Fashion</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-hashtag"></i></div><div><div class="t-val">+410%</div><div class="t-label">Social Reach — FitLife App</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-star"></i></div><div><div class="t-val">$2.4M</div><div class="t-label">Pipeline — B2B Software Co.</div></div></div>
+    <!-- duplicate -->
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-chart-line"></i></div><div><div class="t-val">+312%</div><div class="t-label">Organic Traffic — TechFlow SaaS</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-dollar-sign"></i></div><div><div class="t-val">7.8× ROAS</div><div class="t-label">Google Ads — EcoGear Store</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-envelope"></i></div><div><div class="t-val">+189%</div><div class="t-label">Email Revenue — Wellness Co.</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-users"></i></div><div><div class="t-val">+240%</div><div class="t-label">Leads Generated — LexGroup Law</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-cart-shopping"></i></div><div><div class="t-val">+89%</div><div class="t-label">Conversion Rate — Luxe Fashion</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-hashtag"></i></div><div><div class="t-val">+410%</div><div class="t-label">Social Reach — FitLife App</div></div></div>
+    <div class="ticker-item"><div class="t-ico"><i class="fas fa-star"></i></div><div><div class="t-val">$2.4M</div><div class="t-label">Pipeline — B2B Software Co.</div></div></div>
+  </div>
+</div>
+
+<!-- ═══ FILTER TABS ═══ -->
+<div class="filter-bar" id="cases">
+  <div class="filter-inner">
+    <div class="filter-head rv">
+      <div class="chip"><i class="fas fa-folder-open"></i> Case Studies</div>
+      <h2 class="h2">Campaigns That<br/><span class="gt">Changed Businesses.</span></h2>
+      <p class="sub" style="margin:14px auto 0">Every project below started with a real challenge and ended with a measurable outcome. Filter by the service or industry most relevant to you.</p>
+    </div>
+    <div class="filter-tabs rv" style="margin-top:36px">
+      <button class="ftab active" data-filter="all"><i class="fas fa-border-all"></i> All Work</button>
+      <button class="ftab" data-filter="seo"><i class="fas fa-magnifying-glass-chart"></i> SEO</button>
+      <button class="ftab" data-filter="ppc"><i class="fab fa-google"></i> Google Ads</button>
+      <button class="ftab" data-filter="social"><i class="fab fa-meta"></i> Social Ads</button>
+      <button class="ftab" data-filter="email"><i class="fas fa-envelope-open-text"></i> Email</button>
+      <button class="ftab" data-filter="cro"><i class="fas fa-chart-line"></i> CRO</button>
+      <button class="ftab" data-filter="content"><i class="fas fa-pen-nib"></i> Content</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FEATURED CASE STUDY ═══ -->
+<div class="featured">
+  <div class="featured-inner">
+    <div class="featured-label rv">&#11088; &nbsp;Featured Case Study</div>
+    <div class="feat-card rv" data-case="techflow" data-cats="seo content">
+      <div class="feat-img">
+        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&h=700&q=88&auto=format&fit=crop&crop=center" alt="TechFlow SaaS SEO campaign" loading="lazy"/>
+        <div class="feat-img-ov"></div>
+        <div class="feat-img-tag"><span class="feat-img-tag-dot"></span> SaaS — B2B Software</div>
+        <div class="feat-award"><i class="fas fa-trophy"></i><div><div class="feat-award-text">Best SEO Campaign 2024</div><div class="feat-award-sub">Clutch Agency Award</div></div></div>
+      </div>
+      <div class="feat-content">
+        <div class="feat-industry"><i class="fas fa-laptop-code"></i> SaaS / B2B Technology</div>
+        <h2 class="feat-title">How TechFlow Grew Organic Traffic by 312% and Generated $2.4M in Pipeline</h2>
+        <p class="feat-desc">TechFlow came to us with a technically sound product but near-zero organic visibility. In 9 months, our technical SEO overhaul, content cluster strategy, and authority link building transformed their search presence into their #1 revenue channel — surpassing paid ads for the first time.</p>
+        <div class="feat-metrics">
+          <div class="fmetric"><div class="fmetric-val">+312%</div><div class="fmetric-label">Organic Traffic Growth</div></div>
+          <div class="fmetric"><div class="fmetric-val">$2.4M</div><div class="fmetric-label">Pipeline Attributed</div></div>
+          <div class="fmetric"><div class="fmetric-val">9 Mo.</div><div class="fmetric-label">Time to Results</div></div>
+        </div>
+        <div class="feat-tags">
+          <span class="ftag">Technical SEO</span>
+          <span class="ftag">Content Strategy</span>
+          <span class="ftag">Link Building</span>
+          <span class="ftag">GA4 Attribution</span>
+        </div>
+        <div class="feat-cta">
+          <button class="btn btn-p" onclick="openModal('techflow')">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
+          <a href="#cta" class="btn-g"><i class="fas fa-clone"></i> Start Similar Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CASES GRID ═══ -->
+<div class="cases">
+  <div class="cases-inner">
+    <div class="cases-grid" id="casesGrid">
+
+      <!-- Card 1: EcoGear — Google Ads (large) -->
+      <div class="cs-card large rv" data-case="ecogear" data-cats="ppc">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1616469829941-c7200edec809?w=900&h=600&q=88&auto=format&fit=crop&crop=center" alt="EcoGear Google Ads campaign" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(58,123,255,.18),rgba(6,12,24,.5))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:#FBBF24"></span> E-Commerce</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">7.8×</div><div class="cs-rb-label">ROAS Achieved</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fab fa-google"></i> Google Ads &amp; Shopping</div>
+          <div class="cs-title">EcoGear: From $1K to $50K Monthly Budget at 7.8× ROAS</div>
+          <div class="cs-desc">A sustainable outdoor gear brand with a small but growing budget needed to scale paid acquisition without destroying margins. We rebuilt their campaign architecture from scratch, implemented Smart Bidding with custom audience signals, and unlocked Performance Max at scale — growing budget 50× while actually improving ROAS.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">7.8×</div><div class="cs-m-l">ROAS</div></div>
+            <div class="cs-m"><div class="cs-m-v">+340%</div><div class="cs-m-l">Revenue</div></div>
+            <div class="cs-m"><div class="cs-m-v">&#8211;28%</div><div class="cs-m-l">Cost/Conv.</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">Google Ads</span><span class="cs-tag">Shopping</span><span class="cs-tag">Perf. Max</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="Marcus Rodriguez"/></div>
+              <div><div class="cs-client-name">Marcus Rodriguez</div><div class="cs-client-co">Founder, EcoGear</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('ecogear')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Wellness Brands — Email -->
+      <div class="cs-card rv" data-case="wellness" data-cats="email">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="Wellness email automation" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(6,12,24,.52))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:var(--c3)"></span> Health &amp; Wellness</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">+189%</div><div class="cs-rb-label">Email Revenue</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fas fa-envelope-open-text"></i> Email Marketing</div>
+          <div class="cs-title">Wellness Brands: 35% of Total Revenue on Email Autopilot</div>
+          <div class="cs-desc">Their email list was 80,000 subscribers generating almost no revenue. We rebuilt their automation flows from welcome sequences to win-back campaigns, adding advanced segmentation and dynamic product recommendations.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">+189%</div><div class="cs-m-l">Email Rev.</div></div>
+            <div class="cs-m"><div class="cs-m-v">35%</div><div class="cs-m-l">Of Total Rev.</div></div>
+            <div class="cs-m"><div class="cs-m-v">4.2×</div><div class="cs-m-l">Email ROI</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">Email Flows</span><span class="cs-tag">Klaviyo</span><span class="cs-tag">Segmentation</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="Amanda Lee"/></div>
+              <div><div class="cs-client-name">Amanda Lee</div><div class="cs-client-co">CMO, Wellness Brands</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('wellness')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: LexGroup — Social Ads -->
+      <div class="cs-card rv" data-case="lexgroup" data-cats="social">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="Law firm social ads campaign" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(6,12,24,.54))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:var(--c1)"></span> Legal Services</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">+240%</div><div class="cs-rb-label">Leads Per Month</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fab fa-meta"></i> Facebook &amp; Instagram Ads</div>
+          <div class="cs-title">LexGroup Law: 240% More Qualified Leads at 60% Lower CPL</div>
+          <div class="cs-desc">A regional law firm struggling with expensive, low-quality leads from generic ad networks. We rebuilt their Meta strategy around hyper-local audience targeting, case-type specific creative, and a dedicated lead qualification funnel.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">+240%</div><div class="cs-m-l">Leads/Mo.</div></div>
+            <div class="cs-m"><div class="cs-m-v">&#8211;60%</div><div class="cs-m-l">Cost/Lead</div></div>
+            <div class="cs-m"><div class="cs-m-v">5.1×</div><div class="cs-m-l">ROAS</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">Meta Ads</span><span class="cs-tag">Lead Gen</span><span class="cs-tag">Local</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="Robert Chen"/></div>
+              <div><div class="cs-client-name">Robert Chen</div><div class="cs-client-co">Partner, LexGroup Law</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('lexgroup')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: FitLife — Social Media + Content (large) -->
+      <div class="cs-card rv" data-case="fitlife" data-cats="social content">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="FitLife social media campaign" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(6,12,24,.5))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:#34D399"></span> Health &amp; Fitness</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">+410%</div><div class="cs-rb-label">Social Reach</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fas fa-hashtag"></i> Social Media &amp; Content</div>
+          <div class="cs-title">FitLife App: 410% Social Reach Growth and 22K App Downloads in 6 Months</div>
+          <div class="cs-desc">A fitness app with great retention but zero organic reach needed a full content and social strategy to fuel top-of-funnel growth. We built a creator-led content engine, short-form video strategy, and community engagement playbook that turned their social presence into a genuine acquisition channel — driving 22K downloads without paid ads.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">+410%</div><div class="cs-m-l">Social Reach</div></div>
+            <div class="cs-m"><div class="cs-m-v">22K</div><div class="cs-m-l">App Downloads</div></div>
+            <div class="cs-m"><div class="cs-m-v">&#8211;72%</div><div class="cs-m-l">Acq. Cost</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">Instagram</span><span class="cs-tag">TikTok</span><span class="cs-tag">Content</span><span class="cs-tag">UGC</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="Sara Kim"/></div>
+              <div><div class="cs-client-name">Sara Kim</div><div class="cs-client-co">Head of Growth, FitLife</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('fitlife')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Luxe Fashion — CRO -->
+      <div class="cs-card rv" data-case="luxe" data-cats="cro">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="Luxe Fashion CRO campaign" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(58,123,255,.18),rgba(6,12,24,.5))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:#F472B6"></span> Fashion &amp; Retail</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">+89%</div><div class="cs-rb-label">Conversion Rate</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fas fa-chart-line"></i> CRO &amp; A/B Testing</div>
+          <div class="cs-title">Luxe Fashion: 89% Conversion Lift Without Touching Ad Spend</div>
+          <div class="cs-desc">High traffic, low conversions. We ran 14 structured A/B tests over 90 days across product pages, checkout flow, and cart abandonment — finding the 1% wins that stacked into an 89% conversion lift and $600K in incremental annual revenue.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">+89%</div><div class="cs-m-l">Conv. Rate</div></div>
+            <div class="cs-m"><div class="cs-m-v">$600K</div><div class="cs-m-l">Added Revenue</div></div>
+            <div class="cs-m"><div class="cs-m-v">14</div><div class="cs-m-l">Tests Run</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">A/B Testing</span><span class="cs-tag">UX</span><span class="cs-tag">Checkout</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="Isabelle Dupont"/></div>
+              <div><div class="cs-client-name">Isabelle Dupont</div><div class="cs-client-co">CEO, Luxe Fashion</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('luxe')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: HealthFirst Clinic — SEO + Content (large) -->
+      <div class="cs-card large rv" data-case="healthfirst" data-cats="seo content">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&h=600&q=88&auto=format&fit=crop&crop=center" alt="HealthFirst clinic SEO" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(6,12,24,.5))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:#34D399"></span> Healthcare</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">+278%</div><div class="cs-rb-label">Appointments Booked</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fas fa-hospital"></i> Healthcare / Local SEO</div>
+          <div class="cs-title">HealthFirst Clinic: 278% More Appointments Through Local SEO and Content</div>
+          <div class="cs-desc">A multi-location medical clinic competing against hospital networks needed a local SEO strategy that could rank across 8 locations and build trust through authoritative content. Our pillar-cluster content approach, Google Business Profile optimisation, and schema markup overhaul transformed their local search presence — driving 278% more booked appointments in 12 months.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">+278%</div><div class="cs-m-l">Appointments</div></div>
+            <div class="cs-m"><div class="cs-m-v">8 Locs.</div><div class="cs-m-l">Ranking #1</div></div>
+            <div class="cs-m"><div class="cs-m-v">+195%</div><div class="cs-m-l">Organic Traffic</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">Local SEO</span><span class="cs-tag">Content</span><span class="cs-tag">Schema</span><span class="cs-tag">GBP</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="Dr. Sarah Thompson"/></div>
+              <div><div class="cs-client-name">Dr. Sarah Thompson</div><div class="cs-client-co">Director, HealthFirst Clinic</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('healthfirst')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: Apex Finance — Google Ads -->
+      <div class="cs-card rv" data-case="apex" data-cats="ppc">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="Apex Finance PPC campaign" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(58,123,255,.2),rgba(6,12,24,.52))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:#FBBF24"></span> Financial Services</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">&#8211;44%</div><div class="cs-rb-label">Cost Per Lead</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fab fa-google"></i> Google Ads &amp; Analytics</div>
+          <div class="cs-title">Apex Finance: 44% Lower CPL and $1.8M in Closed Deals via Google Search</div>
+          <div class="cs-desc">A financial advisory firm paying $280 per lead needed radical efficiency. We restructured their Google Search campaigns with intent-layered audience targeting, custom match scripts, and offline conversion tracking to tie ad spend directly to closed revenue.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">&#8211;44%</div><div class="cs-m-l">Cost/Lead</div></div>
+            <div class="cs-m"><div class="cs-m-v">$1.8M</div><div class="cs-m-l">Deals Closed</div></div>
+            <div class="cs-m"><div class="cs-m-v">6.8×</div><div class="cs-m-l">ROAS</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">Google Search</span><span class="cs-tag">Scripts</span><span class="cs-tag">Attribution</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="David Marsh"/></div>
+              <div><div class="cs-client-name">David Marsh</div><div class="cs-client-co">CEO, Apex Financial</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('apex')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Urban Eats — Social + Email -->
+      <div class="cs-card rv" data-case="urbaneats" data-cats="social email">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="Urban Eats restaurant marketing" loading="lazy"/>
+          <div class="cs-img-ov" style="background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(6,12,24,.5))"></div>
+          <div class="cs-img-tag"><span class="cs-img-dot" style="background:#F97316"></span> Restaurants &amp; F&amp;B</div>
+          <div class="cs-result-badge"><div class="cs-rb-val">+320%</div><div class="cs-rb-label">Reservations</div></div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-industry"><i class="fas fa-utensils"></i> Social Media &amp; Email</div>
+          <div class="cs-title">Urban Eats: 320% More Reservations Through Instagram and Email Combined</div>
+          <div class="cs-desc">A premium restaurant group with 4 locations needed to fill tables consistently, not just on weekends. We built a visual-first Instagram strategy paired with weekly email campaigns targeting past diners — turning their audience into a predictable reservation engine.</div>
+          <div class="cs-metrics">
+            <div class="cs-m"><div class="cs-m-v">+320%</div><div class="cs-m-l">Reservations</div></div>
+            <div class="cs-m"><div class="cs-m-v">+180%</div><div class="cs-m-l">Instagram Followers</div></div>
+            <div class="cs-m"><div class="cs-m-v">48%</div><div class="cs-m-l">Email Open Rate</div></div>
+          </div>
+          <div class="cs-tags"><span class="cs-tag">Instagram</span><span class="cs-tag">Email</span><span class="cs-tag">Local</span></div>
+          <div class="cs-footer">
+            <div class="cs-client">
+              <div class="cs-avatar"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&q=85&auto=format&fit=crop&crop=faces" alt="Marco Rossi"/></div>
+              <div><div class="cs-client-name">Marco Rossi</div><div class="cs-client-co">Owner, Urban Eats Group</div></div>
+            </div>
+            <button class="cs-arrow" onclick="openModal('urbaneats')"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESULTS BAND ═══ -->
+<div class="results-band">
+  <div class="rb-inner">
+    <div class="rb-head rv">
+      <div class="chip"><i class="fas fa-chart-bar"></i> Aggregate Results</div>
+      <h2 class="h2">The Numbers Behind<br/><span class="gt">150+ Campaigns.</span></h2>
+      <p class="sub" style="margin:14px auto 0">Aggregated across all client engagements — these are the outcomes that define what NovaMark delivers at scale.</p>
+    </div>
+    <div class="rb-grid">
+      <div class="rb-cell rv"><span class="rb-ico">&#128200;</span><div class="rb-val" data-to="312" data-sx="%">0%</div><div class="rb-label">Average Traffic Growth</div><div class="rb-sub">Across all SEO engagements</div></div>
+      <div class="rb-cell rv"><span class="rb-ico">&#128176;</span><div class="rb-val" data-to="6" data-px="" data-sx=".2× ROAS">0</div><div class="rb-label">Average Return on Ad Spend</div><div class="rb-sub">Google &amp; Meta combined</div></div>
+      <div class="rb-cell rv"><span class="rb-ico">&#127942;</span><div class="rb-val" data-to="89" data-sx="%">0%</div><div class="rb-label">Average Conversion Lift</div><div class="rb-sub">Per CRO engagement</div></div>
+      <div class="rb-cell rv"><span class="rb-ico">&#11088;</span><div class="rb-val" data-to="98" data-sx="%">0%</div><div class="rb-label">Client Retention Rate</div><div class="rb-sub">Across all account types</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INDUSTRIES ═══ -->
+<div class="industries">
+  <div class="ind-inner">
+    <div class="ind-head rv">
+      <div class="chip"><i class="fas fa-building"></i> Industries We Serve</div>
+      <h2 class="h2">Expertise Across<br/><span class="gt">Every Vertical.</span></h2>
+      <p class="sub" style="margin:14px auto 0">We have built specialised playbooks for 12+ industries — so your campaign benefits from proven strategies, not a learning curve.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-laptop-code"></i></div><div class="ind-name">SaaS &amp; Tech</div><div class="ind-count">34 Clients</div><div class="ind-desc">B2B and B2C software, apps, and platforms. Specialising in long sales cycles, PLG, and demo conversion funnels.</div></div>
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-cart-shopping"></i></div><div class="ind-name">E-Commerce &amp; DTC</div><div class="ind-count">41 Clients</div><div class="ind-desc">Direct-to-consumer brands, Shopify stores, and marketplace sellers. ROAS-first approach with AOV and LTV focus.</div></div>
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-hospital"></i></div><div class="ind-name">Healthcare</div><div class="ind-count">18 Clients</div><div class="ind-desc">Clinics, telehealth, and medical practices. HIPAA-aware strategies with strong local and organic components.</div></div>
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-scale-balanced"></i></div><div class="ind-name">Legal &amp; Professional</div><div class="ind-count">15 Clients</div><div class="ind-desc">Law firms, accountants, and consultants. Lead quality over volume — we optimise for qualified intake, not raw clicks.</div></div>
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-utensils"></i></div><div class="ind-name">Restaurants &amp; F&amp;B</div><div class="ind-count">12 Clients</div><div class="ind-desc">Restaurant groups, food brands, and CPG. Visual-first strategies combining social, local SEO, and email loyalty.</div></div>
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-home"></i></div><div class="ind-name">Real Estate</div><div class="ind-count">11 Clients</div><div class="ind-desc">Agencies, developers, and PropTech platforms. High-intent lead generation through Google Search and Meta.</div></div>
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-graduation-cap"></i></div><div class="ind-name">Education &amp; EdTech</div><div class="ind-count">10 Clients</div><div class="ind-desc">Universities, online courses, and training platforms. Enrollment-focused funnels with strong content and paid search.</div></div>
+      <div class="ind-card rv"><div class="ind-ico"><i class="fas fa-shirt"></i></div><div class="ind-name">Fashion &amp; Lifestyle</div><div class="ind-count">9 Clients</div><div class="ind-desc">Apparel, beauty, and lifestyle brands. CRO, influencer integration, and cross-channel paid acquisition at scale.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CLIENT LOGOS ═══ -->
+<div class="logos-bar">
+  <p>Trusted by brands across 12 countries</p>
+  <div class="logos-track">
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> TechFlow</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> EcoGear</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Wellness Co.</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> LexGroup</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> FitLife App</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Luxe Fashion</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> HealthFirst</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Apex Finance</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Urban Eats</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Orion SaaS</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> PeakEdge</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> NovaCraft</div>
+    <!-- duplicate -->
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> TechFlow</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> EcoGear</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Wellness Co.</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> LexGroup</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> FitLife App</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Luxe Fashion</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> HealthFirst</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Apex Finance</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Urban Eats</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> Orion SaaS</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> PeakEdge</div>
+    <div class="logo-item"><i class="fas fa-circle-dot"></i> NovaCraft</div>
+  </div>
+</div>
+
+<!-- ═══ PROCESS STRIP ═══ -->
+<div class="process-strip">
+  <div class="ps-inner">
+    <div class="ps-head rv">
+      <div class="chip"><i class="fas fa-gears"></i> How Every Project Works</div>
+      <h2 class="h2">From Brief to Results<br/>in <span class="gt">5 Steps.</span></h2>
+      <p class="sub" style="margin:14px auto 0">Every case study on this page followed the same proven process. Here is how we consistently turn client briefs into outcomes like these.</p>
+    </div>
+    <div class="ps-steps rv">
+      <div class="ps-step">
+        <div class="ps-num"><i class="fas fa-magnifying-glass"></i></div>
+        <div class="ps-title">Discovery &amp; Audit</div>
+        <div class="ps-body">Deep dive into your data, competitors, and current performance gaps before a single strategy is written.</div>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num"><i class="fas fa-drafting-compass"></i></div>
+        <div class="ps-title">Custom Strategy</div>
+        <div class="ps-body">A bespoke multi-channel plan with KPIs, 90-day milestones, and a clear testing roadmap built for your specific goals.</div>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num"><i class="fas fa-rocket"></i></div>
+        <div class="ps-title">Launch</div>
+        <div class="ps-body">Campaigns live within 5 business days. Every element validated before budget goes out the door.</div>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num"><i class="fas fa-flask"></i></div>
+        <div class="ps-title">Test &amp; Optimise</div>
+        <div class="ps-body">Weekly A/B tests across creative, copy, and bids. What works scales. What doesn't gets cut immediately.</div>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num"><i class="fas fa-chart-line"></i></div>
+        <div class="ps-title">Report &amp; Scale</div>
+        <div class="ps-body">Weekly reports. Monthly deep-dives. As results compound, we expand into new channels and markets together.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<div class="tspot">
+  <div class="tspot-inner">
+    <div class="tspot-head rv">
+      <div class="chip"><i class="fas fa-heart"></i> Client Voices</div>
+      <h2 class="h2">The Story Behind<br/><span class="gt">Every Result.</span></h2>
+      <p class="sub" style="margin:14px auto 0">The numbers are compelling. The people behind them are why we do this work every day.</p>
+    </div>
+    <div class="tspot-grid">
+      <div class="tsc rv">
+        <div class="tsc-glow"></div>
+        <div class="tsc-q">"</div>
+        <div class="tsc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tsc-text">We had been investing in SEO for two years with another agency and seen almost no movement. NovaMark audited us, identified the core issues in the first week, and within nine months we were ranking for terms we had never ranked for. The pipeline impact was transformational.</p>
+        <div class="tsc-result"><i class="fas fa-arrow-trend-up tsc-result-ico"></i><div class="tsc-result-text">Organic traffic up <strong>+312%</strong> — $2.4M attributed pipeline in 9 months</div></div>
+        <div class="tsc-author">
+          <div class="tsc-av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Sarah Johnson"/></div>
+          <div><div class="tsc-name">Sarah Johnson</div><div class="tsc-co">CEO, TechFlow SaaS</div></div>
+        </div>
+      </div>
+      <div class="tsc rv">
+        <div class="tsc-glow"></div>
+        <div class="tsc-q">"</div>
+        <div class="tsc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tsc-text">I was spending $1K a month and getting maybe one or two sales. NovaMark completely restructured my campaigns, and by month three we were at $20K a month in budget delivering a 7.8x return. I genuinely did not think numbers like that were achievable for a brand our size.</p>
+        <div class="tsc-result"><i class="fas fa-dollar-sign tsc-result-ico"></i><div class="tsc-result-text">Budget scaled from <strong>$1K to $50K/mo</strong> at <strong>7.8× ROAS</strong></div></div>
+        <div class="tsc-author">
+          <div class="tsc-av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Marcus Rodriguez"/></div>
+          <div><div class="tsc-name">Marcus Rodriguez</div><div class="tsc-co">Founder, EcoGear Store</div></div>
+        </div>
+      </div>
+      <div class="tsc rv">
+        <div class="tsc-glow"></div>
+        <div class="tsc-q">"</div>
+        <div class="tsc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tsc-text">Our email list was sitting there doing nothing for years. NovaMark turned it into a revenue engine in 90 days. 35% of our total monthly revenue now comes from email automations they built. I cannot overstate how much this changed our business model and our margins.</p>
+        <div class="tsc-result"><i class="fas fa-envelope tsc-result-ico"></i><div class="tsc-result-text">Email now drives <strong>35% of total revenue</strong> — up <strong>+189%</strong></div></div>
+        <div class="tsc-author">
+          <div class="tsc-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Amanda Lee"/></div>
+          <div><div class="tsc-name">Amanda Lee</div><div class="tsc-co">CMO, Wellness Brands Co.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta" id="cta">
+  <div class="cta-in rv">
+    <div class="cta-c">
+      <div class="chip" style="justify-content:center"><i class="fas fa-rocket"></i> Your Case Study Starts Here</div>
+      <h2 class="cta-t">Ready to Be Our<br/><span class="gt">Next Success Story?</span></h2>
+      <p class="cta-d">Every campaign on this page started with a 30-minute discovery call. Book yours — no pitch, no pressure, just an honest look at what we would do differently for your business.</p>
+      <div class="cta-btns">
+        <a href="index.php#contact" class="btn btn-p">Book a Discovery Call <i class="fas fa-arrow-right"></i></a>
+        <a href="services.php" class="btn-g"><i class="fas fa-table-cells-large"></i> Explore Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft wrap">
+    <div class="fb">
+      <a href="index.php" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <div class="fsocs">
+        <a href="#" class="fsoc" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="fsoc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="fsoc" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="fsoc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="fsoc" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <div class="flinks">
+        <a href="services.php#seo"><i class="fas fa-magnifying-glass-chart"></i> SEO Optimization</a>
+        <a href="services.php#google-ads"><i class="fab fa-google"></i> Google Ads</a>
+        <a href="services.php#social-ads"><i class="fab fa-meta"></i> Social Ads</a>
+        <a href="services.php#social-media"><i class="fas fa-hashtag"></i> Social Media</a>
+        <a href="services.php#content"><i class="fas fa-pen-nib"></i> Content Marketing</a>
+        <a href="services.php#email"><i class="fas fa-envelope-open-text"></i> Email Marketing</a>
+        <a href="services.php#cro"><i class="fas fa-chart-line"></i> CRO</a>
+        <a href="services.php#analytics"><i class="fas fa-chart-pie"></i> Analytics</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Company</h4>
+      <div class="flinks">
+        <a href="about.php"><i class="fas fa-building"></i> About Us</a>
+        <a href="about.php#team"><i class="fas fa-users"></i> Our Team</a>
+        <a href="portfolio.php"><i class="fas fa-folder-open"></i> Portfolio</a>
+        <a href="#"><i class="fas fa-briefcase"></i> Careers</a>
+        <a href="#"><i class="fas fa-newspaper"></i> Press</a>
+        <a href="#"><i class="fas fa-handshake"></i> Partners</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Resources</h4>
+      <div class="flinks">
+        <a href="#"><i class="fas fa-rss"></i> Blog</a>
+        <a href="#"><i class="fas fa-screwdriver-wrench"></i> Free Tools</a>
+        <a href="#"><i class="fas fa-book"></i> Marketing Guides</a>
+        <a href="#"><i class="fas fa-video"></i> Webinars</a>
+        <a href="#"><i class="fas fa-list-check"></i> SEO Checklist</a>
+        <a href="#"><i class="fas fa-calculator"></i> ROI Calculator</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Contact</h4>
+      <div class="flinks">
+        <a href="/cdn-cgi/l/email-protection#751d1019191a351b1a03141814071e5b1412101b160c"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="d2bab7bebebd92bcbda4b3bfb3a0b9fcb3b5b7bcb1ab">[email&#160;protected]</span></a>
+        <a href="tel:+12125550190"><i class="fas fa-phone"></i> +1 (212) 555-0190</a>
+        <a href="#" style="align-items:flex-start"><i class="fas fa-location-dot" style="margin-top:3px"></i><span>340 Park Ave, Suite 400<br/>New York, NY 10022</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot wrap">
+    <div class="fleg">&copy; 2025 NovaMark Agency. All rights reserved.</div>
+    <div class="flegs">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ CASE STUDY MODAL ═══ -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modal">
+    <div class="modal-img">
+      <img id="modal-img-src" src="" alt=""/>
+      <div class="modal-img-ov"></div>
+      <button class="modal-close" onclick="closeModal()"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-ind" id="modal-ind"></div>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-metrics" id="modal-metrics"></div>
+      <div class="modal-section-title"><i class="fas fa-circle-check"></i> What We Did</div>
+      <ul class="modal-list" id="modal-what"></ul>
+      <div class="modal-section-title"><i class="fas fa-arrow-trend-up"></i> Key Results</div>
+      <ul class="modal-list" id="modal-results"></ul>
+      <div class="modal-tags" id="modal-tags"></div>
+      <div class="modal-footer">
+        <div class="modal-client" id="modal-client"></div>
+        <a href="#cta" class="btn btn-p" onclick="closeModal()">Start a Similar Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+/* Case study data */
+var cases = {
+  techflow:{img:"https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&h=500&q=88&auto=format&fit=crop",ind:"SaaS / B2B Technology",ind_ico:"fas fa-laptop-code",title:"TechFlow SaaS: 312% Traffic Growth and $2.4M Pipeline in 9 Months",desc:"TechFlow had near-zero organic search presence. In 9 months our technical SEO overhaul, content cluster strategy, and authority link building transformed their search presence into their #1 revenue channel.",metrics:[{v:"+312%",l:"Organic Traffic"},{v:"$2.4M",l:"Pipeline Generated"},{v:"47",l:"Keywords at #1"},{v:"9 Mo.",l:"Time to Results"}],what:["Full technical SEO audit identifying 340 crawl errors and Core Web Vitals failures","Rebuilt site architecture with a 3-tier pillar-cluster content model across 8 topic clusters","Produced 64 long-form content pieces targeting commercial-intent keywords","6-month white-hat link building campaign earning 180+ referring domains","Full GA4 attribution with custom pipeline tracking tied to closed revenue"],results:["Organic traffic grew from 8,200 to 33,800 monthly sessions (+312%)","47 target keywords moved to position #1 on Google","Organic became the #1 revenue channel, surpassing paid ads","$2.4M in attributed pipeline directly traceable to organic content","Featured in Clutch's Best SEO Campaign 2024"],tags:["Technical SEO","Content Strategy","Link Building","GA4","Schema"],client_img:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Sarah Johnson",client_co:"CEO, TechFlow SaaS"},
+  ecogear:{img:"https://images.unsplash.com/photo-1616469829941-c7200edec809?w=900&h=500&q=88&auto=format&fit=crop",ind:"E-Commerce / Retail",ind_ico:"fas fa-cart-shopping",title:"EcoGear: $1K to $50K Monthly Budget at 7.8x ROAS With Google Ads",desc:"EcoGear's in-house campaigns had no structure and a rough 2.1x ROAS. We rebuilt everything from scratch and scaled to $50K/month while improving ROAS to 7.8x.",metrics:[{v:"7.8x",l:"ROAS"},{v:"+340%",l:"Revenue"},{v:"$1K to $50K",l:"Budget Scaled"},{v:"-28%",l:"Cost/Conv."}],what:["Rebuilt campaign architecture with 6 campaign types","Implemented Smart Bidding with 90-day conversion window","Created 12 audience segments from CRM data","Launched Performance Max with 40+ creative variants","Merchant Center feed optimisation with margin-based bidding"],results:["ROAS improved from 2.1x to 7.8x","Budget scaled from $1K to $50K — a 50x increase","Revenue grew +340% in 12 months","Cost per conversion reduced 28%","Google Ads became the #1 customer acquisition channel"],tags:["Google Ads","Shopping","Performance Max","Smart Bidding"],client_img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Marcus Rodriguez",client_co:"Founder, EcoGear Store"},
+  wellness:{img:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=500&q=88&auto=format&fit=crop",ind:"Health & Wellness",ind_ico:"fas fa-heart-pulse",title:"Wellness Brands: 35% of Total Revenue from Email Automation",desc:"An 80,000-subscriber email list generating almost nothing. We rebuilt the entire email programme turning a dormant list into a revenue engine running on autopilot.",metrics:[{v:"+189%",l:"Email Revenue"},{v:"35%",l:"Of Total Revenue"},{v:"48%",l:"Open Rate"},{v:"4.2x",l:"Email ROI"}],what:["Audited existing Klaviyo account and identified 14 broken sequences","Built 9 new automation flows including Welcome, Cart, Win-Back, VIP","Implemented segmentation across 22 segments","Designed 6 branded email templates optimised for mobile and dark mode","Set up predictive analytics for churn prediction"],results:["Email revenue grew +189% in 6 months","Email now accounts for 35% of total monthly revenue","Average open rate grew from 12% to 48%","Abandoned cart recovery rate of 22% vs 8% industry average","Email programme now generates revenue 24/7 autonomously"],tags:["Klaviyo","Email Flows","Segmentation","A/B Testing"],client_img:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Amanda Lee",client_co:"CMO, Wellness Brands Co."},
+  lexgroup:{img:"https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&h=500&q=88&auto=format&fit=crop",ind:"Legal Services",ind_ico:"fas fa-scale-balanced",title:"LexGroup Law: 240% More Qualified Leads at 60% Lower Cost Per Lead",desc:"LexGroup was paying $420 per lead from generic directories. We moved them to Meta with hyper-local targeting and drove CPL down to $68 while tripling conversion rates.",metrics:[{v:"+240%",l:"Leads/Month"},{v:"-60%",l:"Cost Per Lead"},{v:"5.1x",l:"ROAS"},{v:"24%",l:"Consultation Rate"}],what:["Mapped 8 case types and built separate ad sets with tailored creative","Created a 3-step Meta lead qualification funnel","Built 12 hyper-local audience segments","Produced 24 case-type specific video ads","Implemented Meta CAPI with offline event matching"],results:["Monthly leads grew +240% within 4 months","Cost per lead dropped from $420 to $68","Consultation-to-client rate improved from 8% to 24%","ROAS reached 5.1x on closed case value","Expanded to two additional locations within 8 months"],tags:["Meta Ads","Lead Generation","Video","CAPI","Local"],client_img:"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Robert Chen",client_co:"Partner, LexGroup Law"},
+  fitlife:{img:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&h=500&q=88&auto=format&fit=crop",ind:"Health & Fitness App",ind_ico:"fas fa-dumbbell",title:"FitLife App: 410% Social Reach and 22K Downloads Without Paid Ads",desc:"FitLife had great retention but zero organic reach. We built a creator-led content engine across Instagram and TikTok driving 22K organic downloads in 6 months.",metrics:[{v:"+410%",l:"Social Reach"},{v:"22K",l:"Downloads"},{v:"-72%",l:"Acquisition Cost"},{v:"3.8M",l:"Impressions"}],what:["Developed brand content playbook with 6 content pillars","Built a micro-influencer UGC programme with 28 creators","Created short-form video template library with 18 formats","Launched #FitLifeChallenge generating 1.2M organic impressions","Implemented UTM tracking and App Store attribution"],results:["Instagram reach grew +410%; TikTok reached 140K followers from zero","22,000 organic app downloads attributed to social content","User acquisition cost dropped 72%","3.8 million total organic impressions in 6 months","14 pieces of earned media coverage from viral moments"],tags:["Instagram","TikTok","UGC","Content Strategy","Attribution"],client_img:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Sara Kim",client_co:"Head of Growth, FitLife App"},
+  luxe:{img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=500&q=88&auto=format&fit=crop",ind:"Fashion & Retail",ind_ico:"fas fa-shirt",title:"Luxe Fashion: 89% Conversion Lift and $600K Added Revenue via CRO",desc:"High traffic, low conversions. We ran 14 structured A/B tests over 90 days stacking improvements into an 89% overall conversion lift and $600K incremental revenue.",metrics:[{v:"+89%",l:"Conv. Rate"},{v:"$600K",l:"Added Revenue"},{v:"14",l:"A/B Tests"},{v:"-34%",l:"Cart Abandonment"}],what:["Full CRO audit using heatmaps, session recordings, and funnel analysis","Tested 4 product page layouts","Rebuilt checkout from 4 steps to 2 with guest checkout","A/B tested 6 cart abandonment email subject lines","Implemented dynamic social proof across all product pages"],results:["Conversion rate grew from 0.9% to 1.7% — an 89% lift","Cart abandonment reduced from 78% to 52%","$600K in incremental annual revenue without extra traffic","Best test: simplified checkout increased completions 44%","11 of 14 tests produced positive results"],tags:["CRO","A/B Testing","UX","Checkout","Heatmaps"],client_img:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Isabelle Dupont",client_co:"CEO, Luxe Fashion"},
+  healthfirst:{img:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&h=500&q=88&auto=format&fit=crop",ind:"Healthcare / Local SEO",ind_ico:"fas fa-hospital",title:"HealthFirst: 278% More Appointments Through Local SEO",desc:"A multi-location clinic competing against hospital networks. Our local SEO strategy helped each of 8 locations rank in the top 3 for their core service keywords.",metrics:[{v:"+278%",l:"Appointments"},{v:"8/8",l:"Locations at #1"},{v:"+195%",l:"Organic Traffic"},{v:"-41%",l:"Cost/Booking"}],what:["Audited all 8 Google Business Profiles and resolved 140+ NAP inconsistencies","Built 8 location-specific content hubs with 180 pages total","Implemented medical schema markup across the full site","Local link building targeting medical associations and local news","Monthly GBP optimisation across all 8 locations"],results:["All 8 locations rank top 3 for primary keywords","Appointments grew +278% year-over-year","Organic traffic increased +195%","Cost per booking reduced 41%","HealthFirst expanded to 2 new locations citing organic demand"],tags:["Local SEO","Google Business Profile","Medical Schema","Content"],client_img:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Dr. Sarah Thompson",client_co:"Director, HealthFirst Clinic"},
+  apex:{img:"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&h=500&q=88&auto=format&fit=crop",ind:"Financial Services",ind_ico:"fas fa-chart-pie",title:"Apex Finance: 44% Lower CPL and $1.8M Closed Deals From Google",desc:"Paying $280 per lead with no revenue attribution. We restructured campaigns, added offline conversion tracking, and delivered $1.8M in closed deals.",metrics:[{v:"-44%",l:"Cost Per Lead"},{v:"$1.8M",l:"Closed Revenue"},{v:"6.8x",l:"ROAS"},{v:"$280 to $157",l:"CPL Reduction"}],what:["Rebuilt campaigns with 3-tier intent structure","Implemented Salesforce offline conversion import","Built 8 custom audience segments with CRM + in-market signals","Created bid modifier scripts for time, device, and geography","A/B tested 32 ad copy variants across 6 ad groups"],results:["CPL reduced from $280 to $157 within 3 months","$1.8M in closed deals attributed to Google Ads","ROAS reached 6.8x on blended basis","Impression share on top-intent keywords grew from 34% to 78%","Lead quality score improved from 3.2 to 7.8 out of 10"],tags:["Google Search","Offline Conversions","Salesforce","Smart Bidding"],client_img:"https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"David Marsh",client_co:"CEO, Apex Financial"},
+  urbaneats:{img:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&h=500&q=88&auto=format&fit=crop",ind:"Restaurants & F&B",ind_ico:"fas fa-utensils",title:"Urban Eats: 320% More Reservations via Instagram and Email",desc:"4 premium locations with weak social and an unused email list. We built a visual-first Instagram strategy paired with weekly email campaigns turning their audience into a predictable reservation engine.",metrics:[{v:"+320%",l:"Reservations"},{v:"+180%",l:"Instagram Followers"},{v:"48%",l:"Email Open Rate"},{v:"-55%",l:"Empty Tables"}],what:["Monthly professional photo shoots producing 80+ assets per location","Content calendar with 5 posts per week per location","Weekly Tuesday email campaign targeting past diners","Birthday and anniversary sequence tied to reservation system","Private Instagram community for VIP diners"],results:["Monthly reservations grew +320% across all 4 locations","Instagram following grew +180%; reach grew +520%","Weekly emails achieve 48% open rates — 3x industry average","Empty table rate dropped from 34% to 15%","Opened a 5th location citing social and email-driven demand"],tags:["Instagram","Email Marketing","Content","Klaviyo","Community"],client_img:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&q=85&auto=format&fit=crop&crop=faces",client_name:"Marco Rossi",client_co:"Owner, Urban Eats Group"}
+};
+
+/* Modal */
+function openModal(id){
+  var c=cases[id];if(!c)return;
+  var bg=document.getElementById('modalBg');
+  document.getElementById('modal-img-src').src=c.img;
+  document.getElementById('modal-img-src').alt=c.title;
+  document.getElementById('modal-ind').innerHTML='<i class="'+c.ind_ico+'"></i> '+c.ind;
+  document.getElementById('modal-title').textContent=c.title;
+  document.getElementById('modal-desc').textContent=c.desc;
+  var mEl=document.getElementById('modal-metrics');mEl.innerHTML='';
+  c.metrics.forEach(function(m){mEl.innerHTML+='<div class="mm"><div class="mm-v">'+m.v+'</div><div class="mm-l">'+m.l+'</div></div>'});
+  var wEl=document.getElementById('modal-what');wEl.innerHTML='';
+  c.what.forEach(function(w){wEl.innerHTML+='<li><i class="fas fa-circle-check"></i> '+w+'</li>'});
+  var rEl=document.getElementById('modal-results');rEl.innerHTML='';
+  c.results.forEach(function(r){rEl.innerHTML+='<li><i class="fas fa-arrow-trend-up"></i> '+r+'</li>'});
+  var tEl=document.getElementById('modal-tags');tEl.innerHTML='';
+  c.tags.forEach(function(t){tEl.innerHTML+='<span class="modal-tag">'+t+'</span>'});
+  document.getElementById('modal-client').innerHTML='<div class="modal-av"><img src="'+c.client_img+'" alt="'+c.client_name+'"/></div><div><div class="modal-cname">'+c.client_name+'</div><div class="modal-cco">'+c.client_co+'</div></div>';
+  bg.classList.add('open');document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('modalBg').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('modalBg').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+
+/* Filter tabs */
+document.querySelectorAll('.ftab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.ftab').forEach(function(t){t.classList.remove('active')});
+    tab.classList.add('active');
+    var filter=tab.dataset.filter;
+    document.querySelectorAll('.cs-card,.feat-card').forEach(function(card){
+      if(filter==='all'){card.style.display='';card.style.opacity='1'}
+      else{var cats=(card.dataset.cats||'').split(' ');var show=cats.indexOf(filter)!==-1;card.style.display=show?'':'none';card.style.opacity=show?'1':'0'}
+    });
+  });
+});
+
+/* Cursor */
+var CR=document.getElementById('cur'),RG=document.getElementById('ring');
+var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;CR.style.left=mx+'px';CR.style.top=my+'px'});
+(function t(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;RG.style.left=rx+'px';RG.style.top=ry+'px';requestAnimationFrame(t)})();
+document.querySelectorAll('a,button,.cs-card,.tsc,.ind-card,.acard').forEach(function(el){
+  el.addEventListener('mouseenter',function(){CR.style.width='18px';CR.style.height='18px';RG.style.width='54px';RG.style.height='54px'});
+  el.addEventListener('mouseleave',function(){CR.style.width='10px';CR.style.height='10px';RG.style.width='38px';RG.style.height='38px'});
+});
+
+/* Navbar */
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('sc',window.scrollY>60)});
+
+/* Back to top */
+var bt=document.getElementById('bt');
+window.addEventListener('scroll',function(){bt.classList.toggle('on',window.scrollY>400)});
+bt.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+
+/* Hamburger */
+document.getElementById('hbg').addEventListener('click',function(){document.getElementById('mob').classList.add('open');document.body.style.overflow='hidden'});
+document.getElementById('mclose').addEventListener('click',closeMob);
+function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow=''}
+
+/* Chat */
+document.getElementById('chatBtn').addEventListener('click',function(){document.getElementById('chatPop').classList.toggle('open')});
+document.addEventListener('click',function(e){if(!e.target.closest('.chat'))document.getElementById('chatPop').classList.remove('open')});
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id==='#')return;var t=document.querySelector(id);if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'})}});
+});
+
+/* Scroll reveal */
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){
+      var sibs=Array.from(en.target.parentElement.children).filter(function(c){return c.classList.contains('rv')});
+      var idx=sibs.indexOf(en.target);
+      setTimeout(function(){en.target.classList.add('on')},idx*80);
+      observer.unobserve(en.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){observer.observe(el)});
+
+/* Counters */
+function animCount(el){
+  var tgt=parseInt(el.dataset.to),px=el.dataset.px||'',sx=el.dataset.sx||'';
+  var step=tgt/(2200/16);var c=0;
+  var timer=setInterval(function(){c+=step;if(c>=tgt){c=tgt;clearInterval(timer)}el.textContent=px+Math.floor(c)+sx},16);
+}
+var rbGrid=document.querySelector('.rb-grid');
+if(rbGrid){
+  var counted=false;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting&&!counted){counted=true;en.target.querySelectorAll('[data-to]').forEach(animCount)}});
+  },{threshold:0.3}).observe(rbGrid);
+}
+</script>
+</body>
+</html>

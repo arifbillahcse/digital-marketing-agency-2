@@ -1,0 +1,1476 @@
+<?php /* NovaMark – Services – NovaMark Digital Marketing Agency */ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services – NovaMark Digital Marketing Agency</title>
+<meta name="description" content="Explore NovaMark's full suite of data-driven digital marketing services — SEO, Google Ads, Social Media, Content, Email, CRO and more."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous"/>
+<style>
+/* ═══════════════════════════════
+   ROOT + RESET
+═══════════════════════════════ */
+:root{
+  --ink:#060C18;--ink2:#0D1525;--ink3:#111E32;
+  --muted:#8897B3;--border:rgba(255,255,255,0.07);
+  --white:#fff;
+  --c1:#00D4FF;--c2:#3A7BFF;--c3:#7C3AED;
+  --grad:linear-gradient(135deg,var(--c1),var(--c2),var(--c3));
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--r-xl:36px;
+  --sh:0 20px 60px rgba(0,0,0,.3);
+  --sh-glow:0 0 40px rgba(58,123,255,.28);
+  --trans:.3s cubic-bezier(.4,0,.2,1);
+  --font-h:'Outfit',sans-serif;
+  --font-b:'Plus Jakarta Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--ink);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-label{display:inline-flex;align-items:center;gap:8px;background:rgba(58,123,255,.1);border:1px solid rgba(58,123,255,.25);color:#7EB3FF;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.section-title{font-family:var(--font-h);font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:800;line-height:1.1;letter-spacing:-.025em}
+.section-sub{color:var(--muted);font-size:1rem;line-height:1.75;max-width:580px}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:100px;font-size:.9rem;font-weight:600;transition:all var(--trans);position:relative;overflow:hidden;white-space:nowrap}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.09);opacity:0;transition:opacity var(--trans)}
+.btn:hover::after{opacity:1}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 22px rgba(58,123,255,.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.18);color:#fff}
+.btn-outline:hover{border-color:rgba(58,123,255,.6);box-shadow:0 0 22px rgba(58,123,255,.18)}
+.btn-lg{padding:14px 34px;font-size:1rem}
+.btn-ghost{padding:13px 28px;border:1.5px solid rgba(255,255,255,.2);color:#fff;border-radius:100px;font-size:1rem;font-weight:600;display:inline-flex;align-items:center;gap:9px;transition:all var(--trans)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+
+/* ═══════════════════════════════
+   CURSOR
+═══════════════════════════════ */
+.cursor{width:10px;height:10px;background:var(--c1);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+.cursor-ring{width:38px;height:38px;border:1.5px solid rgba(0,212,255,.45);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+
+/* ═══════════════════════════════
+   NAVBAR
+═══════════════════════════════ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--trans),box-shadow var(--trans)}
+.navbar.scrolled{background:rgba(6,12,24,.9);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav-inner{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.logo{font-family:var(--font-h);font-size:1.55rem;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
+.logo-dot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--trans);position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--trans);border-radius:2px}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a.active::after,.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px}
+.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--trans)}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(30px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--trans)}
+.mobile-menu a:hover{color:var(--c1)}
+.mobile-close{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer}
+
+/* ═══════════════════════════════
+   PAGE HERO — SPLIT LAYOUT
+═══════════════════════════════ */
+.page-hero{
+  min-height:100vh;
+  padding:110px 24px 80px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.ph-blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.13;animation:blob-f 11s ease-in-out infinite}
+.ph-b1{width:600px;height:600px;background:var(--c2);top:-180px;left:-80px;animation-delay:0s}
+.ph-b2{width:420px;height:420px;background:var(--c3);bottom:-60px;right:10%;animation-delay:4s}
+.ph-b3{width:260px;height:260px;background:var(--c1);top:40%;right:30%;animation-delay:7s}
+@keyframes blob-f{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-28px) scale(1.04)}66%{transform:translate(-14px,18px) scale(.97)}}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(58,123,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(58,123,255,.04) 1px,transparent 1px);background-size:56px 56px}
+/* Diagonal accent lines */
+.ph-line{position:absolute;width:1px;background:linear-gradient(to bottom,transparent,rgba(58,123,255,.22),transparent);top:0;bottom:0;pointer-events:none}
+.ph-line-1{left:33%}.ph-line-2{right:33%}
+
+/* Two-column inner */
+.ph-inner{
+  position:relative;z-index:1;
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+}
+
+/* ── Left: text ── */
+.ph-content{}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted);margin-bottom:24px;animation:fade-up .7s ease both}
+.breadcrumb a{transition:color var(--trans)}.breadcrumb a:hover{color:#fff}
+.breadcrumb i{font-size:.6rem;opacity:.5}
+.ph-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);color:var(--c1);font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:22px;animation:fade-up .7s ease .05s both}
+.ph-badge-dot{width:6px;height:6px;background:var(--c1);border-radius:50%;animation:pulse-dot 1.5s infinite}
+.ph-title{font-family:var(--font-h);font-size:clamp(2.6rem,4.5vw,3.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;margin-bottom:20px;animation:fade-up .7s ease .1s both}
+.ph-sub{color:var(--muted);font-size:1rem;line-height:1.78;margin-bottom:36px;max-width:480px;animation:fade-up .7s ease .2s both}
+.ph-cta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;animation:fade-up .7s ease .3s both}
+
+/* Trust strip */
+.ph-trust{display:flex;align-items:center;gap:20px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.07);animation:fade-up .7s ease .42s both;flex-wrap:wrap}
+.ph-trust-avatars{display:flex;align-items:center}
+.ph-trust-avatars img{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);object-fit:cover;margin-left:-10px}
+.ph-trust-avatars img:first-child{margin-left:0}
+.ph-trust-text{font-size:.8rem;color:var(--muted)}
+.ph-trust-text strong{color:#fff;font-weight:700}
+.ph-trust-stars{color:#FBBF24;font-size:.75rem;margin-bottom:2px}
+
+@keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-dot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
+
+/* ── Right: image mosaic ── */
+.ph-visual{
+  position:relative;
+  height:560px;
+  animation:fade-up .9s ease .28s both;
+}
+
+/* Main large image — top-left */
+.ph-img-main{
+  position:absolute;
+  top:0;left:0;
+  width:68%;height:65%;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);
+}
+.ph-img-main img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  filter:brightness(.85) contrast(1.05);
+  transition:transform 7s ease;
+}
+.ph-img-main:hover img{transform:scale(1.04)}
+/* Dark blue tint overlay */
+.ph-img-main::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(6,12,24,.35) 0%,rgba(58,123,255,.12) 100%);
+  border-radius:var(--r-lg);pointer-events:none;
+}
+
+/* Bottom-right tall image */
+.ph-img-b{
+  position:absolute;
+  bottom:0;right:0;
+  width:46%;height:72%;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);
+}
+.ph-img-b img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+  filter:brightness(.8) contrast(1.05) saturate(.9);
+  transition:transform 7s ease;
+}
+.ph-img-b:hover img{transform:scale(1.04)}
+.ph-img-b::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(6,12,24,.1) 0%,rgba(124,58,237,.18) 100%);
+  border-radius:var(--r-lg);pointer-events:none;
+}
+
+/* Small accent image — bottom-left */
+.ph-img-s{
+  position:absolute;
+  bottom:0;left:0;
+  width:46%;height:38%;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 16px 48px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);
+}
+.ph-img-s img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  filter:brightness(.75) contrast(1.1) saturate(.85);
+}
+.ph-img-s::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(6,12,24,.45));
+  border-radius:var(--r-lg);pointer-events:none;
+}
+
+/* Service label badges on each image */
+.ph-img-tag{
+  position:absolute;
+  top:14px;left:14px;
+  background:rgba(6,12,24,.78);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:100px;
+  padding:5px 14px;
+  font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;
+  display:flex;align-items:center;gap:6px;
+  z-index:3;
+}
+.ph-img-tag .tag-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* Floating stat cards */
+.ph-fc{
+  position:absolute;
+  background:rgba(8,14,28,.88);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r-md);
+  padding:13px 18px;
+  display:flex;align-items:center;gap:11px;
+  box-shadow:0 16px 48px rgba(0,0,0,.5);
+  z-index:10;
+  white-space:nowrap;
+}
+.ph-fc-ico{
+  width:36px;height:36px;
+  background:var(--grad);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;color:#fff;flex-shrink:0;
+}
+.ph-fc-val{font-family:var(--font-h);font-size:1rem;font-weight:800;color:#fff;line-height:1}
+.ph-fc-lbl{font-size:.67rem;color:var(--muted);margin-top:2px}
+
+/* Card positions & animations */
+.ph-fc-1{top:-18px;right:10%;animation:fc-float1 4.5s ease-in-out infinite}
+.ph-fc-2{top:38%;left:-44px;animation:fc-float2 5.2s ease-in-out infinite}
+.ph-fc-3{bottom:34%;right:-40px;animation:fc-float3 4s ease-in-out infinite}
+.ph-fc-4{bottom:-18px;left:22%;animation:fc-float4 5.8s ease-in-out infinite}
+
+@keyframes fc-float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes fc-float2{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+@keyframes fc-float3{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes fc-float4{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+/* Glow between images */
+.ph-glow{
+  position:absolute;
+  width:200px;height:200px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(58,123,255,.22),transparent 70%);
+  top:30%;left:52%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  animation:glow-pulse 4s ease-in-out infinite;
+}
+@keyframes glow-pulse{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.3)}}
+
+/* Responsive */
+@media(max-width:1024px){
+  .ph-inner{grid-template-columns:1fr;gap:52px}
+  .ph-visual{height:420px}
+  .ph-sub{max-width:100%}
+  .ph-title{font-size:2.8rem}
+}
+@media(max-width:768px){
+  .ph-visual{height:300px}
+  .ph-fc-2,.ph-fc-3{display:none}
+  .ph-title{font-size:2.2rem}
+}
+
+/* Scrolling stats bar */
+.stats-bar{
+  background:rgba(255,255,255,.03);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:22px 24px;
+  overflow:hidden;
+  position:relative;
+  z-index:2;
+}
+.stats-bar-track{display:flex;gap:72px;animation:sb-scroll 22s linear infinite;width:max-content}
+.stats-bar-track:hover{animation-play-state:paused}
+.sb-item{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.sb-icon{width:36px;height:36px;background:var(--grad);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;flex-shrink:0}
+.sb-val{font-family:var(--font-h);font-size:1.2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sb-lbl{font-size:.78rem;color:var(--muted);font-weight:500}
+@keyframes sb-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══════════════════════════════
+   STICKY SERVICE NAV TABS
+═══════════════════════════════ */
+.svc-tabs{
+  position:sticky;
+  top:74px;
+  z-index:800;
+  background:rgba(6,12,24,.92);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  padding:0 24px;
+}
+.svc-tabs-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
+.svc-tabs-inner::-webkit-scrollbar{display:none}
+.svc-tab{padding:16px 22px;font-size:.82rem;font-weight:600;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:color var(--trans),border-color var(--trans);display:flex;align-items:center;gap:7px;cursor:pointer}
+.svc-tab:hover{color:#fff}
+.svc-tab.active{color:#fff;border-bottom-color:var(--c2)}
+.svc-tab i{font-size:.82rem}
+
+/* ═══════════════════════════════
+   SERVICE SECTIONS (deep-dives)
+═══════════════════════════════ */
+.svc-section{padding:100px 24px;position:relative;scroll-margin-top:140px}
+.svc-section:nth-child(even){background:linear-gradient(180deg,transparent,rgba(58,123,255,.025),transparent)}
+.svc-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.svc-inner.reverse{direction:rtl}
+.svc-inner.reverse > *{direction:ltr}
+
+/* Image side */
+.svc-img-wrap{position:relative;border-radius:var(--r-lg);overflow:visible}
+.svc-img-main{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  object-position:center;
+  border-radius:var(--r-lg);
+  display:block;
+  transition:transform .6s ease;
+  box-shadow:0 32px 80px rgba(0,0,0,.4);
+}
+.svc-img-wrap:hover .svc-img-main{transform:scale(1.02)}
+.svc-img-accent{
+  position:absolute;
+  bottom:-20px;
+  right:-20px;
+  width:160px;
+  height:130px;
+  object-fit:cover;
+  border-radius:var(--r-md);
+  border:3px solid var(--ink);
+  box-shadow:0 16px 40px rgba(0,0,0,.5);
+}
+.svc-inner.reverse .svc-img-accent{right:auto;left:-20px}
+.svc-img-badge{
+  position:absolute;
+  top:-16px;
+  left:-16px;
+  background:rgba(6,12,24,.92);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r-md);
+  padding:14px 18px;
+  display:flex;align-items:center;gap:12px;
+  box-shadow:0 12px 40px rgba(0,0,0,.5);
+  z-index:5;
+}
+.svc-inner.reverse .svc-img-badge{left:auto;right:-16px}
+.sib-icon{width:38px;height:38px;background:var(--grad);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0}
+.sib-val{font-family:var(--font-h);font-size:1.3rem;font-weight:900;line-height:1}
+.sib-lbl{font-size:.7rem;color:var(--muted);margin-top:2px}
+
+/* Content side */
+.svc-content{}
+.svc-num{font-family:var(--font-h);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c2);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.svc-num::before{content:'';display:block;width:28px;height:1.5px;background:var(--c2)}
+.svc-title{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin-bottom:16px}
+.svc-desc{color:var(--muted);font-size:.97rem;line-height:1.8;margin-bottom:28px}
+.svc-deliverables{display:flex;flex-direction:column;gap:11px;margin-bottom:32px}
+.svc-del{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;line-height:1.55}
+.svc-del i{color:var(--c1);font-size:.8rem;margin-top:3px;flex-shrink:0}
+.svc-del strong{color:#fff;font-weight:600}
+.svc-del-sub{color:var(--muted);font-size:.83rem}
+.svc-cta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* Result pill */
+.svc-result{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(0,212,255,.07);
+  border:1px solid rgba(0,212,255,.18);
+  border-radius:100px;
+  padding:8px 18px 8px 10px;
+  margin-bottom:28px;
+}
+.sr-dot{width:32px;height:32px;background:rgba(0,212,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--c1);font-size:.85rem;flex-shrink:0}
+.sr-text{font-size:.82rem;color:rgba(255,255,255,.8)}.sr-text strong{color:var(--c1)}
+
+/* ═══════════════════════════════
+   SERVICES OVERVIEW GRID
+═══════════════════════════════ */
+.overview{padding:80px 24px 40px}
+.overview-head{text-align:center;margin-bottom:56px}
+.overview-head .section-sub{margin:16px auto 0}
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto}
+.ov-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-md);
+  padding:26px 22px;
+  cursor:pointer;
+  transition:all var(--trans);
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+.ov-card::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity var(--trans)}
+.ov-card:hover{transform:translateY(-6px);border-color:rgba(58,123,255,.3);box-shadow:var(--sh-glow)}
+.ov-card:hover::before{opacity:.05}
+.ov-ico{width:52px;height:52px;background:var(--grad);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;margin:0 auto 16px;transition:transform var(--trans)}
+.ov-card:hover .ov-ico{transform:scale(1.12) rotate(-6deg)}
+.ov-name{font-family:var(--font-h);font-size:.95rem;font-weight:700;margin-bottom:8px}
+.ov-blurb{font-size:.78rem;color:var(--muted);line-height:1.6}
+
+/* ═══════════════════════════════
+   PROCESS SECTION
+═══════════════════════════════ */
+.process{padding:110px 24px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.04),transparent)}
+.process-head{text-align:center;margin-bottom:80px}
+.process-head .section-sub{margin:16px auto 0}
+.process-steps{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+/* connector line */
+.process-steps::before{content:'';position:absolute;top:44px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(58,123,255,.3) 20%,rgba(124,58,237,.3) 80%,transparent);z-index:0}
+.process-step{text-align:center;position:relative;z-index:1;padding:0 12px}
+.ps-num{width:88px;height:88px;border-radius:50%;background:var(--ink2);border:2px solid rgba(58,123,255,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:var(--font-h);font-size:1.8rem;font-weight:900;color:rgba(255,255,255,.15);position:relative;transition:all var(--trans)}
+.ps-num::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--grad);opacity:0;z-index:-1;transition:opacity var(--trans)}
+.process-step:hover .ps-num{color:#fff;border-color:transparent;box-shadow:0 0 30px rgba(58,123,255,.4)}
+.process-step:hover .ps-num::after{opacity:1}
+.ps-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;transition:opacity var(--trans)}
+.ps-num-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.8rem;font-weight:900;transition:opacity var(--trans)}
+.ps-title{font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:9px}
+.ps-desc{font-size:.8rem;color:var(--muted);line-height:1.65}
+
+/* ═══════════════════════════════
+   TOOLS & TECH
+═══════════════════════════════ */
+.tools{padding:80px 24px}
+.tools-head{text-align:center;margin-bottom:52px}
+.tools-head .section-sub{margin:16px auto 0}
+.tools-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.tool-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-md);
+  padding:20px 14px;
+  text-align:center;
+  transition:all var(--trans);
+  cursor:default;
+}
+.tool-card:hover{background:rgba(255,255,255,.065);border-color:rgba(58,123,255,.25);transform:translateY(-4px)}
+.tool-ico{font-size:1.8rem;margin-bottom:9px;display:block}
+.tool-name{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.04em}
+
+/* ═══════════════════════════════
+   MINI CASE STUDIES
+═══════════════════════════════ */
+.cases{padding:100px 24px;background:linear-gradient(180deg,transparent,rgba(0,212,255,.03),transparent)}
+.cases-head{max-width:1200px;margin:0 auto 52px;display:flex;justify-content:space-between;align-items:flex-end}
+.cases-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.case-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  transition:all var(--trans);
+}
+.case-card:hover{transform:translateY(-7px);border-color:rgba(58,123,255,.25);box-shadow:0 24px 64px rgba(0,0,0,.3)}
+.case-img{height:220px;position:relative;overflow:hidden}
+.case-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease}
+.case-card:hover .case-img img{transform:scale(1.07)}
+.case-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,24,.05),rgba(6,12,24,.65))}
+.case-industry{position:absolute;top:14px;left:14px;background:rgba(6,12,24,.75);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);color:var(--c1);font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:100px}
+.case-body{padding:26px}
+.case-company{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.case-title{font-family:var(--font-h);font-size:1.05rem;font-weight:700;line-height:1.38;margin-bottom:16px;transition:color var(--trans)}
+.case-card:hover .case-title{color:var(--c1)}
+.case-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.case-stat{background:rgba(255,255,255,.04);border-radius:var(--r-sm);padding:12px}
+.cs-val{font-family:var(--font-h);font-size:1.3rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cs-lbl{font-size:.7rem;color:var(--muted)}
+.case-link{font-size:.82rem;font-weight:700;color:#7EB3FF;display:flex;align-items:center;gap:6px;transition:gap var(--trans)}
+.case-card:hover .case-link{gap:10px}
+
+/* ═══════════════════════════════
+   TESTIMONIALS STRIP
+═══════════════════════════════ */
+.testi-strip{padding:80px 24px}
+.ts-head{text-align:center;margin-bottom:52px}
+.ts-head .section-sub{margin:16px auto 0}
+.ts-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ts-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:32px;transition:all var(--trans)}
+.ts-card:hover{border-color:rgba(124,58,237,.28);transform:translateY(-5px)}
+.ts-quote{font-size:3rem;line-height:1;color:var(--c3);opacity:.3;font-family:Georgia,serif;margin-bottom:14px}
+.ts-stars{color:#FBBF24;font-size:.8rem;display:flex;gap:3px;margin-bottom:14px}
+.ts-text{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:24px}
+.ts-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.07);padding-top:18px}
+.ts-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,.1)}
+.ts-avatar img{width:100%;height:100%;object-fit:cover}
+.ts-name{font-weight:700;font-size:.88rem}
+.ts-company{font-size:.73rem;color:var(--muted)}
+
+/* ═══════════════════════════════
+   CTA BANNER
+═══════════════════════════════ */
+.cta-banner{padding:72px 24px}
+.cta-inner{max-width:1080px;margin:0 auto;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(58,123,255,.12),rgba(124,58,237,.08));border:1px solid rgba(58,123,255,.25);border-radius:var(--r-xl);padding:72px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-inner::before{content:'';position:absolute;top:-50%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(58,123,255,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-inner::after{content:'';position:absolute;bottom:-50%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-content{position:relative;z-index:1}
+.cta-title{font-family:var(--font-h);font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:900;letter-spacing:-.025em;margin-bottom:14px}
+.cta-desc{color:var(--muted);font-size:1rem;margin:0 auto 36px;max-width:480px}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+.footer{background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);padding:76px 24px 30px}
+.footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:60px}
+.footer-brand p{color:var(--muted);font-size:.86rem;line-height:1.7;margin:14px 0 22px;max-width:270px}
+.footer-col h4{font-family:var(--font-h);font-size:.88rem;font-weight:700;margin-bottom:18px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:.85rem;color:var(--muted);transition:color var(--trans)}
+.footer-links a:hover{color:#fff}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-legal{font-size:.8rem;color:var(--muted)}
+.footer-legal-links{display:flex;gap:18px}
+.footer-legal-links a{font-size:.8rem;color:var(--muted);transition:color var(--trans)}
+.footer-legal-links a:hover{color:#fff}
+.social-links{display:flex;gap:10px}
+.social-link{width:38px;height:38px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;transition:all var(--trans)}
+.social-link:hover{background:var(--grad);border-color:transparent;color:#fff;transform:translateY(-3px)}
+
+/* Back to top + chat */
+.back-top{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:var(--grad);border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;box-shadow:0 8px 26px rgba(58,123,255,.45);transition:all var(--trans);opacity:0;pointer-events:none;z-index:500}
+.back-top.visible{opacity:1;pointer-events:all}
+.back-top:hover{transform:translateY(-4px)}
+.chat-widget{position:fixed;bottom:30px;left:30px;z-index:500}
+.chat-btn{width:54px;height:54px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;box-shadow:0 8px 28px rgba(58,123,255,.5);cursor:pointer;transition:all var(--trans);position:relative}
+.chat-btn::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(58,123,255,.3);animation:chat-ping 2s ease infinite}
+@keyframes chat-ping{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.chat-btn:hover{transform:scale(1.1)}
+.chat-popup{position:absolute;bottom:66px;left:0;width:270px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:20px;display:none;box-shadow:var(--sh)}
+.chat-popup.open{display:block}
+.chat-popup h4{font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:5px}
+.chat-popup p{font-size:.8rem;color:var(--muted);margin-bottom:14px}
+.chat-start{display:block;text-align:center;padding:10px;background:var(--grad);color:#fff;border-radius:8px;font-size:.83rem;font-weight:600}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media(max-width:1024px){
+  .svc-inner{grid-template-columns:1fr;gap:44px}
+  .svc-inner.reverse{direction:ltr}
+  .svc-img-badge{left:16px;right:auto}
+  .svc-inner.reverse .svc-img-badge{right:auto;left:16px}
+  .svc-img-accent{right:16px;bottom:-12px}
+  .svc-inner.reverse .svc-img-accent{left:16px;right:auto}
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .process-steps{grid-template-columns:1fr 1fr;gap:36px}
+  .process-steps::before{display:none}
+  .tools-grid{grid-template-columns:repeat(4,1fr)}
+  .cases-grid{grid-template-columns:1fr 1fr}
+  .ts-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .process-steps{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(3,1fr)}
+  .cases-grid{grid-template-columns:1fr}
+  .ts-grid{grid-template-columns:1fr}
+  .cases-head{flex-direction:column;align-items:flex-start;gap:14px}
+  .cta-inner{padding:44px 26px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;gap:14px;text-align:center}
+  .cursor,.cursor-ring{display:none}
+  .back-top{right:14px;bottom:14px}
+  .chat-widget{left:14px;bottom:14px}
+  .ph-title{font-size:2.8rem}
+  .svc-section{padding:72px 24px}
+}
+@media(max-width:480px){
+  .overview-grid{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr}
+  .footer-legal-links{flex-direction:column;gap:8px;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Back to Top -->
+<a href="#" class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></a>
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+  <div class="chat-btn" id="chatBtn"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-popup" id="chatPopup">
+    <h4>👋 Let's Talk!</h4>
+    <p>Ready to scale your marketing? Start a conversation with our team right now.</p>
+    <a href="#cta" class="chat-start" onclick="document.getElementById('chatPopup').classList.remove('open')">Get Free Consultation</a>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" id="mobileClose"><i class="fas fa-xmark"></i></span>
+  <a href="index.php" onclick="closeMob()">Home</a>
+  <a href="#overview" onclick="closeMob()">Services</a>
+  <a href="#process" onclick="closeMob()">Process</a>
+  <a href="#cases" onclick="closeMob()">Case Studies</a>
+  <a href="#cta" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.php" class="logo"><div class="logo-dot"></div>Nova<span class="grad-text">Mark</span></a>
+    <ul class="nav-links">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="services.php" class="active">Services</a></li>
+      <li><a href="#">Why Us</a></li>
+      <li><a href="#">Case Studies</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-outline">Login</a>
+      <a href="#cta" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ════════ PAGE HERO ════════ -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <div class="ph-blob ph-b1"></div>
+    <div class="ph-blob ph-b2"></div>
+    <div class="ph-blob ph-b3"></div>
+    <div class="ph-grid"></div>
+    <div class="ph-line ph-line-1"></div>
+    <div class="ph-line ph-line-2"></div>
+  </div>
+
+  <div class="ph-inner">
+
+    <!-- ── LEFT: Text Content ── -->
+    <div class="ph-content">
+      <div class="breadcrumb">
+        <a href="index.php">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span style="color:#fff">Services</span>
+      </div>
+
+      <div class="ph-badge">
+        <span class="ph-badge-dot"></span>
+        Full-Service Digital Marketing
+      </div>
+
+      <h1 class="ph-title">
+        Services That<br/><span class="grad-text">Grow Brands.</span>
+      </h1>
+
+      <p class="ph-sub">From organic search to paid ads, social media to email automation — NovaMark delivers data-driven strategies that turn clicks into customers and budgets into business growth.</p>
+
+      <div class="ph-cta">
+        <a href="#overview" class="btn btn-primary">Explore All Services <i class="fas fa-arrow-down"></i></a>
+        <a href="#cta" class="btn-ghost" style="padding:10px 22px;font-size:.88rem"><i class="fas fa-calendar-check"></i> Book Free Audit</a>
+      </div>
+
+      <!-- Trust row -->
+      <div class="ph-trust">
+        <div class="ph-trust-avatars">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=68&h=68&q=85&auto=format&fit=crop&crop=faces" alt="Client"/>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=68&h=68&q=85&auto=format&fit=crop&crop=faces" alt="Client"/>
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=68&h=68&q=85&auto=format&fit=crop&crop=faces" alt="Client"/>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=68&h=68&q=85&auto=format&fit=crop&crop=faces" alt="Client"/>
+        </div>
+        <div class="ph-trust-text">
+          <div class="ph-trust-stars">★★★★★</div>
+          <div>Trusted by <strong>150+ businesses</strong> worldwide</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RIGHT: Dark Image Mosaic ── -->
+    <div class="ph-visual">
+
+      <!-- Glow orb between images -->
+      <div class="ph-glow"></div>
+
+      <!-- Main large image — dark analytics/dashboard theme -->
+      <div class="ph-img-main">
+        <div class="ph-img-tag"><span class="tag-dot" style="background:var(--c1)"></span> Analytics & Strategy</div>
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=700&q=90&auto=format&fit=crop&crop=center"
+          alt="Data-driven marketing analytics dashboard"
+          loading="eager"/>
+      </div>
+
+      <!-- Tall image — bottom right: dark workspace / campaign management -->
+      <div class="ph-img-b">
+        <div class="ph-img-tag"><span class="tag-dot" style="background:var(--c3)"></span> Paid Ads</div>
+        <img
+          src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&h=900&q=90&auto=format&fit=crop&crop=center"
+          alt="Campaign management dark workspace"
+          loading="eager"/>
+      </div>
+
+      <!-- Small image — bottom left: dark SEO / content work -->
+      <div class="ph-img-s">
+        <div class="ph-img-tag"><span class="tag-dot" style="background:#34D399"></span> SEO & Content</div>
+        <img
+          src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=700&h=400&q=90&auto=format&fit=crop&crop=center"
+          alt="SEO content strategy dark environment"
+          loading="eager"/>
+      </div>
+
+      <!-- Floating stat card 1 — top right -->
+      <div class="ph-fc ph-fc-1">
+        <div class="ph-fc-ico"><i class="fas fa-chart-line"></i></div>
+        <div>
+          <div class="ph-fc-val">+300%</div>
+          <div class="ph-fc-lbl">Avg. Traffic Growth</div>
+        </div>
+      </div>
+
+      <!-- Floating stat card 2 — left side -->
+      <div class="ph-fc ph-fc-2">
+        <div class="ph-fc-ico"><i class="fas fa-bullseye"></i></div>
+        <div>
+          <div class="ph-fc-val">6.2× ROAS</div>
+          <div class="ph-fc-lbl">Return on Ad Spend</div>
+        </div>
+      </div>
+
+      <!-- Floating stat card 3 — right side -->
+      <div class="ph-fc ph-fc-3">
+        <div class="ph-fc-ico"><i class="fas fa-star"></i></div>
+        <div>
+          <div class="ph-fc-val">4.9 / 5.0</div>
+          <div class="ph-fc-lbl">Client Rating</div>
+        </div>
+      </div>
+
+      <!-- Floating stat card 4 — bottom -->
+      <div class="ph-fc ph-fc-4">
+        <div class="ph-fc-ico"><i class="fas fa-users"></i></div>
+        <div>
+          <div class="ph-fc-val">150+ Clients</div>
+          <div class="ph-fc-lbl">Across 20+ Industries</div>
+        </div>
+      </div>
+
+    </div><!-- /ph-visual -->
+  </div><!-- /ph-inner -->
+</section>
+
+<!-- Scrolling stats bar -->
+<div class="stats-bar">
+  <div class="stats-bar-track">
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-chart-line"></i></div><div><div class="sb-val">300%</div><div class="sb-lbl">Avg. Traffic Growth</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-bullseye"></i></div><div><div class="sb-val">6.2×</div><div class="sb-lbl">Average ROAS</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-users"></i></div><div><div class="sb-val">150+</div><div class="sb-lbl">Happy Clients</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-trophy"></i></div><div><div class="sb-val">$2M+</div><div class="sb-lbl">Ad Revenue Generated</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-star"></i></div><div><div class="sb-val">4.9★</div><div class="sb-lbl">Client Rating</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-clock"></i></div><div><div class="sb-val">8+ Yrs</div><div class="sb-lbl">Industry Experience</div></div></div>
+    <!-- duplicate for loop -->
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-chart-line"></i></div><div><div class="sb-val">300%</div><div class="sb-lbl">Avg. Traffic Growth</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-bullseye"></i></div><div><div class="sb-val">6.2×</div><div class="sb-lbl">Average ROAS</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-users"></i></div><div><div class="sb-val">150+</div><div class="sb-lbl">Happy Clients</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-trophy"></i></div><div><div class="sb-val">$2M+</div><div class="sb-lbl">Ad Revenue Generated</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-star"></i></div><div><div class="sb-val">4.9★</div><div class="sb-lbl">Client Rating</div></div></div>
+    <div class="sb-item"><div class="sb-icon"><i class="fas fa-clock"></i></div><div><div class="sb-val">8+ Yrs</div><div class="sb-lbl">Industry Experience</div></div></div>
+  </div>
+</div>
+
+<!-- ════════ STICKY TABS ════════ -->
+<div class="svc-tabs" id="svcTabs">
+  <div class="svc-tabs-inner">
+    <div class="svc-tab active" data-target="seo"><i class="fas fa-magnifying-glass-chart"></i> SEO</div>
+    <div class="svc-tab" data-target="social-media"><i class="fas fa-hashtag"></i> Social Media</div>
+    <div class="svc-tab" data-target="paid-ads"><i class="fas fa-bullseye"></i> Paid Ads</div>
+    <div class="svc-tab" data-target="web-design"><i class="fas fa-code"></i> Web Design</div>
+    <div class="svc-tab" data-target="content"><i class="fas fa-pen-nib"></i> Content</div>
+    <div class="svc-tab" data-target="email"><i class="fas fa-envelope-open-text"></i> Email</div>
+    <div class="svc-tab" data-target="branding"><i class="fas fa-palette"></i> Branding</div>
+    <div class="svc-tab" data-target="analytics"><i class="fas fa-chart-pie"></i> Analytics</div>
+  </div>
+</div>
+
+<!-- ════════ SERVICES OVERVIEW GRID ════════ -->
+<section class="overview" id="overview">
+  <div class="overview-head reveal">
+    <div class="section-label"><i class="fas fa-bolt"></i> Our Services</div>
+    <h2 class="section-title">Everything You Need to <span class="grad-text">Grow Online</span></h2>
+    <p class="section-sub">Eight specialist service areas. One integrated growth strategy. Measurable results delivered every single month.</p>
+  </div>
+  <div class="overview-grid">
+    <div class="ov-card reveal" onclick="document.getElementById('seo').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-magnifying-glass-chart"></i></div>
+      <div class="ov-name">SEO</div>
+      <div class="ov-blurb">Rank higher, get found faster, and drive organic traffic that converts.</div>
+    </div>
+    <div class="ov-card reveal" onclick="document.getElementById('social-media').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-hashtag"></i></div>
+      <div class="ov-name">Social Media Marketing</div>
+      <div class="ov-blurb">Grow your brand and engage your audience across every social platform.</div>
+    </div>
+    <div class="ov-card reveal" onclick="document.getElementById('paid-ads').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-bullseye"></i></div>
+      <div class="ov-name">Paid Advertising</div>
+      <div class="ov-blurb">Get instant traffic, leads, and sales with precision-targeted ad campaigns.</div>
+    </div>
+    <div class="ov-card reveal" onclick="document.getElementById('web-design').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-code"></i></div>
+      <div class="ov-name">Web Design &amp; Dev</div>
+      <div class="ov-blurb">Modern, fast, and high-converting websites built to perform and scale.</div>
+    </div>
+    <div class="ov-card reveal" onclick="document.getElementById('content').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-pen-nib"></i></div>
+      <div class="ov-name">Content Marketing</div>
+      <div class="ov-blurb">High-quality content that converts visitors into customers and builds authority.</div>
+    </div>
+    <div class="ov-card reveal" onclick="document.getElementById('email').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-envelope-open-text"></i></div>
+      <div class="ov-name">Email Marketing</div>
+      <div class="ov-blurb">Turn leads into loyal customers with automated email campaigns and funnels.</div>
+    </div>
+    <div class="ov-card reveal" onclick="document.getElementById('branding').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-palette"></i></div>
+      <div class="ov-name">Branding &amp; Growth</div>
+      <div class="ov-blurb">Build a strong brand and a scalable marketing funnel from the ground up.</div>
+    </div>
+    <div class="ov-card reveal" onclick="document.getElementById('analytics').scrollIntoView({behavior:'smooth',block:'start'})">
+      <div class="ov-ico"><i class="fas fa-chart-pie"></i></div>
+      <div class="ov-name">Analytics &amp; Reporting</div>
+      <div class="ov-blurb">Track performance and make confident, data-driven decisions every month.</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ════════ SERVICE DEEP-DIVES ════════ -->
+
+<!-- 1. SEO -->
+<section class="svc-section" id="seo">
+  <div class="svc-inner container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="SEO Optimization" style="filter:brightness(.8) contrast(1.05) saturate(.88)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=320&h=260&q=85&auto=format&fit=crop" alt="Analytics"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-arrow-trend-up"></i></div>
+        <div><div class="sib-val grad-text">+312%</div><div class="sib-lbl">Organic Traffic</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">01 — Search Engine Optimization</div>
+      <h2 class="svc-title">Rank at the Top.<br/><span class="grad-text">Stay There.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-fire"></i></div>
+        <div class="sr-text">Clients average a <strong>312% increase</strong> in organic traffic within 6 months</div>
+      </div>
+      <p class="svc-desc">We build search strategies that go beyond keywords — combining technical excellence, authoritative content, and smart link building to give your site lasting dominance in Google's results.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Keyword Research</strong><div class="svc-del-sub">Intent mapping, competitor gap analysis, long-tail targeting, and search volume prioritisation</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>On-Page &amp; Technical SEO</strong><div class="svc-del-sub">Site speed, crawlability, indexing, Core Web Vitals, schema markup, and meta optimisation</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Off-Page SEO (Backlinks)</strong><div class="svc-del-sub">White-hat outreach, digital PR, HARO, guest posting, and authority link building campaigns</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>SEO Audit &amp; Reporting</strong><div class="svc-del-sub">Full technical audit, monthly rank tracking, competitor monitoring, and real-time dashboard</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Start SEO Campaign <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">Free SEO Audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Social Media Marketing -->
+<section class="svc-section" id="social-media">
+  <div class="svc-inner reverse container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Social Media Marketing" style="filter:brightness(.78) contrast(1.08) saturate(.85)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=320&h=260&q=85&auto=format&fit=crop" alt="Social media content"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-users"></i></div>
+        <div><div class="sib-val grad-text">+410%</div><div class="sib-lbl">Avg. Reach Growth</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">02 — Social Media Marketing</div>
+      <h2 class="svc-title">Grow Your Brand.<br/><span class="grad-text">Own Your Audience.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-hashtag"></i></div>
+        <div class="sr-text">Clients see an average <strong>410% increase in social reach</strong> within the first 6 months</div>
+      </div>
+      <p class="svc-desc">Social media is where brands are built and communities are formed. We create and execute platform-native strategies across Facebook, Instagram, LinkedIn, and YouTube — combining content planning, community management, and data-driven optimisation to grow your audience and drive real business outcomes.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Facebook &amp; Instagram Marketing</strong><div class="svc-del-sub">Content strategy, creative production, posting cadence, Stories, Reels, and community engagement</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>LinkedIn Marketing</strong><div class="svc-del-sub">Thought leadership content, company page growth, and B2B audience development strategies</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>YouTube Marketing</strong><div class="svc-del-sub">Channel strategy, video SEO, content calendar, and subscriber growth optimisation</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Content Planning &amp; Management</strong><div class="svc-del-sub">Monthly content calendar, caption writing, hashtag strategy, and performance analytics reporting</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Grow My Social Presence <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">Free Social Audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Paid Advertising -->
+<section class="svc-section" id="paid-ads">
+  <div class="svc-inner container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1616469829941-c7200edec809?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Paid Advertising Management" style="filter:brightness(.78) contrast(1.08) saturate(.85)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=320&h=260&q=85&auto=format&fit=crop" alt="PPC dashboard"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-dollar-sign"></i></div>
+        <div><div class="sib-val grad-text">6.2×</div><div class="sib-lbl">Avg. ROAS</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">03 — Paid Advertising (Ads Management)</div>
+      <h2 class="svc-title">Instant Traffic.<br/><span class="grad-text">Maximum Return.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-rocket"></i></div>
+        <div class="sr-text">Average client ROAS of <strong>6.2×</strong> across Google and Meta — budgets scaled from $1K to $50K/month</div>
+      </div>
+      <p class="svc-desc">Get in front of the right people at exactly the right moment — with ads that convert. We manage precision campaigns across Facebook, Instagram, and Google Search to Drive, Display, and YouTube, turning every dollar of ad spend into measurable leads and revenue.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Facebook &amp; Instagram Ads</strong><div class="svc-del-sub">Audience targeting, creative strategy, Advantage+ campaigns, and conversion-optimised ad sets</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Google Ads (Search, Display, YouTube)</strong><div class="svc-del-sub">Full campaign architecture across all Google channels with Smart Bidding and Performance Max</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Lead Generation Campaign</strong><div class="svc-del-sub">End-to-end lead gen funnels: ad creative, landing pages, form optimisation, and CRM integration</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Retargeting &amp; Optimisation</strong><div class="svc-del-sub">Multi-touch retargeting sequences, audience segmentation, and continuous weekly bid optimisation</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Launch Ad Campaign <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">Free Ad Account Audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Website Design & Development -->
+<section class="svc-section" id="web-design">
+  <div class="svc-inner reverse container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Web Design &amp; Development" style="filter:brightness(.78) contrast(1.06) saturate(.88)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=320&h=260&q=85&auto=format&fit=crop" alt="Code editor dark"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-bolt"></i></div>
+        <div><div class="sib-val grad-text">+67%</div><div class="sib-lbl">Conv. After Redesign</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">04 — Website Design &amp; Development</div>
+      <h2 class="svc-title">Websites That<br/><span class="grad-text">Convert &amp; Scale.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-arrow-trend-up"></i></div>
+        <div class="sr-text">Clients see an average <strong>+67% conversion improvement</strong> after a NovaMark website redesign</div>
+      </div>
+      <p class="svc-desc">A great-looking website that doesn't convert is just an expensive brochure. We design and build modern, fast websites that load in under 3 seconds, rank on Google, and turn visitors into customers — combining pixel-perfect design with technical performance and conversion-focused UX.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>WordPress Website Design</strong><div class="svc-del-sub">Custom theme development, Elementor Pro builds, and plugin optimisation for speed and security</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Landing Page Design</strong><div class="svc-del-sub">High-converting, single-purpose pages for campaigns, lead generation, and product launches</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>E-commerce Website Setup</strong><div class="svc-del-sub">WooCommerce and Shopify stores with full product catalogue, payment gateway, and checkout optimisation</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Speed &amp; Mobile Optimisation</strong><div class="svc-del-sub">Core Web Vitals compliance, image compression, CDN setup, and fully responsive mobile-first design</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Start Your Website <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">View Our Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Content Marketing -->
+<section class="svc-section" id="content">
+  <div class="svc-inner container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Content Marketing" style="filter:brightness(.76) contrast(1.08) saturate(.85)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=320&h=260&q=85&auto=format&fit=crop" alt="Content writing"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-pen-nib"></i></div>
+        <div><div class="sib-val grad-text">3.2×</div><div class="sib-lbl">More Leads</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">05 — Content Marketing</div>
+      <h2 class="svc-title">Content That<br/><span class="grad-text">Converts.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-pen-nib"></i></div>
+        <div class="sr-text">Brands with a NovaMark content strategy generate <strong>3.2× more inbound leads</strong> within 6 months</div>
+      </div>
+      <p class="svc-desc">Content is the fuel that powers SEO, social, and email. We produce high-quality, strategically designed content that educates your audience, builds your authority, and turns organic visitors into paying customers — all while compounding in value every single month.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>SEO Content Writing</strong><div class="svc-del-sub">Long-form pillar pages and cluster content targeting high-intent keywords that drive qualified organic traffic</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Blog &amp; Article Writing</strong><div class="svc-del-sub">Consistent, research-backed blog content that builds topical authority and keeps your audience engaged</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Website Copywriting</strong><div class="svc-del-sub">Conversion-focused copy for homepages, service pages, and landing pages that compels visitors to act</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Content Strategy</strong><div class="svc-del-sub">Full content calendar, topic clustering, keyword mapping, competitor analysis, and editorial planning</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Build My Content Strategy <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">Content Audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Email Marketing & Automation -->
+<section class="svc-section" id="email">
+  <div class="svc-inner reverse container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Email Marketing &amp; Automation" style="filter:brightness(.78) contrast(1.08) saturate(.85)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=320&h=260&q=85&auto=format&fit=crop" alt="Email dashboard"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-envelope"></i></div>
+        <div><div class="sib-val grad-text">4.2×</div><div class="sib-lbl">Email ROI</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">06 — Email Marketing &amp; Automation</div>
+      <h2 class="svc-title">Leads In.<br/><span class="grad-text">Loyal Customers Out.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="sr-text">Clients generate an average <strong>4.2× ROI</strong> on email — with 35% of total revenue running on autopilot</div>
+      </div>
+      <p class="svc-desc">Email is the highest-ROI marketing channel when done right. We build sophisticated automation systems that nurture leads, recover abandoned carts, re-engage lapsed customers, and generate consistent revenue — without you lifting a finger after setup.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Email Campaign Setup</strong><div class="svc-del-sub">Full campaign strategy, list segmentation, deliverability optimisation, and Klaviyo or Mailchimp setup</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Automation Funnel</strong><div class="svc-del-sub">Welcome, abandoned cart, post-purchase, win-back, and replenishment flows built to run autonomously</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Template Design</strong><div class="svc-del-sub">On-brand, mobile-optimised email templates with dark mode support and high deliverability formatting</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Newsletter Management</strong><div class="svc-del-sub">Weekly or monthly newsletter production, A/B testing, list hygiene, and open rate optimisation</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Set Up Email Automation <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">Free Email Audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Branding & Growth Strategy -->
+<section class="svc-section" id="branding">
+  <div class="svc-inner container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Branding &amp; Growth Strategy" style="filter:brightness(.76) contrast(1.08) saturate(.85)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=320&h=260&q=85&auto=format&fit=crop" alt="Brand strategy session"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-rocket"></i></div>
+        <div><div class="sib-val grad-text">3.4×</div><div class="sib-lbl">Growth Rate</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">07 — Branding &amp; Growth Strategy</div>
+      <h2 class="svc-title">Build the Brand.<br/><span class="grad-text">Scale the Business.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-chart-line"></i></div>
+        <div class="sr-text">Clients with a defined brand strategy see <strong>3.4× faster revenue growth</strong> on average</div>
+      </div>
+      <p class="svc-desc">Marketing without a brand strategy is just noise. We help you build a clear, compelling brand identity then connect it to a full marketing funnel designed to attract, convert, and retain customers at scale — from audience research through to conversion rate optimisation.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Brand Strategy</strong><div class="svc-del-sub">Positioning, messaging framework, tone of voice, competitive differentiation, and full brand guidelines</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Audience Research</strong><div class="svc-del-sub">Deep customer persona development, buyer journey mapping, and market segmentation analysis</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Conversion Optimisation (CRO)</strong><div class="svc-del-sub">A/B testing, heatmap analysis, funnel audits, and UX improvements across all key conversion touchpoints</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Marketing Funnel Setup</strong><div class="svc-del-sub">Full-funnel architecture covering awareness, lead capture, nurture sequences, and retention campaigns</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Build My Brand Strategy <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">Free Brand Audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Analytics & Reporting -->
+<section class="svc-section" id="analytics">
+  <div class="svc-inner reverse container">
+    <div class="svc-img-wrap reveal">
+      <img class="svc-img-main" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Analytics &amp; Reporting" style="filter:brightness(.76) contrast(1.1) saturate(.85)"/>
+      <img class="svc-img-accent" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=320&h=260&q=85&auto=format&fit=crop" alt="Data analytics"/>
+      <div class="svc-img-badge">
+        <div class="sib-icon"><i class="fas fa-chart-pie"></i></div>
+        <div><div class="sib-val grad-text">100%</div><div class="sib-lbl">Data Visibility</div></div>
+      </div>
+    </div>
+    <div class="svc-content reveal">
+      <div class="svc-num">08 — Analytics &amp; Reporting</div>
+      <h2 class="svc-title">See Everything.<br/><span class="grad-text">Decide Confidently.</span></h2>
+      <div class="svc-result">
+        <div class="sr-dot"><i class="fas fa-chart-bar"></i></div>
+        <div class="sr-text">Clients with NovaMark analytics make <strong>decisions 4× faster</strong> with full-funnel data visibility</div>
+      </div>
+      <p class="svc-desc">You cannot optimise what you cannot measure. We set up and manage comprehensive analytics systems that give you complete, real-time visibility into every marketing touchpoint — from first click to closed customer — so every decision is backed by data, not guesswork.</p>
+      <div class="svc-deliverables">
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Google Analytics Setup</strong><div class="svc-del-sub">GA4 implementation, event tracking, goal configuration, and cross-domain tracking setup</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Performance Tracking</strong><div class="svc-del-sub">Custom Looker Studio dashboards with real-time KPI monitoring across all channels and campaigns</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Monthly Reports</strong><div class="svc-del-sub">Plain-English performance summaries with trend analysis, wins, issues, and clear next-step recommendations</div></div></div>
+        <div class="svc-del"><i class="fas fa-circle-check"></i><div><strong>Strategy Optimisation</strong><div class="svc-del-sub">Data-led monthly strategy reviews to reallocate budget, cut underperformers, and double down on winners</div></div></div>
+      </div>
+      <div class="svc-cta">
+        <a href="#cta" class="btn btn-primary btn-lg">Set Up My Analytics <i class="fas fa-arrow-right"></i></a>
+        <a href="#cta" class="btn btn-outline">Free Analytics Audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ PROCESS ════════ -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-head reveal">
+      <div class="section-label"><i class="fas fa-sitemap"></i> How We Work</div>
+      <h2 class="section-title">Our Proven 5-Step<br/><span class="grad-text">Growth Process</span></h2>
+      <p class="section-sub">From first conversation to ongoing results — here's how we turn your marketing goals into measurable growth.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="ps-num">
+          <i class="fas fa-magnifying-glass ps-icon"></i>
+        </div>
+        <div class="ps-title">Discovery &amp; Audit</div>
+        <div class="ps-desc">We analyse your current performance, competitors, audience, and goals to create a baseline and opportunity map.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">
+          <i class="fas fa-compass-drafting ps-icon"></i>
+        </div>
+        <div class="ps-title">Strategy Design</div>
+        <div class="ps-desc">A custom, multi-channel strategy built around your specific goals, budget, and growth timeline — no templates.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">
+          <i class="fas fa-rocket ps-icon"></i>
+        </div>
+        <div class="ps-title">Launch &amp; Execute</div>
+        <div class="ps-desc">Campaigns go live with precision — every element tested, tracked, and built to perform from day one.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">
+          <i class="fas fa-flask ps-icon"></i>
+        </div>
+        <div class="ps-title">Test &amp; Optimise</div>
+        <div class="ps-desc">Continuous A/B testing, bid adjustments, content refinement, and audience expansion to compound results.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">
+          <i class="fas fa-chart-line ps-icon"></i>
+        </div>
+        <div class="ps-title">Report &amp; Scale</div>
+        <div class="ps-desc">Transparent reporting every week. What's working gets scaled. What isn't gets fixed or cut — fast.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TOOLS ════════ -->
+<section class="tools">
+  <div class="container">
+    <div class="tools-head reveal">
+      <div class="section-label"><i class="fas fa-wrench"></i> Tools &amp; Tech</div>
+      <h2 class="section-title">Industry-Leading<br/><span class="grad-text">Tools We Master</span></h2>
+      <p class="section-sub">We're certified and proficient across the platforms and tools that drive real marketing results.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card reveal"><span class="tool-ico"><i class="fab fa-google" style="color:#4285F4;font-size:1.9rem"></i></span><div class="tool-name">Google Ads</div></div>
+      <div class="tool-card reveal"><span class="tool-ico"><i class="fab fa-meta" style="color:#1877F2;font-size:1.9rem"></i></span><div class="tool-name">Meta Ads</div></div>
+      <div class="tool-card reveal"><span class="tool-ico"><i class="fab fa-tiktok" style="color:#fff;font-size:1.9rem"></i></span><div class="tool-name">TikTok Ads</div></div>
+      <div class="tool-card reveal"><span class="tool-ico"><i class="fab fa-linkedin" style="color:#0077B5;font-size:1.9rem"></i></span><div class="tool-name">LinkedIn Ads</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">📊</span><div class="tool-name">Google Analytics 4</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">🏷️</span><div class="tool-name">Tag Manager</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">🔥</span><div class="tool-name">Hotjar</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">📧</span><div class="tool-name">Klaviyo</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">🚀</span><div class="tool-name">SEMrush</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">🔗</span><div class="tool-name">Ahrefs</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">📈</span><div class="tool-name">Looker Studio</div></div>
+      <div class="tool-card reveal"><span class="tool-ico" style="font-size:1.9rem">⚡</span><div class="tool-name">HubSpot</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CASE STUDIES ════════ -->
+<section class="cases" id="cases">
+  <div class="cases-head reveal">
+    <div>
+      <div class="section-label"><i class="fas fa-award"></i> Case Studies</div>
+      <h2 class="section-title">Real Clients.<br/><span class="grad-text">Real Results.</span></h2>
+    </div>
+    <a href="#" class="btn btn-outline">View All Case Studies <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card reveal">
+      <div class="case-img">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&h=440&q=88&auto=format&fit=crop&crop=center" alt="TechFlow SaaS" loading="lazy"/>
+        <div class="case-img-ov"></div>
+        <div class="case-industry">SaaS</div>
+      </div>
+      <div class="case-body">
+        <div class="case-company">TechFlow SaaS</div>
+        <div class="case-title">How SEO &amp; Content Strategy Tripled Organic Traffic in 5 Months</div>
+        <div class="case-stats">
+          <div class="case-stat"><div class="cs-val">+312%</div><div class="cs-lbl">Organic Traffic</div></div>
+          <div class="case-stat"><div class="cs-val">$420K</div><div class="cs-lbl">Pipeline Generated</div></div>
+        </div>
+        <a href="#" class="case-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="case-card reveal">
+      <div class="case-img">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=440&q=88&auto=format&fit=crop&crop=center" alt="EcoGear Store" loading="lazy"/>
+        <div class="case-img-ov"></div>
+        <div class="case-industry">E-Commerce</div>
+      </div>
+      <div class="case-body">
+        <div class="case-company">EcoGear Store</div>
+        <div class="case-title">Scaling Google Ads from $1K to $50K/Month While Maintaining 6.2× ROAS</div>
+        <div class="case-stats">
+          <div class="case-stat"><div class="cs-val">6.2×</div><div class="cs-lbl">ROAS Achieved</div></div>
+          <div class="case-stat"><div class="cs-val">$1.2M</div><div class="cs-lbl">Revenue Driven</div></div>
+        </div>
+        <a href="#" class="case-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="case-card reveal">
+      <div class="case-img">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&h=440&q=88&auto=format&fit=crop&crop=center" alt="Wellness Brands" loading="lazy"/>
+        <div class="case-img-ov"></div>
+        <div class="case-industry">Health &amp; Wellness</div>
+      </div>
+      <div class="case-body">
+        <div class="case-company">Wellness Brands Co.</div>
+        <div class="case-title">40,000 Email Subscribers in 4 Months Through Content + Email Automation</div>
+        <div class="case-stats">
+          <div class="case-stat"><div class="cs-val">40K</div><div class="cs-lbl">New Subscribers</div></div>
+          <div class="case-stat"><div class="cs-val">38%</div><div class="cs-lbl">Email Open Rate</div></div>
+        </div>
+        <a href="#" class="case-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section class="testi-strip">
+  <div class="container">
+    <div class="ts-head reveal">
+      <div class="section-label"><i class="fas fa-heart"></i> Client Love</div>
+      <h2 class="section-title">What Our Clients<br/><span class="grad-text">Say About Us</span></h2>
+      <p class="section-sub">150+ businesses trust NovaMark to grow their marketing. Here's what they have to say.</p>
+    </div>
+    <div class="ts-grid">
+      <div class="ts-card reveal">
+        <div class="ts-quote">"</div>
+        <div class="ts-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ts-text">NovaMark's SEO strategy tripled our organic traffic in 5 months. The team is professional, data-focused, and genuinely invested in our growth. Best agency we've ever worked with.</p>
+        <div class="ts-author">
+          <div class="ts-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Sarah Johnson"/></div>
+          <div><div class="ts-name">Sarah Johnson</div><div class="ts-company">CEO, TechFlow SaaS</div></div>
+        </div>
+      </div>
+      <div class="ts-card reveal">
+        <div class="ts-quote">"</div>
+        <div class="ts-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ts-text">Our Google Ads ROAS went from 1.8× to 6.2× in 90 days. I've worked with 3 agencies before — NovaMark is the first that actually delivered. The reporting transparency is unmatched.</p>
+        <div class="ts-author">
+          <div class="ts-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Marcus Rodriguez"/></div>
+          <div><div class="ts-name">Marcus Rodriguez</div><div class="ts-company">Founder, EcoGear Store</div></div>
+        </div>
+      </div>
+      <div class="ts-card reveal">
+        <div class="ts-quote">"</div>
+        <div class="ts-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ts-text">The email automation flows NovaMark built now generate 35% of our monthly revenue on autopilot. Their content strategy doubled our social following in 3 months. Incredible ROI.</p>
+        <div class="ts-author">
+          <div class="ts-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Amanda Lee"/></div>
+          <div><div class="ts-name">Amanda Lee</div><div class="ts-company">CMO, Wellness Brands Co.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA BANNER ════════ -->
+<section class="cta-banner" id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-content">
+      <div class="section-label" style="justify-content:center"><i class="fas fa-rocket"></i> Ready to Grow?</div>
+      <h2 class="cta-title">Let's Build Your<br/><span class="grad-text">Custom Strategy</span></h2>
+      <p class="cta-desc">Book a free 30-minute strategy session. No sales pitch. Just an honest look at what will work for your business and a clear roadmap to results.</p>
+      <div class="cta-btns">
+        <a href="index.php#contact" class="btn btn-primary btn-lg">Book Free Strategy Session <i class="fas fa-arrow-right"></i></a>
+        <a href="tel:+12125550190" class="btn-ghost"><i class="fas fa-phone"></i> Call Us Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="footer-top container">
+    <div class="footer-brand">
+      <a href="index.php" class="logo"><div class="logo-dot"></div>Nova<span class="grad-text">Mark</span></a>
+      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#seo">SEO Optimization</a></li>
+        <li><a href="#google-ads">Google Ads</a></li>
+        <li><a href="#social-ads">Facebook Ads</a></li>
+        <li><a href="#social-media">Social Media</a></li>
+        <li><a href="#content">Content Marketing</a></li>
+        <li><a href="#email">Email Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#cases">Case Studies</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Partners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Free Tools</a></li>
+        <li><a href="#">Marketing Guides</a></li>
+        <li><a href="#">Webinars</a></li>
+        <li><a href="#">SEO Checklist</a></li>
+        <li><a href="#">ROI Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="/cdn-cgi/l/email-protection#4a222f2626250a24253c2b272b3821642b2d2f242933"><span class="__cf_email__" data-cfemail="87efe2ebebe8c7e9e8f1e6eae6f5eca9e6e0e2e9e4fe">[email&#160;protected]</span></a></li>
+        <li><a href="tel:+12125550190">+1 (212) 555-0190</a></li>
+        <li style="color:var(--muted);font-size:.85rem;line-height:1.6">340 Park Ave<br/>New York, NY 10022</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <div class="footer-legal">© 2025 NovaMark Agency. All rights reserved.</div>
+    <div class="footer-legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════ JAVASCRIPT ════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* Cursor */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function t(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(t)})();
+document.querySelectorAll('a,button,.ov-card,.case-card,.ts-card,.tool-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='54px';ring.style.height='54px'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='38px';ring.style.height='38px'});
+});
+
+/* Navbar */
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>60));
+
+/* Back to top */
+const bt=document.getElementById('backTop');
+window.addEventListener('scroll',()=>bt.classList.toggle('visible',scrollY>400));
+bt.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+
+/* Hamburger */
+document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden'});
+document.getElementById('mobileClose').addEventListener('click',()=>closeMob());
+function closeMob(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''}
+
+/* Chat */
+document.getElementById('chatBtn').addEventListener('click',()=>document.getElementById('chatPopup').classList.toggle('open'));
+document.addEventListener('click',e=>{if(!e.target.closest('.chat-widget'))document.getElementById('chatPopup').classList.remove('open')});
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t&&a.getAttribute('href')!=='#'){e.preventDefault();scrollTo({top:t.offsetTop-140,behavior:'smooth'})}
+  });
+});
+
+/* Reveal */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const sibs=Array.from(en.target.parentElement.children).filter(c=>c.classList.contains('reveal'));
+      const i=sibs.indexOf(en.target);
+      setTimeout(()=>en.target.classList.add('visible'),i*80);
+      ro.unobserve(en.target);
+    }
+  });
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* Sticky tab highlighting on scroll */
+const sections=['seo','social-media','paid-ads','web-design','content','email','branding','analytics'];
+const tabs=document.querySelectorAll('.svc-tab');
+const tabOffset=140;
+
+function updateActiveTab(){
+  let current='seo';
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&scrollY>=el.offsetTop-tabOffset-80){current=id}
+  });
+  tabs.forEach(t=>t.classList.toggle('active',t.dataset.target===current));
+}
+window.addEventListener('scroll',updateActiveTab,{passive:true});
+
+/* Tab click → scroll to section */
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    const el=document.getElementById(tab.dataset.target);
+    if(el)scrollTo({top:el.offsetTop-tabOffset,behavior:'smooth'});
+  });
+});
+
+/* Process step icons — show icon, hide number by default; on hover it pulses */
+document.querySelectorAll('.ps-num').forEach((n,i)=>{
+  const icon=n.querySelector('.ps-icon');
+  const num=document.createElement('span');
+  num.className='ps-num-label';
+  num.style.cssText='position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;opacity:.15;font-family:var(--font-h)';
+  num.textContent=String(i+1).padStart(2,'0');
+  n.appendChild(num);
+});
+</script>
+</body>
+</html>
