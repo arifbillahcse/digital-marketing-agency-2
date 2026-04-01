@@ -364,15 +364,6 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 /* ════════════════════════════
    NEWSLETTER
 ════════════════════════════ */
-.newsletter{padding:52px 24px}
-.nl-inner{max-width:1200px;margin:0 auto;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:46px 52px;display:flex;align-items:center;justify-content:space-between;gap:36px}
-.nl-content h3{font-family:var(--font-h);font-size:1.45rem;font-weight:800;margin-bottom:7px}
-.nl-content p{color:var(--muted);font-size:.88rem}
-.nl-form{display:flex;gap:11px;min-width:390px}
-.nl-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:12px 20px;color:#fff;font-family:var(--font-b);font-size:.9rem;outline:none;transition:border-color var(--trans),box-shadow var(--trans)}
-.nl-input::placeholder{color:var(--muted)}
-.nl-input:focus{border-color:rgba(58,123,255,.5);box-shadow:0 0 22px rgba(58,123,255,.1)}
-
 /* ════════════════════════════
    CONTACT
 ════════════════════════════ */
@@ -435,8 +426,6 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   .why-inner{grid-template-columns:1fr;gap:44px}
   .counters-grid{grid-template-columns:repeat(2,1fr)}
   .footer-top{grid-template-columns:1fr 1fr;gap:36px}
-  .nl-inner{flex-direction:column;gap:22px}
-  .nl-form{min-width:0;width:100%}
   .hv-typewriter{right:-30px;width:220px}
   .hv-socials{right:-52px}
   .hv-keywords{right:-36px}
@@ -459,7 +448,6 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   .footer-bottom{flex-direction:column;gap:14px;text-align:center}
   .form-row{grid-template-columns:1fr}
   .cta-inner{padding:44px 26px}
-  .nl-inner{padding:30px 22px}
   .counters-grid{grid-template-columns:1fr 1fr}
   .cursor,.cursor-ring{display:none}
   .blog-head{flex-direction:column;align-items:flex-start;gap:14px;padding-bottom:0}
@@ -991,18 +979,7 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 </section>
 
 <!-- ══════════════ NEWSLETTER ══════════════ -->
-<section class="newsletter">
-  <div class="nl-inner reveal">
-    <div class="nl-content">
-      <h3>📬 Marketing Insights Weekly</h3>
-      <p>Join 12,000+ marketers. Weekly strategy breakdowns, case studies, and growth tactics.</p>
-    </div>
-    <div class="nl-form">
-      <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email address"/>
-      <button class="btn btn-primary" id="nlBtn" style="white-space:nowrap">Subscribe Free</button>
-    </div>
-  </div>
-</section>
+
 
 <!-- ══════════════ CONTACT ══════════════ -->
 <section class="contact" id="contact">
@@ -1238,16 +1215,6 @@ document.querySelectorAll('.faq-q').forEach(function(q){
     if(!open)item.classList.add('open');
   });
 });
-
-/* Newsletter form */
-var nlForm=document.querySelector('.nl-form');
-if(nlForm){
-  nlForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    var btn=nlForm.querySelector('button');
-    if(btn){btn.textContent='Subscribed!';btn.style.background='#34D399';btn.style.boxShadow='none'}
-  });
-}
 
 /* Services "Learn More" links */
 document.querySelectorAll('.sc-link').forEach(function(link){
