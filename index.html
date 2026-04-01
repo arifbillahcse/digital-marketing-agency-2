@@ -226,10 +226,7 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 .service-card:hover .sc-icon-wrap{transform:scale(1.12) rotate(-5deg)}
 .sc-title{font-family:var(--font-h);font-size:1.02rem;font-weight:700;margin-bottom:10px}
 .sc-desc{font-size:.85rem;color:var(--muted);line-height:1.65;margin-bottom:18px}
-.sc-link{font-size:.82rem;font-weight:700;color:#7EB3FF;display:flex;align-items:center;gap:6px;transition:gap var(--trans),color var(--trans)}
-.service-card:hover .sc-link{gap:10px;color:var(--c1)}
-
-/* ════════════════════════════
+.service-card:hover /* ════════════════════════════
    WHY CHOOSE US
 ════════════════════════════ */
 .why{padding:100px 24px;background:linear-gradient(180deg,transparent,rgba(58,123,255,.04),transparent)}
@@ -315,25 +312,6 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 /* ════════════════════════════
    BLOG
 ════════════════════════════ */
-.blog{padding:100px 24px;background:linear-gradient(180deg,transparent,rgba(0,212,255,.03),transparent)}
-.blog-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 0 52px}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto}
-.blog-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);overflow:hidden;transition:all var(--trans);cursor:pointer}
-.blog-card:hover{border-color:rgba(0,212,255,.22);transform:translateY(-7px);box-shadow:0 22px 60px rgba(0,0,0,.25)}
-.blog-img{height:215px;position:relative;overflow:hidden}
-.blog-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease}
-.blog-card:hover .blog-img img{transform:scale(1.07)}
-.blog-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,9,20,.1) 0%,rgba(5,9,20,.55) 100%);pointer-events:none}
-.blog-tag{position:absolute;top:16px;left:16px;background:rgba(6,12,24,.75);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);color:var(--c1);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:100px}
-.blog-body{padding:26px}
-.blog-meta{display:flex;align-items:center;gap:14px;font-size:.76rem;color:var(--muted);margin-bottom:11px}
-.blog-meta i{color:var(--c2)}
-.blog-title{font-family:var(--font-h);font-size:1.02rem;font-weight:700;line-height:1.4;margin-bottom:11px;transition:color var(--trans)}
-.blog-card:hover .blog-title{color:var(--c1)}
-.blog-excerpt{font-size:.83rem;color:var(--muted);line-height:1.65;margin-bottom:18px}
-.blog-read{font-size:.82rem;font-weight:700;color:#7EB3FF;display:flex;align-items:center;gap:6px;transition:gap var(--trans)}
-.blog-card:hover .blog-read{gap:10px}
-
 /* ════════════════════════════
    CTA BANNER
 ════════════════════════════ */
@@ -442,7 +420,6 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   .services-grid{grid-template-columns:1fr}
   .testi-grid{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
-  .blog-grid{grid-template-columns:1fr}
   .contact-inner{grid-template-columns:1fr;gap:44px}
   .footer-top{grid-template-columns:1fr 1fr}
   .footer-bottom{flex-direction:column;gap:14px;text-align:center}
@@ -450,7 +427,6 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   .cta-inner{padding:44px 26px}
   .counters-grid{grid-template-columns:1fr 1fr}
   .cursor,.cursor-ring{display:none}
-  .blog-head{flex-direction:column;align-items:flex-start;gap:14px;padding-bottom:0}
   .back-top{right:14px;bottom:14px}
 }
 @media(max-width:480px){
@@ -643,49 +619,41 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
         <div class="sc-icon-wrap"><i class="fas fa-magnifying-glass-chart"></i></div>
         <div class="sc-title">SEO Optimization</div>
         <div class="sc-desc">Dominate search rankings with technical SEO, content strategy, and authority-building that drives sustainable organic traffic.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal">
         <div class="sc-icon-wrap"><i class="fab fa-google"></i></div>
         <div class="sc-title">Google Ads Management</div>
         <div class="sc-desc">Precision-targeted PPC campaigns with continuous optimization to maximize your ROAS and minimize wasted ad spend.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal">
         <div class="sc-icon-wrap"><i class="fab fa-meta"></i></div>
         <div class="sc-title">Facebook &amp; Instagram Ads</div>
         <div class="sc-desc">Data-driven social advertising that reaches your ideal customers at every stage of their buying journey.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal">
         <div class="sc-icon-wrap"><i class="fas fa-hashtag"></i></div>
         <div class="sc-title">Social Media Marketing</div>
         <div class="sc-desc">Build a loyal community and amplify brand awareness through strategic content, engagement, and growth tactics.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal">
         <div class="sc-icon-wrap"><i class="fas fa-pen-nib"></i></div>
         <div class="sc-title">Content Marketing</div>
         <div class="sc-desc">Compelling, SEO-optimized content that educates your audience, builds authority, and drives qualified leads.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal">
         <div class="sc-icon-wrap"><i class="fas fa-envelope-open-text"></i></div>
         <div class="sc-title">Email Marketing</div>
         <div class="sc-desc">High-converting email sequences, automation flows, and personalized campaigns with industry-beating open rates.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal">
         <div class="sc-icon-wrap"><i class="fas fa-chart-line"></i></div>
         <div class="sc-title">Conversion Rate Optimization</div>
         <div class="sc-desc">Turn more visitors into customers with data-backed A/B testing, UX improvements, and funnel optimization.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal">
         <div class="sc-icon-wrap"><i class="fas fa-chart-pie"></i></div>
         <div class="sc-title">Analytics &amp; Tracking</div>
         <div class="sc-desc">Full-funnel visibility with GA4, Tag Manager, and custom dashboards that reveal exactly what's working.</div>
-        <a href="#" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -866,69 +834,7 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   </div>
 </section>
 
-<!-- ══════════════ BLOG ══════════════ -->
-<section class="blog" id="blog">
-  <div class="blog-head reveal">
-    <div>
-      <div class="section-label"><i class="fas fa-newspaper"></i> Insights</div>
-      <h2 class="section-title">Marketing Insights &amp;<br/><span class="grad-text">Growth Playbooks</span></h2>
-    </div>
-    <a href="#" class="btn btn-outline">View All Posts <i class="fas fa-arrow-right"></i></a>
-  </div>
-  <div class="blog-grid">
-    <div class="blog-card reveal">
-      <div class="blog-img">
-        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=700&h=420&q=88&auto=format&fit=crop&crop=center"
-          alt="SEO Strategies 2025" loading="lazy"/>
-        <div class="blog-img-overlay"></div>
-        <div class="blog-tag">SEO</div>
-      </div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span><i class="fas fa-calendar-days"></i> Mar 12, 2025</span>
-          <span><i class="fas fa-clock"></i> 8 min read</span>
-        </div>
-        <div class="blog-title">10 SEO Strategies That Will Dominate Search in 2025</div>
-        <div class="blog-excerpt">The SEO landscape has changed dramatically. Here's what's actually working right now to rank faster and stay on top longer.</div>
-        <a href="#" class="blog-read">Read Article <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-img">
-        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=700&h=420&q=88&auto=format&fit=crop&crop=center"
-          alt="Google Ads Scaling" loading="lazy"/>
-        <div class="blog-img-overlay"></div>
-        <div class="blog-tag">Ads</div>
-      </div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span><i class="fas fa-calendar-days"></i> Mar 5, 2025</span>
-          <span><i class="fas fa-clock"></i> 6 min read</span>
-        </div>
-        <div class="blog-title">How We Scaled a Google Ads Campaign from $1K to $50K/Month</div>
-        <div class="blog-excerpt">A detailed breakdown of the exact framework we used to scale ad spend 50× while maintaining a 4.2× ROAS throughout.</div>
-        <a href="#" class="blog-read">Read Article <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-img">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=420&q=88&auto=format&fit=crop&crop=center"
-          alt="Digital Marketing Trends 2025" loading="lazy"/>
-        <div class="blog-img-overlay"></div>
-        <div class="blog-tag">Trends</div>
-      </div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span><i class="fas fa-calendar-days"></i> Feb 28, 2025</span>
-          <span><i class="fas fa-clock"></i> 10 min read</span>
-        </div>
-        <div class="blog-title">Digital Marketing Trends That Will Define 2025 &amp; Beyond</div>
-        <div class="blog-excerpt">AI-driven personalization, zero-click search, and short-form video dominance — here's what brands need to prepare for.</div>
-        <a href="#" class="blog-read">Read Article <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ══════════════ CTA BANNER ══════════════ -->
 <section class="cta-banner">
@@ -1216,12 +1122,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   });
 });
 
-/* Services "Learn More" links */
-document.querySelectorAll('.sc-link').forEach(function(link){
-  link.addEventListener('click',function(e){
-    e.preventDefault();
-    window.location.href='services.html';
-  });
+
 });
 
 /* Contact form on homepage */
