@@ -44,8 +44,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .btn-g:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);transform:translateY(-2px)}
 
 /* CURSOR */
-#cur{width:10px;height:10px;background:var(--c1);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
-#ring{width:38px;height:38px;border:1.5px solid rgba(0,212,255,.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+
 
 /* NAVBAR */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--t),box-shadow var(--t)}
@@ -350,17 +349,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 #bt{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:var(--grad);border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;box-shadow:0 8px 26px rgba(58,123,255,.45);transition:all var(--t);opacity:0;pointer-events:none;z-index:500}
 #bt.on{opacity:1;pointer-events:all}
 #bt:hover{transform:translateY(-4px)}
-.chat{position:fixed;bottom:30px;left:30px;z-index:500}
-.chat-btn{width:54px;height:54px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;box-shadow:0 8px 28px rgba(58,123,255,.5);cursor:pointer;transition:all var(--t);position:relative}
-.chat-btn::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(58,123,255,.3);animation:ping 2s ease infinite}
 @keyframes ping{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
-.chat-btn:hover{transform:scale(1.1)}
-.chat-pop{position:absolute;bottom:66px;left:0;width:272px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:20px;display:none;box-shadow:var(--sh)}
-.chat-pop.open{display:block}
-.chat-pop h4{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:5px}
-.chat-pop p{font-size:.79rem;color:var(--muted);margin-bottom:14px}
-.chat-start{display:block;text-align:center;padding:10px;background:var(--grad);color:#fff;border-radius:8px;font-size:.83rem;font-weight:600}
-
 /* MODAL */
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;opacity:0;pointer-events:none;transition:opacity var(--t)}
 .modal-bg.open{opacity:1;pointer-events:all}
@@ -420,9 +409,8 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   .cta-in{padding:44px 26px}
   .ft{grid-template-columns:1fr 1fr}
   .fbot{flex-direction:column;gap:14px;text-align:center}
-  #cur,#ring{display:none}
-  #bt{right:14px;bottom:14px}.chat{left:14px;bottom:14px}
-  .hero-stats{flex-direction:column;gap:18px}
+  #cur,
+  #bt{right:14px;bottom:14px}.hero-stats{flex-direction:column;gap:18px}
   .hs{border-right:none;padding-right:0}
 }
 @media(max-width:480px){
@@ -436,17 +424,9 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 </head>
 <body>
 
-<div id="cur"></div>
-<div id="ring"></div>
 <a href="#" id="bt"><i class="fas fa-arrow-up"></i></a>
 
-<div class="chat">
-  <div class="chat-btn" id="chatBtn"><i class="fas fa-comment-dots"></i></div>
-  <div class="chat-pop" id="chatPop">
-    <h4>&#128075; Want results like these?</h4>
-    <p>Book a free strategy call and we will show you exactly how we would grow your business.</p>
-    <a href="#cta" class="chat-start" onclick="document.getElementById('chatPop').classList.remove('open')">Get a Free Strategy Call</a>
-  </div>
+
 </div>
 
 <div class="mob" id="mob">
@@ -1141,10 +1121,6 @@ document.querySelectorAll('.ftab').forEach(function(tab){
   });
 });
 
-/* Cursor */
-var CR=document.getElementById('cur'),RG=document.getElementById('ring');
-var mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;CR.style.left=mx+'px';CR.style.top=my+'px'});
 (function t(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;RG.style.left=rx+'px';RG.style.top=ry+'px';requestAnimationFrame(t)})();
 document.querySelectorAll('a,button,.cs-card,.tsc,.ind-card,.acard').forEach(function(el){
   el.addEventListener('mouseenter',function(){CR.style.width='18px';CR.style.height='18px';RG.style.width='54px';RG.style.height='54px'});
@@ -1165,9 +1141,6 @@ document.getElementById('mclose').addEventListener('click',closeMob);
 function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow=''}
 
 /* Chat */
-document.getElementById('chatBtn').addEventListener('click',function(){document.getElementById('chatPop').classList.toggle('open')});
-document.addEventListener('click',function(e){if(!e.target.closest('.chat'))document.getElementById('chatPop').classList.remove('open')});
-
 /* Smooth scroll */
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id==='#')return;var t=document.querySelector(id);if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'})}});

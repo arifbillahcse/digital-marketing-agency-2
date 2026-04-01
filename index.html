@@ -422,16 +422,10 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 .back-top{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:var(--grad);border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;box-shadow:0 8px 26px rgba(58,123,255,.45);transition:all var(--trans);opacity:0;pointer-events:none;z-index:500}
 .back-top.visible{opacity:1;pointer-events:all}
 .back-top:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(58,123,255,.6)}
-.chat-widget{position:fixed;bottom:30px;left:30px;z-index:500}
-.chat-btn{width:54px;height:54px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;box-shadow:0 8px 28px rgba(58,123,255,.5);cursor:pointer;transition:all var(--trans);position:relative}
-.chat-btn::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(58,123,255,.3);animation:chat-ping 2s ease infinite}
 @keyframes chat-ping{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
-.chat-btn:hover{transform:scale(1.1)}
-.chat-popup{position:absolute;bottom:66px;left:0;width:275px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:20px;display:none;box-shadow:var(--sh)}
-.chat-popup.open{display:block}
-.chat-popup h4{font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:5px}
-.chat-popup p{font-size:.8rem;color:var(--muted);margin-bottom:14px}
-.chat-start{display:block;text-align:center;padding:10px;background:var(--grad);color:#fff;border-radius:8px;font-size:.83rem;font-weight:600}
+
+
+
 
 /* ════════════════════════════
    RESPONSIVE
@@ -469,7 +463,6 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   .counters-grid{grid-template-columns:1fr 1fr}
   .cursor,.cursor-ring{display:none}
   .blog-head{flex-direction:column;align-items:flex-start;gap:14px;padding-bottom:0}
-  .chat-widget{left:14px;bottom:14px}
   .back-top{right:14px;bottom:14px}
 }
 @media(max-width:480px){
@@ -485,15 +478,7 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 
 <!-- Back to top -->
 <a href="#" class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
-
-<!-- Live chat -->
-<div class="chat-widget">
-  <div class="chat-btn" id="chatBtn"><i class="fas fa-comment-dots"></i></div>
-  <div class="chat-popup" id="chatPopup">
-    <h4>👋 Hey there!</h4>
-    <p>Need a custom marketing strategy? We're online now — let's talk.</p>
-    <a href="#contact" class="chat-start" onclick="document.getElementById('chatPopup').classList.remove('open')">Start a Conversation</a>
-  </div>
+  
 </div>
 
 <!-- Mobile menu -->
@@ -1165,10 +1150,6 @@ document.getElementById('mclose').addEventListener('click',closeMob);
 function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow='';}
 
 /* Chat widget */
-var chatBtn=document.getElementById('chatBtn'),chatPop=document.getElementById('chatPopup');
-if(chatBtn){chatBtn.addEventListener('click',function(){chatPop.classList.toggle('open')})}
-document.addEventListener('click',function(e){if(chatPop&&!e.target.closest('.chat-widget'))chatPop.classList.remove('open')});
-
 /* Smooth scroll */
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
