@@ -54,6 +54,8 @@ nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-
 .logo{font-family:var(--fh);font-size:1.55rem;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
 .ldot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pdot 2s infinite}
 @keyframes pdot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
+.logo-link{display:flex;align-items:center;text-decoration:none}
+.logo-img{height:48px;width:auto;display:block}
 .nav-l{display:flex;align-items:center;gap:34px}
 .nav-l a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--t);position:relative}
 .nav-l a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--t);border-radius:2px}
@@ -413,20 +415,21 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   <a href="index.html" onclick="closeMob()">Home</a>
   <a href="services.html" onclick="closeMob()">Services</a>
   <a href="about.html" onclick="closeMob()">About</a>
-  <a href="#team" onclick="closeMob()">Team</a>
-  <a href="#cta" onclick="closeMob()">Contact</a>
+  <a href="why-choose-us.html" onclick="closeMob()">Why Choose Us</a>
+  <a href="portfolio.html" onclick="closeMob()">Portfolio</a>
+  <a href="contact.html" onclick="closeMob()">Contact</a>
 </div>
 
 <nav id="nav">
   <div class="nav-in">
-    <a href="index.html" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+    <a href="index.html" class="logo-link"><img src="rexbon-logo.svg" alt="Rexbon" class="logo-img"/></a>
     <ul class="nav-l">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html" class="act">About</a></li>
-      <li><a href="#">Case Studies</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-r">
       <a href="#" class="btn btn-o">Login</a>
@@ -967,7 +970,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 <footer>
   <div class="ft wrap">
     <div class="fb">
-      <a href="index.html" class="logo"><div class="ldot"></div>Nova<span class="gt">Mark</span></a>
+      <a href="index.html" class="logo-link"><img src="rexbon-logo.svg" alt="Rexbon" class="logo-img"/></a>
       <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
       <div class="fsocs">
         <a href="#" class="fsoc" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
