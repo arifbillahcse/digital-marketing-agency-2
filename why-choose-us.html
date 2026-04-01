@@ -639,25 +639,6 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   </div>
 </section>
 
-<script>
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-reveals.forEach(el => observer.observe(el));
-
-const barObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.bar-fill').forEach(b => {
-        b.style.transform = 'scaleX(' + b.dataset.w + ')';
-      });
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.why-card').forEach(c => barObs.observe(c));
-</script>
-
 
 <!-- FOOTER -->
 <footer>
@@ -716,43 +697,8 @@ document.querySelectorAll('.why-card').forEach(c => barObs.observe(c));
   </div>
 </footer>
 
-<script>
-(function tick(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;RG.style.left=rx+'px';RG.style.top=ry+'px';requestAnimationFrame(tick)})();
-document.querySelectorAll('a,button').forEach(function(el){
-  el.addEventListener('mouseenter',function(){CR.style.width='18px';CR.style.height='18px';RG.style.width='54px';RG.style.height='54px'});
-  el.addEventListener('mouseleave',function(){CR.style.width='10px';CR.style.height='10px';RG.style.width='38px';RG.style.height='38px'});
-});
 
-/* Navbar scroll */
-window.addEventListener('scroll',function(){
-  document.getElementById('nav').classList.toggle('sc',window.scrollY>60);
-});
-
-/* Back to top */
-var bt=document.getElementById('bt');
-window.addEventListener('scroll',function(){bt.classList.toggle('on',window.scrollY>400)});
-bt.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
-
-/* Hamburger */
-document.getElementById('hbg').addEventListener('click',function(){
-  document.getElementById('mob').classList.add('open');
-  document.body.style.overflow='hidden';
-});
-document.getElementById('mclose').addEventListener('click',closeMob);
-function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow='';}
-
-
-
-/* Smooth anchor scroll */
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var id=a.getAttribute('href');
-    if(id==='#') return;
-    var target=document.querySelector(id);
-    if(target){e.preventDefault();window.scrollTo({top:target.offsetTop-80,behavior:'smooth'});}
-  });
-});
-</script>
-
+<script src="assets/main.js"></script>
+<script src="assets/why-choose-us.js"></script>
 </body>
 </html>

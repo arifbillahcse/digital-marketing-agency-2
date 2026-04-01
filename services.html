@@ -1367,84 +1367,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 </footer>
 
 <!-- ════════ JAVASCRIPT ════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* Cursor */
-const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function t(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(t)})();
-document.querySelectorAll('a,button,.ov-card,.case-card,.ts-card,.tool-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='54px';ring.style.height='54px'});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='38px';ring.style.height='38px'});
-});
 
-/* Navbar */
-window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>60));
-
-/* Back to top */
-const bt=document.getElementById('backTop');
-window.addEventListener('scroll',()=>bt.classList.toggle('visible',scrollY>400));
-bt.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
-
-/* Hamburger */
-document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden'});
-document.getElementById('mobileClose').addEventListener('click',()=>closeMob());
-function closeMob(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''}
-
-/* Chat */
-/* Smooth scroll */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t&&a.getAttribute('href')!=='#'){e.preventDefault();scrollTo({top:t.offsetTop-140,behavior:'smooth'})}
-  });
-});
-
-/* Reveal */
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach(en=>{
-    if(en.isIntersecting){
-      const sibs=Array.from(en.target.parentElement.children).filter(c=>c.classList.contains('reveal'));
-      const i=sibs.indexOf(en.target);
-      setTimeout(()=>en.target.classList.add('visible'),i*80);
-      ro.unobserve(en.target);
-    }
-  });
-},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-
-/* Sticky tab highlighting on scroll */
-const sections=['seo','social-media','paid-ads','web-design','content','email','branding','analytics'];
-const tabs=document.querySelectorAll('.svc-tab');
-const tabOffset=140;
-
-function updateActiveTab(){
-  let current='seo';
-  sections.forEach(id=>{
-    const el=document.getElementById(id);
-    if(el&&scrollY>=el.offsetTop-tabOffset-80){current=id}
-  });
-  tabs.forEach(t=>t.classList.toggle('active',t.dataset.target===current));
-}
-window.addEventListener('scroll',updateActiveTab,{passive:true});
-
-/* Tab click → scroll to section */
-tabs.forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    const el=document.getElementById(tab.dataset.target);
-    if(el)scrollTo({top:el.offsetTop-tabOffset,behavior:'smooth'});
-  });
-});
-
-/* Process step icons — show icon, hide number by default; on hover it pulses */
-document.querySelectorAll('.ps-num').forEach((n,i)=>{
-  const icon=n.querySelector('.ps-icon');
-  const num=document.createElement('span');
-  num.className='ps-num-label';
-  num.style.cssText='position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;opacity:.15;font-family:var(--font-h)';
-  num.textContent=String(i+1).padStart(2,'0');
-  n.appendChild(num);
-});
-</script>
+<script src="assets/main.js"></script>
+<script src="assets/services.js"></script>
 </body>
 </html>
