@@ -47,14 +47,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 /* NAVBAR */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--t),box-shadow var(--t)}
-nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .nav-in{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
 .logo{font-family:var(--fh);font-size:1.55rem;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
 .ldot{width:8px;height:8px;background:var(--grad);border-radius:50%;animation:pdot 2s infinite}
 @keyframes pdot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
 .nav-l{display:flex;align-items:center;gap:34px}
-.nav-l a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--t);position:relative}
-.nav-l a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--t);border-radius:2px}
+.nav-l a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color var(--trans);position:relative}
+.nav-l a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--trans);border-radius:2px}
 .nav-l a:hover,.nav-l a.act{color:#fff}
 .nav-l a.act::after,.nav-l a:hover::after{transform:scaleX(1)}
 .nav-r{display:flex;align-items:center;gap:10px}
@@ -62,7 +62,7 @@ nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-
 .hbg span{width:24px;height:2px;background:#fff;border-radius:2px}
 .mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(28px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
 .mob.open{display:flex}
-.mob a{font-family:var(--fh);font-size:2rem;font-weight:700;transition:color var(--t)}
+.mob a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--t)}
 .mob a:hover{color:var(--c1)}
 .mclose{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer}
 

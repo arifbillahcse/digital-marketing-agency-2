@@ -350,13 +350,8 @@ body {
   font-family: var(--font-b);
   text-decoration: none;
 }
-.btn-primary {
-  background: var(--grad);
-  color: #fff;
-  box-shadow: 0 4px 22px rgba(58,123,255,.4);
-  border: none;
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(58,123,255,.55); }
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 22px rgba(58,123,255,.4)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(58,123,255,.55)}
 .btn-outline {
   border: 1.5px solid rgba(255,255,255,.18);
   color: #fff;
@@ -384,7 +379,7 @@ body {
 
 /* NAVBAR */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--trans),box-shadow var(--trans)}
-nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .nav-in{max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
 .logo-link{display:flex;align-items:center;text-decoration:none}
 .logo-img{height:48px;width:auto;display:block}
@@ -394,11 +389,11 @@ nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-
 .nav-l a:hover,.nav-l a.act{color:#fff}
 .nav-l a.act::after,.nav-l a:hover::after{transform:scaleX(1)}
 .nav-r{display:flex;align-items:center;gap:10px}
-.hbg{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;border:none;background:none}
+.hbg{display:none;flex-direction:column;gap:5px;padding:8px}
 .hbg span{width:24px;height:2px;background:#fff;border-radius:2px}
 .mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(28px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
 .mob.open{display:flex}
-.mob a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--trans);color:#fff}
+.mob a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--trans)}
 .mob a:hover{color:var(--c1)}
 .mclose{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer}
 
@@ -457,6 +452,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   <a href="contact.html" onclick="closeMob()">Contact</a>
 </div>
 
+<!-- ══════════════ NAVBAR ══════════════ -->
 <nav id="nav">
   <div class="nav-in">
     <a href="index.html" class="logo-link"><img src="img/misgro.png" alt="MISGRO" class="logo-img"/></a>
@@ -469,7 +465,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-r">
-      <a href="contact.html" class="btn btn-primary">Work With Us <i class="fas fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn btn-p">Work With Us <i class="fas fa-arrow-right"></i></a>
     </div>
     <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
