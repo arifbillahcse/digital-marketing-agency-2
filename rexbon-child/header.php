@@ -184,8 +184,64 @@ $deals_url   = get_theme_mod( 'rexbon_deals_url',   '#deals' );
         </form>
     </div>
 
-    <!-- Mobile nav items -->
+    <!-- ① BROWSE BY CATEGORY (shown first in drawer) -->
+    <?php if ( get_theme_mod( 'rexbon_cat_strip_enabled', true ) ) : ?>
+    <nav class="mobile-cat-section" aria-label="<?php esc_attr_e( 'Browse by category', 'rexbon-child' ); ?>">
+        <p class="mobile-section-label"><?php esc_html_e( 'Browse by Category', 'rexbon-child' ); ?></p>
+        <ul class="mobile-cat-list">
+            <?php
+            if ( has_nav_menu( 'rexbon-category' ) ) {
+                // Pull menu items and render each as a list row
+                $cat_items = wp_get_nav_menu_items(
+                    get_nav_menu_locations()['rexbon-category'] ?? 0
+                );
+                if ( $cat_items ) :
+                    foreach ( $cat_items as $item ) :
+                        $icon = rexbon_build_icon_html( $item->description ?? '' );
+                        $url  = esc_url( $item->url );
+                        $label = esc_html( $item->title );
+                        $active = in_array( 'current-menu-item', (array) $item->classes, true ) ? ' active' : '';
+                        echo "<li class=\"mobile-cat-item{$active}\">
+                                <a href=\"{$url}\" class=\"mobile-cat-link\">
+                                    {$icon}<span>{$label}</span>
+                                </a>
+                              </li>";
+                    endforeach;
+                endif;
+            } else {
+                // Fallback default categories
+                $defaults = [
+                    [ '🏠', 'Home & Kitchen', home_url( '/category/home-kitchen' ) ],
+                    [ '💻', 'Tech',           home_url( '/category/tech' ) ],
+                    [ '🎮', 'Gaming',         home_url( '/category/gaming' ) ],
+                    [ '💪', 'Fitness',        home_url( '/category/fitness' ) ],
+                    [ '🌿', 'Beauty',         home_url( '/category/beauty' ) ],
+                    [ '🐾', 'Pet Supplies',   home_url( '/category/pet-supplies' ) ],
+                    [ '📚', 'Books',          home_url( '/category/books' ) ],
+                    [ '👶', 'Baby',           home_url( '/category/baby' ) ],
+                    [ '🚗', 'Auto',           home_url( '/category/auto' ) ],
+                    [ '🎒', 'Travel',         home_url( '/category/travel' ) ],
+                ];
+                foreach ( $defaults as $pill ) {
+                    printf(
+                        '<li class="mobile-cat-item"><a href="%s" class="mobile-cat-link"><span class="nav-icon" aria-hidden="true">%s</span><span>%s</span></a></li>',
+                        esc_url( $pill[2] ),
+                        esc_html( $pill[0] ),
+                        esc_html( $pill[1] )
+                    );
+                }
+            }
+            ?>
+        </ul>
+    </nav>
+
+    <!-- Divider between sections -->
+    <div class="mobile-section-divider" aria-hidden="true"></div>
+    <?php endif; ?>
+
+    <!-- ② PRIMARY NAVIGATION (shown second in drawer) -->
     <nav aria-label="<?php esc_attr_e( 'Mobile navigation', 'rexbon-child' ); ?>">
+        <p class="mobile-section-label"><?php esc_html_e( 'Menu', 'rexbon-child' ); ?></p>
         <?php
         if ( has_nav_menu( 'rexbon-primary' ) ) {
             wp_nav_menu( [
@@ -196,7 +252,6 @@ $deals_url   = get_theme_mod( 'rexbon_deals_url',   '#deals' );
                 'fallback_cb'    => false,
             ] );
         } else {
-            // Fallback static links – always visible on mobile even without a WP menu assigned
             ?>
             <ul class="mobile-nav-list">
                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/reviews' ) ); ?>" class="nav-link"><span class="nav-label"><?php esc_html_e( 'Reviews', 'rexbon-child' ); ?></span></a></li>

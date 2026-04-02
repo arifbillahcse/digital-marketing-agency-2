@@ -567,6 +567,73 @@
 }
 .mobile-deals-btn:hover { background: var(--rb-orange-dark); }
 
+/* ── MOBILE DRAWER: section labels ── */
+.mobile-section-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rb-muted);
+  padding: 4px 0 8px;
+  margin: 0;
+}
+
+/* ── MOBILE DRAWER: category section ── */
+.mobile-cat-section { margin-bottom: 0; }
+
+.mobile-cat-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-cat-item { border-bottom: 1px solid var(--rb-border); }
+.mobile-cat-item:last-child { border-bottom: none; }
+
+.mobile-cat-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rb-text);
+  transition: color var(--rb-trans);
+}
+.mobile-cat-link:hover,
+.mobile-cat-item.active .mobile-cat-link { color: var(--rb-green); }
+
+/* icon inside category row */
+.mobile-cat-link .nav-icon,
+.mobile-cat-link i[class*="fa"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--rb-green-pale);
+  border-radius: 8px;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: background var(--rb-trans);
+}
+.mobile-cat-item.active .mobile-cat-link .nav-icon,
+.mobile-cat-item.active .mobile-cat-link i[class*="fa"],
+.mobile-cat-link:hover .nav-icon,
+.mobile-cat-link:hover i[class*="fa"] {
+  background: var(--rb-green);
+  color: var(--rb-white);
+}
+
+/* ── MOBILE DRAWER: divider between sections ── */
+.mobile-section-divider {
+  height: 1px;
+  background: var(--rb-border);
+  margin: 16px 0;
+}
+
 /* Overlay behind drawer */
 .mobile-overlay {
   position: fixed;
