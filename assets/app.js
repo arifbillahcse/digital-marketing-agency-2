@@ -287,9 +287,12 @@ function openModal(id){
   document.getElementById('modal-client').innerHTML='<div class="modal-av"><img src="'+c.client_img+'" alt="'+c.client_name+'"/></div><div><div class="modal-cname">'+c.client_name+'</div><div class="modal-cco">'+c.client_co+'</div></div>';
   bg.classList.add('open');document.body.style.overflow='hidden';
 }
-function closeModal(){document.getElementById('modalBg').classList.remove('open');document.body.style.overflow=''}
-document.getElementById('modalBg').addEventListener('click',function(e){if(e.target===this)closeModal()});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+function closeModal(){var mb=document.getElementById('modalBg');if(mb){mb.classList.remove('open');document.body.style.overflow='';}}
+var _modalBg=document.getElementById('modalBg');
+if(_modalBg){
+  _modalBg.addEventListener('click',function(e){if(e.target===this)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+}
 
 /* Filter tabs */
 document.querySelectorAll('.ftab').forEach(function(tab){
