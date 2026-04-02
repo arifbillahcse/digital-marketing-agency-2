@@ -84,6 +84,16 @@ function rexbon_register_menus() {
         'rexbon-primary'  => __( 'Rexbon Primary Navigation', 'rexbon-child' ),
         'rexbon-category' => __( 'Rexbon Category Strip', 'rexbon-child' ),
     ] );
+
+    // Enable the custom logo uploader in Appearance → Customize → Site Identity
+    add_theme_support( 'custom-logo', [
+        'height'               => 80,
+        'width'                => 300,
+        'flex-height'          => true,
+        'flex-width'           => true,
+        'header-text'          => [ 'site-title', 'site-description' ],
+        'unlink-homepage-logo' => false,
+    ] );
 }
 
 /* ─────────────────────────────────────────────

@@ -67,21 +67,27 @@ $deals_url   = get_theme_mod( 'rexbon_deals_url',   '#deals' );
     <div class="header-inner">
 
         <!-- LOGO -->
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" aria-label="<?php bloginfo( 'name' ); ?> – <?php esc_attr_e( 'Go to homepage', 'rexbon-child' ); ?>">
+        <?php
+        $has_custom_logo = has_custom_logo();
+        if ( $has_custom_logo ) :
+            // Wrap the_custom_logo() output so we can apply our class
+            $logo_html = get_custom_logo();
+            // Inject our class into the <a> tag that the_custom_logo() generates
+            echo str_replace( 'class="custom-logo-link"', 'class="logo custom-logo-link"', $logo_html );
+        else :
+        ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
             <?php
-            $logo_id = get_theme_mod( 'custom_logo' );
-            if ( $logo_id ) :
-                echo wp_get_attachment_image( $logo_id, 'full', false, [ 'class' => 'logo-img', 'alt' => get_bloginfo( 'name' ) ] );
+            $site_name  = get_bloginfo( 'name' );
+            $name_parts = explode( 'bon', $site_name, 2 );
+            if ( count( $name_parts ) === 2 && $name_parts[0] !== '' ) :
+                echo esc_html( $name_parts[0] ) . '<em>bon</em>' . esc_html( $name_parts[1] );
             else :
-                $name_parts = explode( 'bon', get_bloginfo( 'name' ), 2 );
-                if ( count( $name_parts ) === 2 ) :
-                    echo esc_html( $name_parts[0] ) . '<em>bon</em>' . esc_html( $name_parts[1] );
-                else :
-                    echo esc_html( get_bloginfo( 'name' ) );
-                endif;
+                echo esc_html( $site_name ?: 'Rexbon' );
             endif;
             ?>
         </a>
+        <?php endif; ?>
 
         <!-- SEARCH -->
         <div class="search-bar" role="search" aria-label="<?php esc_attr_e( 'Site search', 'rexbon-child' ); ?>">
@@ -189,6 +195,16 @@ $deals_url   = get_theme_mod( 'rexbon_deals_url',   '#deals' );
                 'walker'         => new Walker_Rexbon_Primary(),
                 'fallback_cb'    => false,
             ] );
+        } else {
+            // Fallback static links – always visible on mobile even without a WP menu assigned
+            ?>
+            <ul class="mobile-nav-list">
+                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/reviews' ) ); ?>" class="nav-link"><span class="nav-label"><?php esc_html_e( 'Reviews', 'rexbon-child' ); ?></span></a></li>
+                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/guides' ) ); ?>" class="nav-link"><span class="nav-label"><?php esc_html_e( 'Guides', 'rexbon-child' ); ?></span></a></li>
+                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/compare' ) ); ?>" class="nav-link"><span class="nav-label"><?php esc_html_e( 'Compare', 'rexbon-child' ); ?></span></a></li>
+                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="nav-link"><span class="nav-label"><?php esc_html_e( 'About', 'rexbon-child' ); ?></span></a></li>
+            </ul>
+            <?php
         }
         ?>
         <?php if ( $deals_label ) : ?>
