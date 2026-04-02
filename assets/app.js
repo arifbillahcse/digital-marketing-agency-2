@@ -162,21 +162,6 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   });
 });
 
-/* ── Contact form (homepage) ─────────────────────────────── */
-var cfForm = document.querySelector('.contact-form');
-if(cfForm){
-  var sub = cfForm.querySelector('.form-submit');
-  if(sub){
-    sub.addEventListener('click', function(e){
-      e.preventDefault();
-      var name = cfForm.querySelector('input[placeholder*="Name"]');
-      var email = cfForm.querySelector('input[placeholder*="email"]');
-      if(name && email && name.value.trim() && email.value.includes('@')){
-        sub.textContent = 'Message Sent!'; sub.style.background = '#34D399';
-      }
-    });
-  }
-}
 /* ── Budget pills ────────────────────────────────────────── */
 document.querySelectorAll('.budget-pill').forEach(function(pill){
   pill.addEventListener('click', function(){
@@ -218,10 +203,27 @@ function handleSubmit(){
   var ico = document.getElementById('btn-ico');
   var spin = document.getElementById('btn-spin');
   btn.disabled = true; txt.textContent = 'Sending...'; ico.style.display = 'none'; spin.style.display = 'block';
-  setTimeout(function(){
+  var phone = document.getElementById('f-phone');
+  fetch('send_mail.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams({
+      name: name,
+      email: email,
+      phone: phone ? phone.value.trim() : '',
+      subject: subject,
+      message: message
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(){
     document.getElementById('formWrap').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
-  }, 1800);
+  })
+  .catch(function(){
+    btn.disabled = false; txt.textContent = 'Send Message'; ico.style.display = ''; spin.style.display = 'none';
+    alert('Something went wrong. Please try again.');
+  });
 }
 
 /* ── Reset form ──────────────────────────────────────────── */
