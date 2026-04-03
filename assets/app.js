@@ -1,3 +1,32 @@
+/* ── Custom cursor ───────────────────────────────────────── */
+(function(){
+  var cur = document.getElementById('cursor');
+  var ring = document.getElementById('cursorRing');
+  if(!cur || !ring) return;
+  var mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', function(e){
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+  });
+  (function tick(){
+    rx += (mx - rx) * .13;
+    ry += (my - ry) * .13;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(tick);
+  })();
+  document.querySelectorAll('a, button').forEach(function(el){
+    el.addEventListener('mouseenter', function(){
+      cur.style.width = '18px'; cur.style.height = '18px';
+      ring.style.width = '54px'; ring.style.height = '54px';
+    });
+    el.addEventListener('mouseleave', function(){
+      cur.style.width = '10px'; cur.style.height = '10px';
+      ring.style.width = '38px'; ring.style.height = '38px';
+    });
+  });
+})();
+
 /* ── Navbar scroll ───────────────────────────────────────── */
 (function(){
   var nav = document.getElementById('nav') || document.getElementById('navbar');
