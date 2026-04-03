@@ -181,16 +181,6 @@ function showSocials(){ scIcons.forEach(function(s){ s.classList.add('visible');
 function hideSocials(){ scIcons.forEach(function(s){ s.classList.remove('visible'); }); }
 if(scIcons.length){ showSocials(); setInterval(function(){ hideSocials(); setTimeout(showSocials, 500); }, 4000); }
 
-/* ── FAQ accordion ───────────────────────────────────────── */
-document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click', function(){
-    var item = q.parentElement;
-    var open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(fi){ fi.classList.remove('open'); });
-    if(!open) item.classList.add('open');
-  });
-});
-
 /* ── Budget pills ────────────────────────────────────────── */
 document.querySelectorAll('.budget-pill').forEach(function(pill){
   pill.addEventListener('click', function(){
