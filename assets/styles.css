@@ -2195,3 +2195,11 @@ body {
   #bt{right:14px;bottom:14px}.ft{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){.ft{grid-template-columns:1fr}}
+
+
+
+/* custom by arif */
+.why-card.reveal.visible
+ {
+    margin-top: 45px;
+}
