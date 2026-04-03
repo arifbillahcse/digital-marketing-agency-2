@@ -915,7 +915,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 }
 
 /* Form fields */
-.field:last-of-type{margin-bottom:0}
+.field:last-of-type{margin-bottom:15px}
 .field label span{color:var(--c1);margin-left:2px}
 .field input,.field select,.field textarea{
   border:1.5px solid rgba(255,255,255,.09);
