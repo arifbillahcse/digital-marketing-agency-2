@@ -1034,8 +1034,10 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 }
 .faq-ico{
   width:32px;height:32px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
   background:rgba(255,255,255,.05);border-radius:8px;
   font-size:.8rem;color:var(--muted);
+  transition:all var(--trans);
 }
 .faq-item.open .faq-ico{background:var(--grad);color:#fff;transform:rotate(45deg)}
 .faq-a{
