@@ -77,7 +77,7 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 .nav-l a:hover,.nav-l a.act{color:#fff}
 .nav-l a.act::after,.nav-l a:hover::after{transform:scaleX(1)}
 .nav-r{display:flex;align-items:center;gap:10px}
-.hbg{display:none;flex-direction:column;gap:5px;padding:8px}
+.hbg{display:none;flex-direction:column;gap:5px;padding:8px;background:transparent;border:none;cursor:pointer}
 .hbg span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--trans)}
 
 /* Mobile menu */
@@ -406,9 +406,9 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   .hv-rating{left:-28px}
 }
 @media(max-width:768px){
-  nav{background:rgba(6,12,24,.97);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
-  .nav-l,.nav-r{display:none}
-  .hbg{display:flex}
+  nav{background:rgba(6,12,24,.97)!important;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+  .nav-l,.nav-r{display:none!important}
+  .hbg{display:flex!important;flex-direction:column;gap:5px;padding:8px;background:transparent;border:none;cursor:pointer}
   .hero-inner{grid-template-columns:1fr}
   .hero-visual{display:none}
   .hero{padding-top:96px}
@@ -780,7 +780,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   .ft{grid-template-columns:1fr 1fr;gap:36px}
 }
 @media(max-width:768px){
-  .nav-l,.nav-r{display:none}.hbg{display:flex}
+  .nav-l,.nav-r{display:none!important}.hbg{display:flex!important}
   .hv{height:300px}.fc1,.fc4{display:none}
   .tlr{grid-template-columns:1fr}
   .tlc{flex-direction:row;margin-bottom:10px}.tly{margin-top:0;margin-left:10px}
