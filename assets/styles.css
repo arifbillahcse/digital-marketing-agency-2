@@ -1415,12 +1415,19 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 }
 @media(max-width:768px){
   .filter-tabs{gap:8px}
-  .cases-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr!important}
   .rb-grid{grid-template-columns:1fr 1fr}
   .ind-grid{grid-template-columns:1fr 1fr}
   .ps-steps{grid-template-columns:repeat(2,1fr)}
-  #bt{right:14px;bottom:14px}.hero-stats{flex-direction:column;gap:18px}
-  .hs{border-right:none;padding-right:0}
+  #bt{right:14px;bottom:14px}
+  .hv{height:260px;overflow:hidden}
+  .fc1,.fc2,.fc3,.fc4{display:none!important}
+  .hero-stats{flex-direction:column;gap:14px}
+  .hs{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:0 0 14px 0}
+  .hs:last-child{border-bottom:none;padding:0}
+  .feat-content{padding:28px 22px}
+  .feat-metrics{grid-template-columns:repeat(2,1fr)}
+  .feat-img{min-height:220px}
 }
 @media(max-width:480px){
   .rb-grid{grid-template-columns:1fr}
