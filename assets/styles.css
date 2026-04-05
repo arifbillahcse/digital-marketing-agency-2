@@ -406,6 +406,7 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
   .hv-rating{left:-28px}
 }
 @media(max-width:768px){
+  nav{background:rgba(6,12,24,.97);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
   .nav-l,.nav-r{display:none}
   .hbg{display:flex}
   .hero-inner{grid-template-columns:1fr}
@@ -1468,6 +1469,8 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   padding:110px 24px 80px;
   display:flex;
   align-items:center;
+  position:relative;
+  overflow:hidden;
 }
 .page-hero-bg{position:absolute;inset:0;z-index:0}
 .ph-blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.13;animation:blob-float 11s ease-in-out infinite}
