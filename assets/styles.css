@@ -792,8 +792,12 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   .fbot{flex-direction:column;gap:14px;text-align:center}
   #cur,
   #bt{right:14px;bottom:14px}.tl::before{left:24px}
-  .hfacts{flex-direction:column;gap:18px}
-  .hf{border-right:none;padding-right:0}
+  .hfacts{flex-direction:column;gap:14px}
+  .hf{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:0 0 14px 0}
+  .hf:last-child{border-bottom:none;padding:0}
+  .hv{overflow:hidden}
+  .sc2-v{font-size:1.9rem}
+  .sc2{padding:32px 18px}
 }
 @media(max-width:480px){
   .ft{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr}
