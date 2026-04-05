@@ -81,7 +81,7 @@ nav.sc{background:rgba(6,12,24,.88);backdrop-filter:blur(22px);-webkit-backdrop-
 .hbg span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--trans)}
 
 /* Mobile menu */
-.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(30px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(30px);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:36px}
 .mob.open{display:flex}
 .mob a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--trans)}
 .mob a:hover{color:var(--c1)}
@@ -486,7 +486,7 @@ nav.sc{background:rgba(6,12,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-
 @keyframes pulse-dot{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:.7}}
 .nav-l a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad);transform:scaleX(0);transition:transform var(--trans);border-radius:2px}
 .hbg span{width:24px;height:2px;background:#fff;border-radius:2px}
-.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(28px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(28px);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:36px}
 .mclose{position:absolute;top:28px;right:28px;font-size:1.5rem;color:var(--muted);cursor:pointer}
 
 /* ═══ HERO ═══ */
@@ -1467,7 +1467,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 .nav-cta{display:flex;align-items:center;gap:10px}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:8px}
 .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--trans)}
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(30px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(6,12,24,.97);backdrop-filter:blur(30px);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:36px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:var(--font-h);font-size:2rem;font-weight:700;transition:color var(--trans)}
 .mobile-menu a:hover{color:var(--c1)}
