@@ -196,6 +196,9 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item').forEach(function(fi){ fi.classList.remove('open'); });
   if(!isOpen) item.classList.add('open');
 }
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click', function(){ toggleFaq(this); });
+});
 
 /* ── Form validation helpers ─────────────────────────────── */
 function validateEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
