@@ -793,7 +793,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   #cur,
   #bt{right:14px;bottom:14px}.tl::before{left:24px}
   .hfacts{flex-direction:column;gap:14px}
-  .hf{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:0 0 14px 0}
+  .hf,.hf:not(:first-child):not(:last-child){border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:0 0 14px 0}
   .hf:last-child{border-bottom:none;padding:0}
   .hv{overflow:hidden}
   .sc2-v{font-size:1.9rem}
@@ -1423,7 +1423,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   .hv{height:260px;overflow:hidden}
   .fc1,.fc2,.fc3,.fc4{display:none!important}
   .hero-stats{flex-direction:column;gap:14px}
-  .hs{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:0 0 14px 0}
+  .hs,.hs:not(:first-child):not(:last-child){border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:0 0 14px 0}
   .hs:last-child{border-bottom:none;padding:0}
   .feat-content{padding:28px 22px}
   .feat-metrics{grid-template-columns:repeat(2,1fr)}
