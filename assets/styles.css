@@ -1017,6 +1017,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   border:1.5px solid rgba(58,123,255,.3);
   margin:0 auto 20px;
   font-size:1.15rem;color:#7EB3FF;
+  display:flex;align-items:center;justify-content:center;
 }
 .step-item:hover .step-num{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 0 8px rgba(58,123,255,.1)}
 .step-title{font-family:var(--font-h);font-size:.95rem;font-weight:700;margin-bottom:8px}
