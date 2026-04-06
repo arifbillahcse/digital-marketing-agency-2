@@ -1911,7 +1911,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 }
 @media(max-width:480px){
   .overview-grid{grid-template-columns:1fr}
-  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .tools-grid{grid-template-columns:repeat(3,1fr)}
   .footer-legal-links{flex-direction:column;gap:8px;align-items:center}
 }
 
