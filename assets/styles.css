@@ -1817,6 +1817,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 .tool-card{
   padding:20px 14px;
   cursor:default;
+  text-align:center;
 }
 .tool-card:hover{background:rgba(255,255,255,.065);border-color:rgba(58,123,255,.25);transform:translateY(-4px)}
 .tool-ico{font-size:1.8rem;margin-bottom:9px;display:block}
