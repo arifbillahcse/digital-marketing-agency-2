@@ -2146,7 +2146,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   border-radius: 5px;
 }
-.check-icon svg { width: 10px; height: 10px; }
+.check-icon svg { width: 15px; height: 15px; }
 
 .cta-strip {
   margin-top: 64px;
@@ -2229,4 +2229,9 @@ body {
 .why-card.reveal.visible
  {
     margin-top: 45px;
+}
+
+.cta-strip .cta-actions a
+ {
+    margin-top: 16px;
 }
