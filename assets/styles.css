@@ -2143,6 +2143,8 @@ body {
   border: 1px solid rgba(58,123,255,.3);
   flex-shrink: 0;
   margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 5px;
 }
 .check-icon svg { width: 10px; height: 10px; }
 
