@@ -1779,6 +1779,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 .ov-card{
   padding:26px 22px;
   text-align:center;
+  display:flex;flex-direction:column;align-items:center;
 }
 .ov-card::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity var(--trans)}
 .ov-card:hover{transform:translateY(-6px);border-color:rgba(58,123,255,.3);box-shadow:var(--sh-glow)}
