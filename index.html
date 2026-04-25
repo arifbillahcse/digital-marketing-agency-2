@@ -1,0 +1,587 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MISGRO – Data-Driven Digital Marketing Agency</title>
+<meta name="description" content="We help brands scale with powerful SEO, targeted ads, and high-converting marketing strategies."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+<div id="cursor" class="cursor"></div>
+<div id="cursorRing" class="cursor-ring"></div>
+
+<!-- Back to top -->
+<a href="#" class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+<!-- Mobile menu -->
+<div class="mob" id="mob">
+  <span class="mclose" id="mclose" onclick="closeMob()"><i class="fas fa-xmark"></i></span>
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services.html" onclick="closeMob()">Services</a>
+  <a href="about.html" onclick="closeMob()">About</a>
+  <a href="why-choose-us.html" onclick="closeMob()">Why Choose Us</a>
+  <a href="portfolio.html" onclick="closeMob()">Portfolio</a>
+  <a href="contact.html" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo-link"><img src="img/misgro.png" alt="MISGRO" class="logo-img"/></a>
+    <ul class="nav-l">
+      <li><a href="index.html" class="act">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="contact.html" class="btn btn-p">Work With Us <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-blob blob-a"></div>
+    <div class="hero-blob blob-b"></div>
+    <div class="hero-blob blob-c"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-inner">
+    <!-- Left -->
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-pulse"></span>#1 Rated Digital Marketing Agency</div>
+      <h1 class="hero-title">Grow Your Business<br/>With <span class="grad-text">Data-Driven</span><br/>Digital Marketing</h1>
+      <p class="hero-desc">We help ambitious brands scale faster with powerful SEO, precision-targeted ads, and high-converting marketing strategies. Results aren't a promise — they're our standard.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary btn-lg">Get Free Consultation <i class="fas fa-arrow-right"></i></a>
+        <a href="services.html" class="btn-ghost"><i class="fas fa-circle-play"></i> View Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-val">300%</div><div class="hs-lbl">Avg. Traffic Growth</div></div>
+        <div><div class="hs-val">$2M+</div><div class="hs-lbl">Ad Revenue Generated</div></div>
+        <div><div class="hs-val">150+</div><div class="hs-lbl">Happy Clients</div></div>
+      </div>
+    </div>
+
+    <!-- Right — animated visual -->
+    <div class="hero-visual" id="heroVisual">
+
+      <!-- Glowing circle with cycling images -->
+      <div class="hv-wrap">
+        <div class="hv-ring"></div>
+        <div class="hv-circle">
+          <!-- HD Unsplash images -->
+          <img class="hv-img-slide active" id="hvi0"
+            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=800&q=90&auto=format&fit=crop&crop=faces,center"
+            alt="Marketing Team at Work"/>
+          <img class="hv-img-slide" id="hvi1"
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=800&q=90&auto=format&fit=crop&crop=faces,center"
+            alt="Strategy Session"/>
+          <img class="hv-img-slide" id="hvi2"
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=800&q=90&auto=format&fit=crop&crop=faces,center"
+            alt="Creative Team"/>
+        </div>
+        <!-- Dots outside circle -->
+        <div class="hv-dots">
+          <button class="hv-dot active" data-img="0"></button>
+          <button class="hv-dot" data-img="1"></button>
+          <button class="hv-dot" data-img="2"></button>
+        </div>
+      </div>
+
+      <!-- Typewriter card top-right -->
+      <div class="hv-typewriter">
+        <div class="hv-tw-badge"><span class="hv-tw-dot"></span><span class="hv-tw-title">Marketing Insight</span></div>
+        <div class="hv-tw-body" id="twText"><span class="hv-cursor"></span></div>
+      </div>
+
+
+      <!-- Keyword scroll card bottom-right -->
+      <div class="hv-keywords">
+        <div class="hv-kw-hd">🚀 What We Do</div>
+        <div class="hv-kw-track">
+          <div class="hv-kw-item">BRANDING</div>
+          <div class="hv-kw-item">MARKETING</div>
+          <div class="hv-kw-item">STRATEGY</div>
+          <div class="hv-kw-item">GROWTH</div>
+          <div class="hv-kw-item">SEO &amp; ADS</div>
+          <div class="hv-kw-item">CONTENT</div>
+          <div class="hv-kw-item">ANALYTICS</div>
+          <div class="hv-kw-item">BRANDING</div>
+          <div class="hv-kw-item">MARKETING</div>
+          <div class="hv-kw-item">STRATEGY</div>
+          <div class="hv-kw-item">GROWTH</div>
+          <div class="hv-kw-item">SEO &amp; ADS</div>
+          <div class="hv-kw-item">CONTENT</div>
+          <div class="hv-kw-item">ANALYTICS</div>
+        </div>
+      </div>
+
+      <!-- Left floating stat -->
+      <div class="hv-stat-l">
+        <div class="hv-sl-val">150+</div>
+        <div class="hv-sl-lbl">Happy Clients</div>
+      </div>
+
+      <!-- Bottom-left rating -->
+      <div class="hv-rating">
+        <div class="hv-rt-stars">★★★★★</div>
+        <div class="hv-rt-val">4.9 / 5.0</div>
+        <div class="hv-rt-lbl">Client Rating</div>
+      </div>
+
+    </div><!-- /hero-visual -->
+  </div>
+</section>
+
+<!-- ══════════════ MARQUEE ══════════════ -->
+<section class="clients">
+  <p class="clients-lbl">Trusted by 150+ Brands Worldwide</p>
+  <div style="overflow:hidden">
+    <div class="marquee-track">
+      <div class="client-logo"><i class="fab fa-shopify"></i> Shopify</div>
+      <div class="client-logo"><i class="fab fa-stripe-s"></i> Stripe</div>
+      <div class="client-logo"><i class="fab fa-slack"></i> Slack</div>
+      <div class="client-logo"><i class="fab fa-dropbox"></i> Dropbox</div>
+      <div class="client-logo"><i class="fab fa-atlassian"></i> Atlassian</div>
+      <div class="client-logo"><i class="fab fa-figma"></i> Figma</div>
+      <div class="client-logo"><i class="fab fa-github"></i> GitHub</div>
+      <div class="client-logo"><i class="fab fa-google"></i> Google</div>
+      <div class="client-logo"><i class="fab fa-shopify"></i> Shopify</div>
+      <div class="client-logo"><i class="fab fa-stripe-s"></i> Stripe</div>
+      <div class="client-logo"><i class="fab fa-slack"></i> Slack</div>
+      <div class="client-logo"><i class="fab fa-dropbox"></i> Dropbox</div>
+      <div class="client-logo"><i class="fab fa-atlassian"></i> Atlassian</div>
+      <div class="client-logo"><i class="fab fa-figma"></i> Figma</div>
+      <div class="client-logo"><i class="fab fa-github"></i> GitHub</div>
+      <div class="client-logo"><i class="fab fa-google"></i> Google</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SERVICES ══════════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head reveal">
+      <div class="section-label"><i class="fas fa-bolt"></i> What We Do</div>
+      <h2 class="section-title">Marketing Services That<br/><span class="grad-text">Actually Convert</span></h2>
+      <p class="section-sub">From visibility to conversion — every stage of your growth funnel covered with precision-crafted strategies.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fas fa-magnifying-glass-chart"></i></div>
+        <div class="sc-title">SEO Optimization</div>
+        <div class="sc-desc">Dominate search rankings with technical SEO, content strategy, and authority-building that drives sustainable organic traffic.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fab fa-google"></i></div>
+        <div class="sc-title">Google Ads Management</div>
+        <div class="sc-desc">Precision-targeted PPC campaigns with continuous optimization to maximize your ROAS and minimize wasted ad spend.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fab fa-meta"></i></div>
+        <div class="sc-title">Facebook &amp; Instagram Ads</div>
+        <div class="sc-desc">Data-driven social advertising that reaches your ideal customers at every stage of their buying journey.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fas fa-hashtag"></i></div>
+        <div class="sc-title">Social Media Marketing</div>
+        <div class="sc-desc">Build a loyal community and amplify brand awareness through strategic content, engagement, and growth tactics.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fas fa-pen-nib"></i></div>
+        <div class="sc-title">Content Marketing</div>
+        <div class="sc-desc">Compelling, SEO-optimized content that educates your audience, builds authority, and drives qualified leads.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="sc-title">Email Marketing</div>
+        <div class="sc-desc">High-converting email sequences, automation flows, and personalized campaigns with industry-beating open rates.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fas fa-chart-line"></i></div>
+        <div class="sc-title">Conversion Rate Optimization</div>
+        <div class="sc-desc">Turn more visitors into customers with data-backed A/B testing, UX improvements, and funnel optimization.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon-wrap"><i class="fas fa-chart-pie"></i></div>
+        <div class="sc-title">Analytics &amp; Tracking</div>
+        <div class="sc-desc">Full-funnel visibility with GA4, Tag Manager, and custom dashboards that reveal exactly what's working.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHY CHOOSE US ══════════════ -->
+<section class="why" id="why">
+  <div class="why-inner container">
+    <div class="why-photo reveal">
+      <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=600&q=88&auto=format&fit=crop&crop=center"
+        alt="Our Marketing Team" loading="lazy"/>
+      <div class="why-photo-badge">
+        <div class="wpb-icon"><i class="fas fa-trophy"></i></div>
+        <div>
+          <div class="wpb-val">8+ Years</div>
+          <div class="wpb-lbl">of Proven Results</div>
+        </div>
+      </div>
+    </div>
+    <div class="why-content reveal">
+      <div class="section-label"><i class="fas fa-star"></i> Why MISGRO</div>
+      <h2 class="section-title">More Than an Agency —<br/><span class="grad-text">Your Growth Partner</span></h2>
+      <p class="section-sub">We don't just run campaigns. We embed into your strategy, think like your co-founders, and obsess over your results.</p>
+      <div class="why-features">
+        <div class="wf-item">
+          <div class="wf-icon"><i class="fas fa-chart-line"></i></div>
+          <div><div class="wf-title">Data-Driven Strategy</div><div class="wf-desc">Every decision backed by real analytics. We track, test, and optimize continuously.</div></div>
+        </div>
+        <div class="wf-item">
+          <div class="wf-icon"><i class="fas fa-certificate"></i></div>
+          <div><div class="wf-title">Certified Experts</div><div class="wf-desc">Google, Meta, and HubSpot certified professionals with hands-on experience across every vertical.</div></div>
+        </div>
+        <div class="wf-item">
+          <div class="wf-icon"><i class="fas fa-bullseye"></i></div>
+          <div><div class="wf-title">Proven ROI Campaigns</div><div class="wf-desc">We've consistently delivered 3–8× ROAS for clients across e-commerce, SaaS, and services.</div></div>
+        </div>
+        <div class="wf-item">
+          <div class="wf-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+          <div><div class="wf-title">Transparent Reporting</div><div class="wf-desc">Real-time dashboards, weekly updates, and monthly deep-dives. No hidden metrics, ever.</div></div>
+        </div>
+        <div class="wf-item">
+          <div class="wf-icon"><i class="fas fa-headset"></i></div>
+          <div><div class="wf-title">Dedicated Account Manager</div><div class="wf-desc">One point of contact who knows your business inside out — available 24/7.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ RESULTS ══════════════ -->
+<section class="results" id="results">
+  <div class="results-head container reveal">
+    <div class="section-label"><i class="fas fa-trophy"></i> Our Results</div>
+    <h2 class="section-title">Numbers That<br/><span class="grad-text">Tell Our Story</span></h2>
+    <p class="section-sub">Real metrics from real campaigns. Not projections — actual case study results.</p>
+  </div>
+  <div class="counters-grid container reveal">
+    <div class="counter-cell">
+      <span class="counter-ico">📈</span>
+      <div class="counter-val" data-target="300" data-suffix="%">0%</div>
+      <div class="counter-lbl">Average Traffic Growth</div>
+    </div>
+    <div class="counter-cell">
+      <span class="counter-ico">🎯</span>
+      <div class="counter-val" data-target="120" data-suffix="%">0%</div>
+      <div class="counter-lbl">Lead Increase Rate</div>
+    </div>
+    <div class="counter-cell">
+      <span class="counter-ico">💰</span>
+      <div class="counter-val" data-target="2" data-prefix="$" data-suffix="M+">$0M+</div>
+      <div class="counter-lbl">Ad Revenue Generated</div>
+    </div>
+    <div class="counter-cell">
+      <span class="counter-ico">😊</span>
+      <div class="counter-val" data-target="150" data-suffix="+">0+</div>
+      <div class="counter-lbl">Happy Clients</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section class="testimonials" id="testimonials">
+  <div class="testi-head container reveal">
+    <div class="section-label"><i class="fas fa-heart"></i> Testimonials</div>
+    <h2 class="section-title">What Our Clients<br/><span class="grad-text">Say About Us</span></h2>
+    <p class="section-sub">Don't take our word for it. Here's what 150+ clients say about working with MISGRO.</p>
+  </div>
+  <div class="testi-grid container">
+    <div class="testi-card reveal">
+      <div class="testi-quote-mark">"</div>
+      <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p class="testi-text">MISGRO completely transformed our online presence. Within 6 months, our organic traffic tripled and lead quality improved dramatically. The team is incredibly responsive and data-focused.</p>
+      <div class="testi-author">
+        <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Sarah Johnson" loading="lazy"/></div>
+        <div><div class="testi-name">Sarah Johnson</div><div class="testi-company">CEO, TechFlow SaaS</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote-mark">"</div>
+      <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p class="testi-text">Our Google Ads ROAS went from 1.8× to 6.2× in just 90 days. The MISGRO team knows exactly what levers to pull. I've worked with 3 other agencies — none come close to this level of expertise.</p>
+      <div class="testi-author">
+        <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Marcus Rodriguez" loading="lazy"/></div>
+        <div><div class="testi-name">Marcus Rodriguez</div><div class="testi-company">Founder, EcoGear Store</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote-mark">"</div>
+      <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p class="testi-text">Best investment we've made for our marketing. Transparent reporting, proactive communication, and results that actually move the needle. Our email list grew by 40K subscribers in 4 months.</p>
+      <div class="testi-author">
+        <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Amanda Lee" loading="lazy"/></div>
+        <div><div class="testi-name">Amanda Lee</div><div class="testi-company">CMO, Wellness Brands Co.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRICING ══════════════ 
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-head reveal">
+      <div class="section-label"><i class="fas fa-tag"></i> Pricing</div>
+      <h2 class="section-title">Simple, Transparent<br/><span class="grad-text">Pricing Plans</span></h2>
+      <p class="section-sub">No hidden fees. No long-term lock-ins. Scale up or down anytime.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">$999<span>/mo</span></div>
+        <div class="plan-period">Perfect for small businesses starting out</div>
+        <div class="plan-divider"></div>
+        <div class="plan-features">
+          <div class="pf-item"><i class="fas fa-circle-check"></i> SEO Audit &amp; On-Page Optimization</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> 2 Social Media Platforms</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Google Ads (up to $5K spend)</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Monthly Performance Report</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Email Support</div>
+          <div class="pf-item na"><i class="fas fa-circle-xmark"></i> Dedicated Account Manager</div>
+          <div class="pf-item na"><i class="fas fa-circle-xmark"></i> Custom Strategy Sessions</div>
+        </div>
+        <a href="#contact" class="plan-btn plan-btn-out">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price grad-text">$2,499<span style="color:var(--muted)">/mo</span></div>
+        <div class="plan-period">For scaling businesses ready to grow fast</div>
+        <div class="plan-divider"></div>
+        <div class="plan-features">
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Full SEO Campaign</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> 4 Social Media Platforms</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Google + Meta Ads (up to $20K)</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Email Marketing Automation</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> CRO &amp; Landing Page Optimization</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Dedicated Account Manager</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Bi-weekly Strategy Sessions</div>
+        </div>
+        <a href="#contact" class="plan-btn plan-btn-grad">Start Growing Now</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price">Custom</div>
+        <div class="plan-period">For enterprises with complex needs</div>
+        <div class="plan-divider"></div>
+        <div class="plan-features">
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Everything in Growth</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Unlimited Ad Spend Management</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Custom Analytics Dashboard</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> White-label Reporting</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Priority 24/7 Support</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Quarterly Business Reviews</div>
+          <div class="pf-item"><i class="fas fa-circle-check"></i> Dedicated Marketing Team</div>
+        </div>
+        <a href="#contact" class="plan-btn plan-btn-out">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+-->
+
+<!-- ══════════════ CTA BANNER ══════════════ -->
+<section class="cta-banner">
+  <div class="cta-inner reveal">
+    <div class="cta-content">
+      <div class="section-label" style="justify-content:center"><i class="fas fa-rocket"></i> Let's Work Together</div>
+      <h2 class="cta-title">Ready to <span class="grad-text">Grow Your Business?</span></h2>
+      <p class="cta-desc">Get a free marketing strategy session today. No commitment. No fluff. Just actionable insights for your brand.</p>
+      <div class="cta-btns">
+        <a href="#contact" class="btn btn-primary btn-lg">Get Free Strategy Session <i class="fas fa-arrow-right"></i></a>
+        <a href="tel:+12125550190" class="btn-ghost"><i class="fas fa-phone"></i> Call Us Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="faq-head reveal">
+      <div class="section-label"><i class="fas fa-circle-question"></i> FAQ</div>
+      <h2 class="section-title">Frequently Asked<br/><span class="grad-text">Questions</span></h2>
+      <p class="section-sub">Everything you need to know before getting started with MISGRO.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long before I see results from SEO?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
+        <div class="faq-a">Most clients see measurable improvements in organic traffic within 3–4 months. Significant ranking changes typically occur between months 4–6. SEO is a long-term investment — the results compound over time and, unlike paid ads, continue delivering after campaigns end.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you require a long-term contract?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
+        <div class="faq-a">No long-term contracts required. We work month-to-month. However, we recommend a minimum 3-month commitment for SEO and content marketing to see meaningful results. Paid advertising can show results much faster.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What industries do you specialise in?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
+        <div class="faq-a">We have deep experience across e-commerce, SaaS, professional services, healthcare, real estate, and local businesses. Our data-driven approach adapts to any vertical — if there's an audience online, we know how to reach them.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do you measure and report on results?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
+        <div class="faq-a">Every client gets a real-time dashboard with full visibility into their campaigns, weekly automated reports, and a monthly deep-dive review with their dedicated account manager covering what worked, what didn't, and what's next.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the minimum ad budget you recommend?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
+        <div class="faq-a">For Google Ads we recommend a minimum of $2,000/month in ad spend. Facebook/Instagram can start at $1,000/month. These minimums ensure we have enough data to test, learn, and optimise your campaigns effectively.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ NEWSLETTER ══════════════ -->
+
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section class="contact" id="contact">
+  <div class="contact-inner container">
+    <div class="contact-info reveal">
+      <div class="section-label"><i class="fas fa-envelope"></i> Get In Touch</div>
+      <h2>Let's Start Your<br/><span class="grad-text">Growth Journey</span></h2>
+      <p>Tell us about your business and goals. We'll come back with a custom strategy and a clear roadmap to results.</p>
+      <div class="contact-details">
+        <div class="cd-item">
+          <div class="cd-icon"><i class="fas fa-envelope"></i></div>
+          <div><div class="cd-lbl">Email</div><div class="cd-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f373a3333301f3130293e323e2d34713e383a313c26">contact@misgro.com</a></div></div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon"><i class="fas fa-phone"></i></div>
+          <div><div class="cd-lbl">Phone</div><div class="cd-text">+1 (212) 555-0190</div></div>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="form-col reveal">
+      <div id="formWrap">
+        <div class="form-title">Send Us a Message</div>
+        <div class="form-sub">We&#39;ll get back to you within one business day.</div>
+        <div class="form-body">
+          <div class="field-row">
+            <div class="field">
+              <label>Your Name <span>*</span></label>
+              <input type="text" id="f-name" placeholder="John Smith" autocomplete="name"/>
+              <div class="err-msg" id="err-name">Please enter your name.</div>
+            </div>
+            <div class="field">
+              <label>Email Address <span>*</span></label>
+              <input type="email" id="f-email" placeholder="john@company.com" autocomplete="email"/>
+              <div class="err-msg" id="err-email">Please enter a valid email.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="+1 (212) 555-0190" autocomplete="tel"/>
+          </div>
+          <div class="field">
+            <label>Subject <span>*</span></label>
+            <input type="text" id="f-subject" placeholder="How can we help you?"/>
+            <div class="err-msg" id="err-subject">Please enter a subject.</div>
+          </div>
+          <div class="field">
+            <label>Message <span>*</span></label>
+            <textarea id="f-message" placeholder="Tell us about your project or enquiry..."></textarea>
+            <div class="err-msg" id="err-message">Please enter your message.</div>
+          </div>
+          <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">
+            <span id="btn-text">Send Message</span>
+            <i class="fas fa-paper-plane" id="btn-ico"></i>
+            <div class="btn-spinner" id="btn-spin"></div>
+          </button>
+        </div>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="success-ico"><i class="fas fa-check"></i></div>
+        <div class="success-title">Message Sent!</div>
+        <p class="success-sub">Thanks for reaching out. We&#39;ll get back to you within one business day.</p>
+        <div class="success-back" onclick="resetForm()"><i class="fas fa-arrow-left"></i> Send Another Message</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-link"><img src="img/misgro.png" alt="MISGRO" class="logo-img"/></a>
+      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">SEO Optimization</a></li>
+        <li><a href="services.html">Google Ads</a></li>
+        <li><a href="services.html">Facebook &amp; Instagram Ads</a></li>
+        <li><a href="services.html">Social Media Marketing</a></li>
+        <li><a href="services.html">Content Marketing</a></li>
+        <li><a href="services.html">Email Marketing</a></li>
+        <li><a href="services.html">Analytics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:contact@misgro.com">contact@misgro.com</a></li>
+        <li><a href="tel:+12125550190">+1 (212) 555-0190</a></li>
+        
+        <li><a href="#">340 Park Ave, Suite 400<br/>New York, NY 10022</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">&copy; 2026 MISGRO Agency. All rights reserved.</div>
+    <div class="footer-legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════
+     JAVASCRIPT
+══════════════════════════════ -->
+
+<script src="assets/app.js"></script>
+</body>
+</html>

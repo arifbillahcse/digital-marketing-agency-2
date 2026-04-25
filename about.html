@@ -1,0 +1,598 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us – MISGRO Digital Marketing Agency</title>
+<meta name="description" content="Meet the people, mission, and values behind MISGRO — built on transparency, results, and genuine client partnerships since 2016."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+<div id="cursor" class="cursor"></div>
+<div id="cursorRing" class="cursor-ring"></div>
+
+
+<a href="#" id="bt"><i class="fas fa-arrow-up"></i></a>
+
+<div class="mob" id="mob">
+  <span class="mclose" id="mclose" onclick="closeMob()"><i class="fas fa-xmark"></i></span>
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services.html" onclick="closeMob()">Services</a>
+  <a href="about.html" onclick="closeMob()">About</a>
+  <a href="why-choose-us.html" onclick="closeMob()">Why Choose Us</a>
+  <a href="portfolio.html" onclick="closeMob()">Portfolio</a>
+  <a href="contact.html" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo-link"><img src="img/misgro.png" alt="MISGRO" class="logo-img"/></a>
+    <ul class="nav-l">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html" class="act">About</a></li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="contact.html" class="btn btn-p">Work With Us <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="h-bg">
+    <div class="hbl hbl1"></div><div class="hbl hbl2"></div><div class="hbl hbl3"></div>
+    <div class="h-grid"></div>
+    <div class="h-vl" style="left:33%"></div><div class="h-vl" style="right:33%"></div>
+  </div>
+  <div class="h-in wrap">
+    <!-- Left: text -->
+    <div class="hero-text">
+      <div class="bc"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span style="color:#fff">About Us</span></div>
+      <div class="hbdg"><span class="hbdg-dot"></span> Our Story &amp; Team</div>
+      <h1 class="hero-title">The People Behind<br/><span class="gt">Your Growth.</span></h1>
+      <p class="hero-desc">We are a team of strategists, creatives, and data experts united by one obsession: turning your marketing budget into measurable, scalable business growth with complete transparency at every step.</p>
+      <div class="hero-ctas">
+        <a href="#team" class="btn btn-p">Meet the Team <i class="fas fa-arrow-down"></i></a>
+        <a href="#cta" class="btn-g"><i class="fas fa-calendar-check"></i> Work With Us</a>
+      </div>
+      <div class="hfacts">
+        <div class="hf"><div class="hf-v">2016</div><div class="hf-l">Year Founded</div></div>
+        <div class="hf"><div class="hf-v">38</div><div class="hf-l">Team Members</div></div>
+        <div class="hf"><div class="hf-v">12</div><div class="hf-l">Countries Served</div></div>
+      </div>
+    </div>
+    <!-- Right: dark image mosaic — explicit overlay divs -->
+    <div class="hv">
+      <div class="hv-glow"></div>
+      <!-- Image A: top-left large — dark team office -->
+      <div class="hv-block hva">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c1)"></span> Our Team</div>
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&h=700&q=90&auto=format&fit=crop&crop=center" alt="MISGRO team collaborating" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <!-- Image B: tall right — dark strategy -->
+      <div class="hv-block hvb">
+        <div class="hv-chip"><span class="cdot" style="background:var(--c3)"></span> Strategy</div>
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&h=1000&q=90&auto=format&fit=crop&crop=center" alt="Dark marketing strategy session" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <!-- Image C: bottom-left — dark analytics -->
+      <div class="hv-block hvc">
+        <div class="hv-chip"><span class="cdot" style="background:#34D399"></span> Data &amp; Results</div>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&q=90&auto=format&fit=crop&crop=center" alt="Analytics dashboard dark" loading="eager"/>
+        <div class="hv-ov"></div>
+      </div>
+      <!-- Floating stat cards -->
+      <div class="hfc fc1"><div class="hfc-i"><i class="fas fa-trophy"></i></div><div><div class="hfc-v">8+ Years</div><div class="hfc-l">Experience</div></div></div>
+      <div class="hfc fc2"><div class="hfc-i"><i class="fas fa-star"></i></div><div><div class="hfc-v">4.9 / 5.0</div><div class="hfc-l">Client Rating</div></div></div>
+      <div class="hfc fc3"><div class="hfc-i"><i class="fas fa-users"></i></div><div><div class="hfc-v">38 Experts</div><div class="hfc-l">In-House Team</div></div></div>
+      <div class="hfc fc4"><div class="hfc-i"><i class="fas fa-globe"></i></div><div><div class="hfc-v">12 Countries</div><div class="hfc-l">Clients Worldwide</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="tbar">
+  <div class="ttrack">
+    <div class="ti"><i class="fab fa-google"></i> Google Premier Partner</div>
+    <div class="ti"><i class="fab fa-meta"></i> Meta Business Partner</div>
+    <div class="ti"><i class="fab fa-shopify"></i> Shopify Experts</div>
+    <div class="ti"><i class="fas fa-certificate"></i> HubSpot Certified</div>
+    <div class="ti"><i class="fab fa-linkedin"></i> LinkedIn Marketing Partner</div>
+    <div class="ti"><i class="fas fa-award"></i> Clutch Top Agency 2024</div>
+    <div class="ti"><i class="fas fa-star"></i> G2 Leader 2026</div>
+    <div class="ti"><i class="fas fa-shield-halved"></i> ISO 27001 Certified</div>
+    <div class="ti"><i class="fab fa-google"></i> Google Premier Partner</div>
+    <div class="ti"><i class="fab fa-meta"></i> Meta Business Partner</div>
+    <div class="ti"><i class="fab fa-shopify"></i> Shopify Experts</div>
+    <div class="ti"><i class="fas fa-certificate"></i> HubSpot Certified</div>
+    <div class="ti"><i class="fab fa-linkedin"></i> LinkedIn Marketing Partner</div>
+    <div class="ti"><i class="fas fa-award"></i> Clutch Top Agency 2024</div>
+    <div class="ti"><i class="fas fa-star"></i> G2 Leader 2026</div>
+    <div class="ti"><i class="fas fa-shield-halved"></i> ISO 27001 Certified</div>
+  </div>
+</div>
+
+<!-- ═══ OUR STORY ═══ -->
+<section class="story" id="story">
+  <div class="story-in wrap">
+    <div class="story-vis rv">
+      <div class="s-main">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=720&q=88&auto=format&fit=crop&crop=center" alt="MISGRO founding team" loading="lazy"/>
+        <div class="s-main-ov"></div>
+      </div>
+      <div class="s-sm">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=320&q=88&auto=format&fit=crop&crop=center" alt="Strategy whiteboard" loading="lazy"/>
+        <div class="s-sm-ov"></div>
+      </div>
+      <div class="s-badge"><div class="sb-v">2016</div><div class="sb-l">Founded in New York</div></div>
+    </div>
+    <div class="sc rv">
+      <div class="chip"><i class="fas fa-book-open"></i> Our Story</div>
+      <h2 class="h2">Built on Results,<br/><span class="gt">Not Promises.</span></h2>
+      <p class="sub" style="margin:16px 0 26px">From a three-person startup in Brooklyn to a 38-strong global team serving clients in 12 countries — here is how MISGRO became the agency that brands actually trust.</p>
+      <p class="sbody">MISGRO was founded in 2016 by three ex-agency marketers who had grown tired of watching businesses pay large retainers for campaigns that looked impressive on slides but delivered little in actual revenue. They had seen agencies prioritise award entries over client outcomes, and vanity metrics over real commercial impact. Something had to change — so they built it themselves.</p>
+      <p class="sbody">We launched with five founding clients and one simple promise: every strategy we build will be directly traceable to business results, with full transparency into the work, the data, and the reasoning behind every decision. In our first year, all five clients renewed. That became our blueprint for everything that followed.</p>
+      <div class="squote">
+        <i class="fas fa-quote-left"></i>
+        <div>
+          <p>We built MISGRO because we believed agencies could actually hold themselves accountable to real business outcomes — not just clicks and impressions. Eight years on, that belief still drives every campaign we run and every partnership we form.</p>
+          <cite>&#8212; James Carter, CEO &amp; Co-Founder</cite>
+        </div>
+      </div>
+      <p class="sbody">Today we manage over $12 million in annual ad spend for 150+ clients across 12 countries, with a 98% client retention rate earned through results — not contracts. We are bootstrapped, independent, and accountable only to the people who matter most: our clients.</p>
+      <a href="#team" class="btn btn-p" style="margin-top:10px">Meet Our Full Team <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MISSION + VALUES ═══ -->
+<section class="mission">
+  <div class="wrap">
+    <div class="mhead rv">
+      <div class="chip"><i class="fas fa-compass"></i> Mission &amp; Values</div>
+      <h2 class="h2">What We Stand For,<br/><span class="gt">Every Single Day.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Five values that shape how we think, build teams, design strategies, and measure success — for ourselves and every client we serve.</p>
+    </div>
+    <div class="mlayout">
+      <div class="mmain rv">
+        <div class="mm-ic"><i class="fas fa-rocket"></i></div>
+        <div class="mm-t">Our Mission</div>
+        <p class="mm-b">To be the most trusted growth partner for ambitious brands worldwide — delivering marketing strategies rooted in data, executed with precision, measured by revenue impact, and communicated with radical transparency at every step of the journey.</p>
+        <div class="mm-sep"></div>
+        <div class="mm-tag"><i class="fas fa-circle-check"></i> Core Commitments</div>
+        <ul class="mm-list">
+          <li><i class="fas fa-circle-check"></i> Revenue-first reporting — never vanity metrics</li>
+          <li><i class="fas fa-circle-check"></i> Full access to your live data, always</li>
+          <li><i class="fas fa-circle-check"></i> No lock-in contracts — we earn your business monthly</li>
+          <li><i class="fas fa-circle-check"></i> One dedicated expert, not a rotating team of juniors</li>
+          <li><i class="fas fa-circle-check"></i> Weekly communication, monthly deep-dive reviews</li>
+        </ul>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-chart-line"></i></div>
+        <div class="vc-t">Results Over Vanity</div>
+        <div class="vc-b">Impressions and click rates are milestones — revenue and ROAS are the destination. Every campaign we run is measured against the metric that actually moves your business forward, and only that metric.</div>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-eye"></i></div>
+        <div class="vc-t">Radical Transparency</div>
+        <div class="vc-b">You will see everything: every test result, every dollar spent, every decision we made and why. We share what worked and what did not — without spin, without cherry-picking, without excuses.</div>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-flask-vial"></i></div>
+        <div class="vc-t">Always Be Testing</div>
+        <div class="vc-b">We run structured A/B experiments every week — creative, copy, audiences, bids. Compounding 1% improvements is how extraordinary, lasting results are built. We never stop iterating.</div>
+      </div>
+      <div class="vcard rv">
+        <div class="vc-ic"><i class="fas fa-handshake"></i></div>
+        <div class="vc-t">Partnership Mindset</div>
+        <div class="vc-b">Your business goals are our strategy. Your wins are our wins. We embed ourselves in your growth, think like co-founders, and care deeply about the outcome as much as you do — every single month.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS BAND ═══ -->
+<div class="sband">
+  <div class="sgrid wrap">
+    <div class="sc2"><span class="sc2-ico">&#128200;</span><div class="sc2-v" data-to="150" data-sx="+">0+</div><div class="sc2-l">Happy Clients</div></div>
+    <div class="sc2"><span class="sc2-ico">&#128176;</span><div class="sc2-v" data-to="12" data-px="$" data-sx="M+">$0M+</div><div class="sc2-l">Ad Spend Managed</div></div>
+    <div class="sc2"><span class="sc2-ico">&#127942;</span><div class="sc2-v" data-to="38" data-sx="">0</div><div class="sc2-l">Team Members</div></div>
+    <div class="sc2"><span class="sc2-ico">&#11088;</span><div class="sc2-v" data-to="98" data-sx="%">0%</div><div class="sc2-l">Client Retention</div></div>
+  </div>
+</div>
+
+<!-- ═══ HOW WE WORK ═══ -->
+<section class="process">
+  <div class="wrap">
+    <div class="phead rv">
+      <div class="chip"><i class="fas fa-gears"></i> How We Work</div>
+      <h2 class="h2">Our Proven Path<br/>to <span class="gt">Client Growth.</span></h2>
+      <p class="sub" style="margin:16px auto 0">No templates, no guesswork. Every engagement starts with deep discovery and ends with a growth engine built specifically for your business — then optimised continuously.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard rv">
+        <div class="pc-n">01</div>
+        <div class="pc-ic"><i class="fas fa-magnifying-glass-chart"></i></div>
+        <div class="pc-t">Deep Discovery &amp; Audit</div>
+        <div class="pc-b">We spend the first two weeks inside your data — analysing current performance, competitor positioning, audience behaviour, and historical spend. We identify every growth lever and every wasted dollar before suggesting a single strategy.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">02</div>
+        <div class="pc-ic"><i class="fas fa-drafting-compass"></i></div>
+        <div class="pc-t">Custom Strategy Design</div>
+        <div class="pc-b">Based on discovery, we build a bespoke multi-channel growth plan with clear KPIs, 90-day milestones, channel allocation, creative direction, and a structured testing roadmap. No two strategies look the same because no two businesses are identical.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">03</div>
+        <div class="pc-ic"><i class="fas fa-rocket"></i></div>
+        <div class="pc-t">Launch &amp; Execute</div>
+        <div class="pc-b">Campaigns go live within 5 business days. Every element — tracking setup, creative, copy, landing pages, and audiences — is validated before a single dollar of budget goes out the door. Launch day is a milestone, not a gamble.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">04</div>
+        <div class="pc-ic"><i class="fas fa-flask"></i></div>
+        <div class="pc-t">Test &amp; Optimise Weekly</div>
+        <div class="pc-b">Every week we run structured A/B tests across creative, copy, audiences, and bids. What works gets scaled. What does not gets cut or iterated fast. We never wait for quarterly reviews to make important optimisation decisions.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">05</div>
+        <div class="pc-ic"><i class="fas fa-chart-line"></i></div>
+        <div class="pc-t">Report &amp; Scale</div>
+        <div class="pc-b">Weekly automated dashboards keep you fully informed. Monthly deep-dives cover what worked, what did not, and what is next. As results compound, we identify new growth frontiers — new channels, markets, and conversion funnels to unlock.</div>
+      </div>
+      <div class="pcard rv">
+        <div class="pc-n">06</div>
+        <div class="pc-ic"><i class="fas fa-handshake-angle"></i></div>
+        <div class="pc-t">Long-Term Partnership</div>
+        <div class="pc-b">Our best relationships run for years — not because of contracts, but because of compounding results. We grow with you, expanding scope as your business scales, always staying three steps ahead of where your marketing needs to go next.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══ TEAM ═══ -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="thead rv">
+      <div class="chip"><i class="fas fa-users"></i> The Team</div>
+      <h2 class="h2">Specialists Who Own<br/><span class="gt">Your Results.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Every MISGRO team member is a certified specialist — not a generalist wearing multiple hats. When you partner with us, you get dedicated experts on every channel, not one person doing everything at once.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/CEO.jpeg" alt="Md Naeem Akon" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Performance SEO</span><span class="texp">GEO &amp; AEO</span><span class="texp">ROI Growth</span></div>
+        <div class="tinfo">
+          <div class="tn">Md Naeem Akon</div><div class="tr">Founder &amp; CEO</div>
+          <div class="tb">As the visionary behind Misgro, Naeem bridges the gap between search visibility and business revenue. He specializes in Performance SEO and Generative Engine Optimization (GEO), ensuring brands don&#39;t just rank, but dominate the modern AI-driven search landscape while maximizing conversion and ROI.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/team2.jpeg" alt="Meena Khatun" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Video Editor</span><span class="texp">On-Page SEO</span><span class="texp">Creative</span></div>
+        <div class="tinfo">
+          <div class="tn">Meena Khatun</div><div class="tr">Lead Creative Strategist</div>
+          <div class="tb">Leads the creative direction at Misgro with 4+ years of professional video editing experience. She specializes in blending high-end visual storytelling with On-Page SEO to ensure every asset is both engaging and search-friendly.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/arif.png" alt="Arif Billah" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">WordPress</span><span class="texp">Cloud Computing</span></div>
+        <div class="tinfo">
+          <div class="tn">Arif Billah</div><div class="tr">Lead Systems Engineer</div>
+          <div class="tb">Expert Cloud Solutions Architect (AWS, Google Cloud) with 4+ years of experience. Managed 100+ server configurations and 200+ high-performance websites with a focus on core web vitals and speed optimization.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/team4.jpeg" alt="Md. Rakibul Islam" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Full Stack</span><span class="texp">Python &amp; Django</span><span class="texp">AWS</span></div>
+        <div class="tinfo">
+          <div class="tn">Md. Rakibul Islam</div><div class="tr">Full Stack Developer</div>
+          <div class="tb">Technical systems specialist with 30+ successful projects. Expert in building scalable, secure backend architectures and optimizing frontend code for technical SEO and peak site performance.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/team3.jpeg" alt="Sonmoy Shaha" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Technical SEO</span><span class="texp">Link Building</span><span class="texp">Organic Growth</span></div>
+        <div class="tinfo">
+          <div class="tn">Sonmoy Shaha</div><div class="tr">Search Engine Lead</div>
+          <div class="tb">Specialist in data-driven technical SEO and link building. Focused on site authority building and developing comprehensive organic growth strategies that increase sustainable search traffic.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/team1.jpeg" alt="Samiul" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Strategy</span><span class="texp">Keyword Analysis</span><span class="texp">Competitor Intel</span></div>
+        <div class="tinfo">
+          <div class="tn">Samiul</div><div class="tr">SEO Strategy Analyst</div>
+          <div class="tb">Strategic analyst focused on competitor intelligence and high-intent keyword research. Specializes in finding content gaps and building the ultimate SEO roadmap for market dominance.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/team.jpeg" alt="Joysree Das" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">GA4</span><span class="texp">GSC</span><span class="texp">Data Audit</span></div>
+        <div class="tinfo">
+          <div class="tn">Joysree Das</div><div class="tr">Technical Data Analyst</div>
+          <div class="tb">Data Analyst specializing in Google Search Console and GA4. Monitors performance data to identify technical errors and optimize site health for perfect search engine indexing.</div>
+        </div>
+      </div>
+      <div class="tcard rv">
+        <div class="tphoto">
+          <img src="img/team5.jpeg" alt="Razzak" loading="lazy"/>
+          <div class="tphoto-grad"></div>
+          <div class="tsocs">
+            <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tsoc"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="texps"><span class="texp">Local SEO</span><span class="texp">GMB</span><span class="texp">Geo-Targeting</span></div>
+        <div class="tinfo">
+          <div class="tn">Razzak</div><div class="tr">Local SEO Specialist</div>
+          <div class="tb">Geo-targeting expert specializing in Google Business Profile (GMB) optimization and local map rankings. Focused on capturing and dominating specific geographic markets for clients.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AWARDS ═══ -->
+<section class="awards">
+  <div class="wrap">
+    <div class="award-head rv">
+      <div class="chip"><i class="fas fa-award"></i> Awards &amp; Recognition</div>
+      <h2 class="h2">Recognised for Results<br/><span class="gt">by the Industry.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Independent validation from the platforms, review sites, and publications that know digital marketing best.</p>
+    </div>
+    <div class="agrid">
+      <div class="acard rv">
+        <span class="a-ico">&#129351;</span>
+        <div class="a-t">Clutch Top Agency</div>
+        <div class="a-y">2022 &bull; 2023 &bull; 2024</div>
+        <div class="a-b">Three consecutive years ranked in Clutch's Top Digital Marketing Agencies globally, based exclusively on verified client reviews and real project outcome data.</div>
+      </div>
+      <div class="acard rv">
+        <span class="a-ico">&#11088;</span>
+        <div class="a-t">G2 Leader Badge</div>
+        <div class="a-y">Spring 2026</div>
+        <div class="a-b">Awarded G2 Leader status in the Digital Marketing Agencies category, based on user satisfaction scores, ease of use, and measurable market presence across all segments.</div>
+      </div>
+      <div class="acard rv">
+        <span class="a-ico">&#128309;</span>
+        <div class="a-t">Google Premier Partner</div>
+        <div class="a-y">Since 2020</div>
+        <div class="a-b">Placed in the top 3% of Google Partners worldwide based on consistent campaign performance, client growth metrics, and managed spend quality across all account types.</div>
+      </div>
+      <div class="acard rv">
+        <span class="a-ico">&#127942;</span>
+        <div class="a-t">Meta Business Partner</div>
+        <div class="a-y">Since 2021</div>
+        <div class="a-b">Recognised as a certified Meta Business Partner for exceptional ROAS delivery and proven expertise across Facebook, Instagram, and WhatsApp advertising at scale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CULTURE / WHY US ═══ -->
+<section class="culture">
+  <div class="cult-in wrap">
+    <!-- Image collage — explicit overlay divs, no ::after ambiguity -->
+    <div class="cult-vis rv">
+      <div class="cv-img cva">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&q=88&auto=format&fit=crop&crop=center" alt="Team collaboration" loading="lazy"/>
+        <div class="cv-img-ov" style="background:linear-gradient(135deg,rgba(58,123,255,.18),rgba(6,12,24,.44))"></div>
+      </div>
+      <div class="cv-img cvb">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=700&h=900&q=88&auto=format&fit=crop&crop=center" alt="Office team" loading="lazy"/>
+        <div class="cv-img-ov" style="background:linear-gradient(160deg,rgba(124,58,237,.2),rgba(6,12,24,.5))"></div>
+      </div>
+      <div class="cv-img cvc">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&h=500&q=88&auto=format&fit=crop&crop=center" alt="Team brainstorm" loading="lazy"/>
+        <div class="cv-img-ov" style="background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(6,12,24,.54))"></div>
+      </div>
+      <div class="cv-badge"><div class="cvb-v">98%</div><div class="cvb-l">Client Retention</div></div>
+    </div>
+    <div class="cult-content rv">
+      <div class="chip"><i class="fas fa-heart"></i> Why Work With Us</div>
+      <h2 class="h2">An Agency That Feels<br/>Like <span class="gt">Your Own Team.</span></h2>
+      <p class="sub" style="margin:16px 0 36px">The best relationships we have feel like a co-founding partnership. Here is what makes working with MISGRO genuinely, tangibly different from every other agency you have tried.</p>
+      <div class="clist">
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-headset"></i></div>
+          <div><div class="ci-t">One Dedicated Senior Manager, Always</div><div class="ci-b">No rotating junior teams. One senior specialist who knows your business, your goals, and your history — reachable by Slack, email, or call. No ticket queues, no runaround, no surprises.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-chart-bar"></i></div>
+          <div><div class="ci-t">Weekly Reporting With Absolute Honesty</div><div class="ci-b">Real-time dashboards plus weekly email digests cover every metric that matters. We tell you what worked and what did not — clearly, directly, without cherry-picking the good numbers.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-lock-open"></i></div>
+          <div><div class="ci-t">Month-to-Month — Zero Lock-In</div><div class="ci-b">We have never believed in keeping clients through 12-month contracts. You stay because we are delivering measurable results every single month — not because you are legally obligated to stay.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-bolt"></i></div>
+          <div><div class="ci-t">Fast Execution, Faster Optimisation</div><div class="ci-b">New campaigns live within 5 business days. Optimisations happen every week — never quarterly. We move at the speed your business demands and make all decisions based on real-time data.</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><i class="fas fa-certificate"></i></div>
+          <div><div class="ci-t">Certified Across Every Major Platform</div><div class="ci-b">Google Premier Partner, Meta Business Partner, HubSpot Certified. We have direct access to platform support teams, early beta features, and insider data that independent agencies simply cannot get.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-head rv">
+      <div class="chip"><i class="fas fa-heart"></i> Client Stories</div>
+      <h2 class="h2">Trusted by 150+ Brands.<br/><span class="gt">Loved by All of Them.</span></h2>
+      <p class="sub" style="margin:16px auto 0">Do not take our word for it — here is what the businesses we have grown have to say about actually working with MISGRO.</p>
+    </div>
+    <div class="testgrid">
+      <div class="tc rv">
+        <div class="tc-q">"</div>
+        <div class="tc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tc-txt">MISGRO does not feel like an agency — they feel like an extension of our internal team. They know our business, they anticipate our needs, they communicate proactively, and they consistently deliver results that genuinely exceed what we thought was achievable.</p>
+        <div class="tc-au">
+          <div class="tc-av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Sarah Johnson" loading="lazy"/></div>
+          <div><div class="tc-n">Sarah Johnson</div><div class="tc-c">CEO, TechFlow SaaS</div></div>
+        </div>
+      </div>
+      <div class="tc rv">
+        <div class="tc-q">"</div>
+        <div class="tc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tc-txt">The transparency MISGRO brings is unlike anything I have experienced with previous agencies. I see exactly where every dollar goes and what it returns. I worked with four agencies before this. None of them came close to this level of honesty. That trust is genuinely priceless.</p>
+        <div class="tc-au">
+          <div class="tc-av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Marcus Rodriguez" loading="lazy"/></div>
+          <div><div class="tc-n">Marcus Rodriguez</div><div class="tc-c">Founder, EcoGear Store</div></div>
+        </div>
+      </div>
+      <div class="tc rv">
+        <div class="tc-q">"</div>
+        <div class="tc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="tc-txt">Two years in and we have never once thought about leaving. MISGRO delivers consistently, month after month. Their email automation alone now generates 35% of our total revenue on autopilot. Emma is genuinely one of the best marketing professionals I have worked with in 15 years.</p>
+        <div class="tc-au">
+          <div class="tc-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&q=85&auto=format&fit=crop&crop=faces" alt="Amanda Lee" loading="lazy"/></div>
+          <div><div class="tc-n">Amanda Lee</div><div class="tc-c">CMO, Wellness Brands Co.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta" id="cta">
+  <div class="cta-in rv">
+    <div class="cta-c">
+      <div class="chip" style="justify-content:center"><i class="fas fa-handshake"></i> Let's Build Something</div>
+      <h2 class="cta-t">Ready to Grow<br/><span class="gt">With MISGRO?</span></h2>
+      <p class="cta-d">Book a free 30-minute discovery call. No pitch, no pressure — just an honest look at where your marketing can improve and how we would approach your specific growth goals.</p>
+      <div class="cta-btns">
+        <a href="index.html#contact" class="btn btn-p">Book a Discovery Call <i class="fas fa-arrow-right"></i></a>
+        <a href="services.html" class="btn-g"><i class="fas fa-table-cells-large"></i> View Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-link"><img src="img/misgro.png" alt="MISGRO" class="logo-img"/></a>
+      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">SEO Optimization</a></li>
+        <li><a href="services.html">Google Ads</a></li>
+        <li><a href="services.html">Facebook &amp; Instagram Ads</a></li>
+        <li><a href="services.html">Social Media Marketing</a></li>
+        <li><a href="services.html">Content Marketing</a></li>
+        <li><a href="services.html">Email Marketing</a></li>
+        <li><a href="services.html">Analytics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:contact@misgro.com">contact@misgro.com</a></li>
+        <li><a href="tel:+12125550190">+1 (212) 555-0190</a></li>
+        
+        <li><a href="#">340 Park Ave, Suite 400<br/>New York, NY 10022</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">&copy; 2026 MISGRO Agency. All rights reserved.</div>
+    <div class="footer-legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
