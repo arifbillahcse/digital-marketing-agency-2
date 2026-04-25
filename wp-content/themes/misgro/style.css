@@ -1,0 +1,16 @@
+/*
+Theme Name: MISGRO
+Theme URI: https://misgro.com/
+Author: MISGRO Agency
+Author URI: https://misgro.com/
+Description: A custom WordPress theme for MISGRO — a data-driven digital marketing agency. Converted from a hand-built static site, this theme keeps the original design intact while adding WordPress menus, dynamic pages, and an AJAX contact form.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: misgro
+Tags: business, marketing, agency, custom-menu, custom-logo, featured-images, threaded-comments
+*/
+
+/* The actual visual styles live in assets/css/styles.css and are enqueued via functions.php. */
