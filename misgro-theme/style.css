@@ -1,0 +1,21 @@
+/*
+Theme Name: Misgro
+Theme URI: https://misgro.com/
+Author: Misgro Agency
+Author URI: https://misgro.com/
+Description: A professional, data-driven digital marketing agency theme. Features a dark futuristic UI, custom cursor, scroll reveal animations, animated counters, hero image carousel, FAQ accordion, sticky service tabs, filterable case study grid, and fully responsive layouts. Converted from a hand-crafted HTML/CSS design.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: misgro
+Tags: dark, business, agency, marketing, one-column, responsive, custom-menu, custom-logo, featured-images, threaded-comments, translation-ready
+*/
+
+/*
+ * The full theme stylesheet lives at assets/styles.css and is loaded via
+ * functions.php. This file exists to satisfy the WordPress theme metadata
+ * requirement and may be used for any future overrides.
+ */
