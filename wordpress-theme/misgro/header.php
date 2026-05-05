@@ -30,6 +30,7 @@
   <a href="<?php echo esc_url( misgro_page_url( 'about' ) ); ?>" onclick="closeMob()">About</a>
   <a href="<?php echo esc_url( misgro_page_url( 'why-choose-us' ) ); ?>" onclick="closeMob()">Why Choose Us</a>
   <a href="<?php echo esc_url( misgro_page_url( 'portfolio' ) ); ?>" onclick="closeMob()">Portfolio</a>
+  <a href="<?php echo esc_url( misgro_page_url( 'blog' ) ); ?>" onclick="closeMob()">Blog</a>
   <a href="<?php echo esc_url( misgro_page_url( 'contact' ) ); ?>" onclick="closeMob()">Contact</a>
 </div>
 
@@ -45,6 +46,7 @@
       <li><a href="<?php echo esc_url( misgro_page_url( 'about' ) ); ?>" class="<?php echo esc_attr( misgro_active_class( 'about' ) ); ?>">About</a></li>
       <li><a href="<?php echo esc_url( misgro_page_url( 'why-choose-us' ) ); ?>" class="<?php echo esc_attr( misgro_active_class( 'why-choose-us' ) ); ?>">Why Choose Us</a></li>
       <li><a href="<?php echo esc_url( misgro_page_url( 'portfolio' ) ); ?>" class="<?php echo esc_attr( misgro_active_class( 'portfolio' ) ); ?>">Portfolio</a></li>
+      <li><a href="<?php echo esc_url( misgro_page_url( 'blog' ) ); ?>" class="<?php echo esc_attr( misgro_active_class( 'blog' ) ); ?>">Blog</a></li>
       <li><a href="<?php echo esc_url( misgro_page_url( 'contact' ) ); ?>" class="<?php echo esc_attr( misgro_active_class( 'contact' ) ); ?>">Contact</a></li>
     </ul>
     <div class="nav-r">
