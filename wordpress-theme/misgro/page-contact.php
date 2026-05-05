@@ -24,7 +24,13 @@ get_header();
       <p class="hero-desc">Whether you have a project in mind, a question about our services, or just want an honest second opinion on your current marketing — we are here and we respond fast.</p>
       <div class="hero-ctas">
         <a href="#contact-form" class="btn btn-p">Send Us a Message <i class="fas fa-arrow-down"></i></a>
-        <a href="tel:+12125550190" class="btn-g"><i class="fas fa-phone"></i> Call Us Now</a>
+        <?php
+        $phone = misgro_get_option( 'misgro_phone' );
+        if ( $phone ) {
+          $phone_link = preg_replace( '/[^0-9+]/', '', $phone );
+          echo '<a href="tel:' . esc_attr( $phone_link ) . '" class="btn-g"><i class="fas fa-phone"></i> Call Us Now</a>';
+        }
+        ?>
       </div>
       <div class="trust-pills">
         <span class="tpill"><i class="fas fa-clock"></i> Responds within 24 hours</span>
@@ -74,7 +80,7 @@ get_header();
           <div class="info-ico"><i class="fas fa-envelope"></i></div>
           <div>
             <div class="info-label">Email Us</div>
-            <div class="info-val"><a href="mailto:contact@misgro.com" style="color:#fff">contact@misgro.com</a></div>
+            <div class="info-val"><a href="mailto:<?php echo esc_attr( misgro_get_option( 'misgro_email' ) ); ?>" style="color:#fff"><?php echo esc_html( misgro_get_option( 'misgro_email' ) ); ?></a></div>
             <div class="info-sub">We reply within one business day, usually faster</div>
           </div>
         </div>
@@ -82,7 +88,7 @@ get_header();
           <div class="info-ico"><i class="fas fa-phone"></i></div>
           <div>
             <div class="info-label">Call Us</div>
-            <div class="info-val"><a href="tel:+12125550190" style="color:#fff">+1 (212) 555-0190</a></div>
+            <div class="info-val"><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', misgro_get_option( 'misgro_phone' ) ) ); ?>" style="color:#fff"><?php echo esc_html( misgro_get_option( 'misgro_phone' ) ); ?></a></div>
             <div class="info-sub">Mon–Fri, 9 AM – 6 PM EST</div>
           </div>
         </div>

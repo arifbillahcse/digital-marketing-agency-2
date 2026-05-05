@@ -147,3 +147,21 @@ function misgro_page_url( $slug ) {
  * Include customizer settings
  */
 require_once get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Include contact form handler
+ */
+require_once get_template_directory() . '/inc/contact-handler.php';
+
+/**
+ * Add nonce for contact form AJAX
+ */
+function misgro_enqueue_contact_nonce() {
+	if ( is_page( 'contact' ) ) {
+		wp_localize_script( 'misgro-app', 'misgro_contact', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'nonce'    => wp_create_nonce( 'misgro_contact_nonce' ),
+		) );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'misgro_enqueue_contact_nonce' );

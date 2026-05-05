@@ -226,21 +226,30 @@ function handleSubmit(){
   var spin = document.getElementById('btn-spin');
   btn.disabled = true; txt.textContent = 'Sending...'; ico.style.display = 'none'; spin.style.display = 'block';
   var phone = document.getElementById('f-phone');
-  fetch('send_mail.php', {
+
+  var formData = new FormData();
+  formData.append('action', 'misgro_contact_form');
+  formData.append('nonce', misgro_contact.nonce);
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('phone', phone ? phone.value.trim() : '');
+  formData.append('subject', subject);
+  formData.append('message', message);
+
+  fetch(misgro_contact.ajax_url, {
     method: 'POST',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-    body: new URLSearchParams({
-      name: name,
-      email: email,
-      phone: phone ? phone.value.trim() : '',
-      subject: subject,
-      message: message
-    })
+    body: formData
   })
   .then(function(r){ return r.json(); })
-  .then(function(){
-    document.getElementById('formWrap').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+  .then(function(response){
+    if(response.success){
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('submitBtn').style.display = 'none';
+    } else {
+      btn.disabled = false; txt.textContent = 'Send Message'; ico.style.display = ''; spin.style.display = 'none';
+      alert('Error: ' + (response.data.message || 'Something went wrong. Please try again.'));
+    }
   })
   .catch(function(){
     btn.disabled = false; txt.textContent = 'Send Message'; ico.style.display = ''; spin.style.display = 'none';
@@ -257,6 +266,9 @@ function resetForm(){
   var txt = document.getElementById('btn-text'); if(txt) txt.textContent = 'Send Message';
   var ico = document.getElementById('btn-ico'); if(ico) ico.style.display = '';
   var spin = document.getElementById('btn-spin'); if(spin) spin.style.display = 'none';
+  document.getElementById('formWrap').style.display = 'block';
+  document.getElementById('formSuccess').style.display = 'none';
+  if(btn) btn.style.display = '';
   document.getElementById('formWrap').style.display = '';
   document.getElementById('formSuccess').style.display = 'none';
   ['err-name','err-email','err-subject','err-message'].forEach(function(id){ showErr(id, false); });
