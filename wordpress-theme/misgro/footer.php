@@ -13,15 +13,36 @@
   <div class="footer-top">
     <div class="footer-brand">
       <a href="<?php echo esc_url( misgro_page_url( 'home' ) ); ?>" class="logo-link">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/misgro.png' ); ?>" alt="MISGRO" class="logo-img"/>
+        <img src="<?php echo esc_url( misgro_get_option( 'misgro_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-img"/>
       </a>
-      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <p><?php echo esc_html( misgro_get_option( 'misgro_footer_text' ) ); ?></p>
       <div class="social-links">
-        <a href="#" class="social-link" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <?php
+        $facebook = misgro_get_option( 'misgro_social_facebook' );
+        if ( $facebook ) {
+          echo '<a href="' . esc_url( $facebook ) . '" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>';
+        }
+        $twitter = misgro_get_option( 'misgro_social_twitter' );
+        if ( $twitter ) {
+          echo '<a href="' . esc_url( $twitter ) . '" class="social-link" aria-label="X Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>';
+        }
+        $linkedin = misgro_get_option( 'misgro_social_linkedin' );
+        if ( $linkedin ) {
+          echo '<a href="' . esc_url( $linkedin ) . '" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>';
+        }
+        $instagram = misgro_get_option( 'misgro_social_instagram' );
+        if ( $instagram ) {
+          echo '<a href="' . esc_url( $instagram ) . '" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>';
+        }
+        $youtube = misgro_get_option( 'misgro_social_youtube' );
+        if ( $youtube ) {
+          echo '<a href="' . esc_url( $youtube ) . '" class="social-link" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>';
+        }
+        $tiktok = misgro_get_option( 'misgro_social_tiktok' );
+        if ( $tiktok ) {
+          echo '<a href="' . esc_url( $tiktok ) . '" class="social-link" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>';
+        }
+        ?>
       </div>
     </div>
     <div class="footer-col">
@@ -48,14 +69,26 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul class="footer-links">
-        <li><a href="mailto:contact@misgro.com">contact@misgro.com</a></li>
-        <li><a href="tel:+12125550190">+1 (212) 555-0190</a></li>
-        <li><a href="#">340 Park Ave, Suite 400<br/>New York, NY 10022</a></li>
+        <?php
+        $email = misgro_get_option( 'misgro_email' );
+        if ( $email ) {
+          echo '<li><a href="mailto:' . esc_attr( $email ) . '">' . esc_html( $email ) . '</a></li>';
+        }
+        $phone = misgro_get_option( 'misgro_phone' );
+        if ( $phone ) {
+          $phone_link = preg_replace( '/[^0-9+]/', '', $phone );
+          echo '<li><a href="tel:' . esc_attr( $phone_link ) . '">' . esc_html( $phone ) . '</a></li>';
+        }
+        $address = misgro_get_option( 'misgro_address' );
+        if ( $address ) {
+          echo '<li>' . nl2br( esc_html( $address ) ) . '</li>';
+        }
+        ?>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-legal">&copy; <?php echo esc_html( date( 'Y' ) ); ?> MISGRO Agency. All rights reserved.</div>
+    <div class="footer-legal"><?php echo wp_kses_post( misgro_get_option( 'misgro_copyright' ) ); ?></div>
     <div class="footer-legal-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>

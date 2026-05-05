@@ -142,3 +142,8 @@ function misgro_page_url( $slug ) {
 
 	return home_url( '/' . $slug . '/' );
 }
+
+/**
+ * Include customizer settings
+ */
+require_once get_template_directory() . '/inc/customizer.php';

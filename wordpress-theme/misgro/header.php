@@ -38,7 +38,7 @@
 <nav id="nav">
   <div class="nav-in">
     <a href="<?php echo esc_url( misgro_page_url( 'home' ) ); ?>" class="logo-link">
-      <img src="<?php echo esc_url( get_template_directory_uri() . '/img/misgro.png' ); ?>" alt="MISGRO" class="logo-img"/>
+      <img src="<?php echo esc_url( misgro_get_option( 'misgro_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-img"/>
     </a>
     <ul class="nav-l">
       <li><a href="<?php echo esc_url( misgro_page_url( 'home' ) ); ?>" class="<?php echo esc_attr( misgro_active_class( 'home' ) ); ?>">Home</a></li>

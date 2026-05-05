@@ -543,15 +543,36 @@ get_header();
   <div class="ft wrap">
     <div class="fb">
       <a href="<?php echo esc_url( misgro_page_url( 'home' ) ); ?>" class="logo-link">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/misgro.png' ); ?>" alt="MISGRO" class="logo-img"/>
+        <img src="<?php echo esc_url( misgro_get_option( 'misgro_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-img"/>
       </a>
-      <p>Data-driven digital marketing that delivers real, measurable growth. Your success is our only metric.</p>
+      <p><?php echo esc_html( misgro_get_option( 'misgro_footer_text' ) ); ?></p>
       <div class="fsocs">
-        <a href="#" class="fsoc" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" class="fsoc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="fsoc" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="fsoc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="fsoc" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <?php
+        $facebook = misgro_get_option( 'misgro_social_facebook' );
+        if ( $facebook ) {
+          echo '<a href="' . esc_url( $facebook ) . '" class="fsoc" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>';
+        }
+        $twitter = misgro_get_option( 'misgro_social_twitter' );
+        if ( $twitter ) {
+          echo '<a href="' . esc_url( $twitter ) . '" class="fsoc" aria-label="X Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>';
+        }
+        $linkedin = misgro_get_option( 'misgro_social_linkedin' );
+        if ( $linkedin ) {
+          echo '<a href="' . esc_url( $linkedin ) . '" class="fsoc" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>';
+        }
+        $instagram = misgro_get_option( 'misgro_social_instagram' );
+        if ( $instagram ) {
+          echo '<a href="' . esc_url( $instagram ) . '" class="fsoc" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>';
+        }
+        $youtube = misgro_get_option( 'misgro_social_youtube' );
+        if ( $youtube ) {
+          echo '<a href="' . esc_url( $youtube ) . '" class="fsoc" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>';
+        }
+        $tiktok = misgro_get_option( 'misgro_social_tiktok' );
+        if ( $tiktok ) {
+          echo '<a href="' . esc_url( $tiktok ) . '" class="fsoc" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>';
+        }
+        ?>
       </div>
     </div>
     <div class="fcol">
@@ -579,14 +600,26 @@ get_header();
     <div class="fcol">
       <h4>Contact</h4>
       <div class="flinks">
-        <a href="mailto:contact@misgro.com"><i class="fas fa-envelope"></i> contact@misgro.com</a>
-        <a href="tel:+12125550190"><i class="fas fa-phone"></i> +1 (212) 555-0190</a>
-        <a href="#" style="align-items:flex-start"><i class="fas fa-location-dot" style="margin-top:3px"></i> <span>340 Park Ave, Suite 400<br/>New York, NY 10022</span></a>
+        <?php
+        $email = misgro_get_option( 'misgro_email' );
+        if ( $email ) {
+          echo '<a href="mailto:' . esc_attr( $email ) . '"><i class="fas fa-envelope"></i> ' . esc_html( $email ) . '</a>';
+        }
+        $phone = misgro_get_option( 'misgro_phone' );
+        if ( $phone ) {
+          $phone_link = preg_replace( '/[^0-9+]/', '', $phone );
+          echo '<a href="tel:' . esc_attr( $phone_link ) . '"><i class="fas fa-phone"></i> ' . esc_html( $phone ) . '</a>';
+        }
+        $address = misgro_get_option( 'misgro_address' );
+        if ( $address ) {
+          echo '<a href="#" style="align-items:flex-start"><i class="fas fa-location-dot" style="margin-top:3px"></i> <span>' . nl2br( esc_html( $address ) ) . '</span></a>';
+        }
+        ?>
       </div>
     </div>
   </div>
   <div class="fbot wrap">
-    <div class="fleg">&copy; <?php echo esc_html( date( 'Y' ) ); ?> MISGRO Agency. All rights reserved.</div>
+    <div class="fleg"><?php echo wp_kses_post( misgro_get_option( 'misgro_copyright' ) ); ?></div>
     <div class="flegs">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
