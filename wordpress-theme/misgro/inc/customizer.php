@@ -16,8 +16,10 @@ function misgro_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'misgro_logo', array(
+		'type'              => 'theme_mod',
 		'default'           => get_template_directory_uri() . '/img/misgro.png',
 		'sanitize_callback' => 'esc_url_raw',
+		'transport'         => 'refresh',
 	) );
 
 	$wp_customize->add_control(
@@ -156,11 +158,26 @@ function misgro_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'misgro_customize_register' );
 
 /**
- * Helper function to get customizer values
+ * Helper function to get customizer values with proper defaults
  */
 function misgro_get_option( $option_name ) {
+	$defaults = array(
+		'misgro_logo'                 => get_template_directory_uri() . '/img/misgro.png',
+		'misgro_phone'                => '+1 (212) 555-0190',
+		'misgro_email'                => get_option( 'admin_email' ),
+		'misgro_address'              => '123 Business Street, New York, NY 10001',
+		'misgro_footer_text'          => 'We\'re a data-driven digital marketing agency obsessed with your growth.',
+		'misgro_copyright'            => '© ' . date( 'Y' ) . ' MISGRO. All rights reserved.',
+		'misgro_footer_links_heading' => 'Quick Links',
+	);
+
 	$value = get_theme_mod( $option_name );
-	return ! empty( $value ) ? $value : '';
+
+	if ( ! empty( $value ) ) {
+		return $value;
+	}
+
+	return isset( $defaults[ $option_name ] ) ? $defaults[ $option_name ] : '';
 }
 
 /**
