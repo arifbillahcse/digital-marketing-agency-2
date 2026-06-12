@@ -788,6 +788,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
   .even .tll,.even .tlr2{order:unset;text-align:left}
   .mlayout{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}
   .agrid{grid-template-columns:1fr 1fr}.tgrid{grid-template-columns:1fr 1fr}
+  .tphoto{height:320px}
   .cta-in{padding:44px 26px}.ft{grid-template-columns:1fr 1fr}
   .fbot{flex-direction:column;gap:14px;text-align:center}
   #cur,
@@ -799,6 +800,7 @@ footer{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.
 }
 @media(max-width:480px){
   .ft{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr}
+  .tphoto{height:380px}
   .agrid{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr 1fr}
 }
 
