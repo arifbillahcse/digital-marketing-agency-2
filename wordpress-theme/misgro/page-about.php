@@ -245,7 +245,7 @@ get_header();
       </div>
       <div class="tcard rv">
         <div class="tphoto">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/meena-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpg.jpeg' ); ?>" alt="Meena Khatun" loading="lazy"/>
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/meena-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpeg' ); ?>" alt="Meena Khatun" loading="lazy"/>
           <div class="tphoto-grad"></div>
           <div class="tsocs">
             <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
@@ -275,7 +275,7 @@ get_header();
       </div>
       <div class="tcard rv">
         <div class="tphoto">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/rakibul-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpg.jpeg' ); ?>" alt="Md. Rakibul Islam" loading="lazy"/>
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/rakibul-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpeg' ); ?>" alt="Md. Rakibul Islam" loading="lazy"/>
           <div class="tphoto-grad"></div>
           <div class="tsocs">
             <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
@@ -290,7 +290,7 @@ get_header();
       </div>
       <div class="tcard rv">
         <div class="tphoto">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/sonmoy-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpg.jpeg' ); ?>" alt="Sonmoy Shaha" loading="lazy"/>
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/sonmoy-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpeg' ); ?>" alt="Sonmoy Shaha" loading="lazy"/>
           <div class="tphoto-grad"></div>
           <div class="tsocs">
             <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
@@ -320,7 +320,7 @@ get_header();
       </div>
       <div class="tcard rv">
         <div class="tphoto">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/joysree-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpg.jpeg' ); ?>" alt="Joysree Das" loading="lazy"/>
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/joysree-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpeg' ); ?>" alt="Joysree Das" loading="lazy"/>
           <div class="tphoto-grad"></div>
           <div class="tsocs">
             <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
@@ -335,7 +335,7 @@ get_header();
       </div>
       <div class="tcard rv">
         <div class="tphoto">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/razzak-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpg.jpeg' ); ?>" alt="Razzak" loading="lazy"/>
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/razzak-misgro-seo-facebook-ads-meta-ads-wordpress-digital-marketing-google-services-expert.jpeg' ); ?>" alt="Razzak" loading="lazy"/>
           <div class="tphoto-grad"></div>
           <div class="tsocs">
             <a href="#" class="tsoc"><i class="fab fa-linkedin-in"></i></a>
