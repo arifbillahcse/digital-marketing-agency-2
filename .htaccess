@@ -1,0 +1,21 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# Allow direct access to wp-content (theme images, uploads, etc)
+RewriteRule ^wp-content/(.*)$ - [L]
+
+# Allow direct access to wp-admin
+RewriteRule ^wp-admin/(.*)$ - [L]
+
+# Allow direct access to wp-includes
+RewriteRule ^wp-includes/(.*)$ - [L]
+
+# For all other requests, use WordPress
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
